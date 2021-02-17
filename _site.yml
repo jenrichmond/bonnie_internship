@@ -1,6 +1,6 @@
 name: "internship"
 title: "internship blog"
-theme: /theme_css/mock.css
+theme: /theme_css/sleep.css
 description: |
   blog
 output_dir: "_site"
