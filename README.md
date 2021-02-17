@@ -6,3 +6,13 @@ Includes instructions re how to work with markdown, customise the look of distil
 
 
 Checking that R is talking to Git by editing the ReadMe.
+
+Practicing using the terminal
+
+1. git pull
+
+2. git add .
+
+3. git commit -m "demo terminal"
+
+4. gitpush
