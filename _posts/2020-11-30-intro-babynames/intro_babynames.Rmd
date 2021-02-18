@@ -67,7 +67,7 @@ ozbabynames %>%
   geom_line() +
   theme_bw() +
  facet_wrap(~name,
-             scales = "free_y") +
+            scales = "free_y") +
   theme(legend.position = "none")
 ```
 
@@ -75,18 +75,19 @@ ozbabynames %>%
 
 What does the `scales = "free y"` do? What happens if you delete it? Is the plot more meaningful with "free y" or without it?
 
+Changes the scale on the Y axis so that it varies for each plot depending on the frequency for each, e.g., for Stefani, the plot appears as almost a straight line when 'free y' is removed, but more clearly shows a peak around 1998 when 'free y' is added.
 
 ### Recreate the plot above with your names 
 
 ```{r}
-your_names <- c("name1", "name2", "name3")
+your_names <- c("Bonnie", "Siobhan")
 ```
 
 What do you need to change about the code below to make it plot your names?
 
 ```{r}
 ozbabynames %>%
-  filter(name %in% artist_names) %>%
+  filter(name %in% your_names) %>%
   group_by(name, year) %>% 
   summarise(count = sum(count)) %>%
   ggplot(aes(x = year, 
@@ -95,8 +96,10 @@ ozbabynames %>%
   geom_line() +
   theme_bw() +
  facet_wrap(~name,
-             scales = "free_y") +
+            scales = "free_y") +
   theme(legend.position = "none")
 ```
 
 Do you need `scales = "free_y"`?
+
+Maybe. Without it, the data for the name "Siobhan" appears as a somewhat flat, squiggly line, but it is easy to compare it to the name Bonnie when they are placed side by side.
