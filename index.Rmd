@@ -14,6 +14,3 @@ knitr::include_graphics(here::here("blog_photo.jpg"))
 Hi! I'm Bonnie, a third year Bachelor of Psychology student. This is my internship blog where I will be posting about my journey learning R and my progress in reproducing the data from various research papers. 
 
 I love exploring the Blue Mountains and am a serious Swiftie (Taylor's Version).
-
-Update the profile picture by taking a selfie of your team and replacing the avatar.jpg file with your own.
-  
