@@ -1,0 +1,20 @@
+---
+title: "week 1"
+description: |
+  A short description of the post.
+author:
+  - name: Bonnie Butler
+date: 02-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Week 1
+
+This is a test blog post by Bonnie.
