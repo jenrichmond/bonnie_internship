@@ -3,7 +3,7 @@ title: "Week 3"
 description: |
  reproducibility project planning
 author:
-  - name: Jenny Richmond
+  - name: Bonnie Butler
 date: "`r Sys.Date()`"
 output:
   distill::distill_article:
