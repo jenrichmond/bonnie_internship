@@ -1,33 +1,19 @@
 ---
-title: "Hey there!"
+title: "Welcome to my blog!"
 site: distill::distill_website
 ---
 
 
 ```{r, echo = FALSE, eval = TRUE, out.width="40%", out.extra='style="float:left; padding:5px"'}
 
-knitr::include_graphics(here::here("avatar.jpg"))
+knitr::include_graphics(here::here("blog_photo.jpg"))
 ```
      
-# About us
+# About me
 
-The index.Rmd file contains your home page. Update the profile picture by taking a selfie of your team and replacing the avatar.jpg file with your own. 
+Hi! I'm Bonnie, a third year Bachelor of Psychology student. This is my internship blog where I will be posting about my journey learning R and my progress in reproducing the data from various research papers. 
 
-Insert a short paragraph here about each of the members of your group. 
+I love exploring the Blue Mountains and am a serious Swiftie (Taylor's Version).
 
-## Billie Eilish
-
-My favourite food on campus is Guzmen & Gomez. I get to UNSW on the bus/train. When we are allowed to travel again, the first place I am going to go is Bali. 
-
-
-## Taylor Swift
-
-My favourite food on campus is Stockmarket. To get to campus, I ride my bike. When we are allowed to travel again, the first place I am going to go is Thailand. 
-
-
-## Lady Gaga
-
-My favourite food on campus is Subway. I drive my car to get to UNSW campus. When we are allowed to travel again, the first place I am going to go is New Zealand. 
-
-
+Update the profile picture by taking a selfie of your team and replacing the avatar.jpg file with your own.
   
