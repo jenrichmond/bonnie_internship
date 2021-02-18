@@ -1,15 +1,10 @@
 ---
-title: "whatever"
+title: "week 1"
 description: |
-  This is a placeholder. You can customise this Rmd when you want to write your first post. 
+  The first blog post of my internship. What I set out to do, what I achieved, the challenges I encountered...
 author:
-  - name: Billie Eilish
-    url: https://example.com/
-  - name: Taylor Swift
-    url: https://example.com/
-  - name: Britney Spears
-    url: https://example.com/
-date: 11-30-2020
+  - name: Bonnie Butler
+date: 02-18-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -19,6 +14,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-### start with a heading
+# Week 1
 
-Insert your text here
+This is a test edit by Bonnie.
