@@ -3,13 +3,8 @@ title: "babynames post"
 description: |
   play with baby names data 
 author:
-  - name: Billie Eilish
-    url: https://example.com
-  - name: Taylor Swift
-    url: https://example.com
-  - name: Lady Gaga
-    url: https://example.com
-date: 11-30-2020
+  - name: Bonnie Butler
+date: 02-18-2021
 output:
   distill::distill_article:
     self_contained: false
