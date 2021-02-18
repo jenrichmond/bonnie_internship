@@ -11,7 +11,9 @@ navbar:
     - text: "How to"
       href: howto.html
     - text: "Blog"
-      href: blog_posts.html 
+      href: blog_posts.html
+    - text: "Papers"
+      href: week3.html
     - text: "Project"
       href: project.html
     - text: "Coding"
