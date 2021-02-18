@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2020-11-30-whatever/",
+    "title": "week 1",
+    "description": "The first blog post of my internship. What I set out to do, what I achieved, the challenges I encountered...",
+    "author": [
+      {
+        "name": "Bonnie Butler",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-18",
+    "categories": [],
+    "contents": "\nWeek 1\nThis is a test edit by Bonnie.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-18T12:19:12+11:00",
+    "input_file": "whatever.utf8.md"
+  },
+  {
     "path": "posts/2020-11-30-intro-babynames/",
     "title": "babynames post",
     "description": "play with baby names data",
@@ -21,31 +38,6 @@
     "categories": [],
     "contents": "\ndata viz with ggplot\nload packages\nWe can use the library() function to load the packages we need. The tidyverse package contains tons of useful functions for data wrangling and visualisation (including ggplot). The ozbabynames package contains data from birth records in Australia.\n\n\nlibrary(tidyverse)\nlibrary(ozbabynames)\n\n\n\nread the babynames data\n\n\nozbabynames <- ozbabynames\n\nglimpse(ozbabynames)\n\n\nRows: 252,358\nColumns: 5\n$ name  <chr> \"Charlotte\", \"Olivia\", \"Ava\", \"Amelia\", \"Mia\", \"Isla\"…\n$ sex   <chr> \"Female\", \"Female\", \"Female\", \"Female\", \"Female\", \"Fe…\n$ year  <int> 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017,…\n$ count <int> 577, 550, 464, 442, 418, 392, 378, 353, 351, 339, 334…\n$ state <chr> \"New South Wales\", \"New South Wales\", \"New South Wale…\n\ndefine the names you want to compare\nbtw Lady Gaga’s real name is Stefani\n\n\nartist_names <- c(\"Billie\", \"Taylor\", \"Stefani\")\n\n\n\nwhose name is most popular??\n\n\nozbabynames %>%\n  filter(name %in% artist_names) %>%\n  group_by(name, year) %>% \n  summarise(count = sum(count)) %>%\n  ggplot(aes(x = year, \n             y = count,\n             colour = name)) +\n  geom_line() +\n  theme_bw() +\n facet_wrap(~name,\n             scales = \"free_y\") +\n  theme(legend.position = \"none\")\n\n\n\n\nWhat does the scales = \"free y\" do? What happens if you delete it? Is the plot more meaningful with “free y” or without it?\nRecreate the plot above with your names\n\n\nyour_names <- c(\"name1\", \"name2\", \"name3\")\n\n\n\nWhat do you need to change about the code below to make it plot your names?\n\n\nozbabynames %>%\n  filter(name %in% artist_names) %>%\n  group_by(name, year) %>% \n  summarise(count = sum(count)) %>%\n  ggplot(aes(x = year, \n             y = count,\n             colour = name)) +\n  geom_line() +\n  theme_bw() +\n facet_wrap(~name,\n             scales = \"free_y\") +\n  theme(legend.position = \"none\")\n\n\n\n\nDo you need scales = \"free_y\"?\n\n\n\n",
     "preview": "posts/2020-11-30-intro-babynames/intro_babynames_files/figure-html5/unnamed-chunk-4-1.png",
-    "last_modified": "2021-02-18T09:56:55+11:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2020-11-30-whatever/",
-    "title": "whatever",
-    "description": "This is a placeholder. You can customise this Rmd when you want to write your first post.",
-    "author": [
-      {
-        "name": "Billie Eilish",
-        "url": "https://example.com/"
-      },
-      {
-        "name": "Taylor Swift",
-        "url": "https://example.com/"
-      },
-      {
-        "name": "Britney Spears",
-        "url": "https://example.com/"
-      }
-    ],
-    "date": "2020-11-30",
-    "categories": [],
-    "contents": "\nstart with a heading\nInsert your text here\n\n\n\n",
-    "preview": {},
     "last_modified": "2021-02-18T09:56:55+11:00",
     "input_file": {}
   }
