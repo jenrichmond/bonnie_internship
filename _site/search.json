@@ -5,7 +5,7 @@
       "title": "welcome to our blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-02-18T12:39:19+11:00"
+      "last_modified": "2021-02-18T15:19:42+11:00"
     },
     {
       "path": "coding.html",
@@ -13,7 +13,7 @@
       "description": "a place for coding notes",
       "author": [],
       "contents": "\nEach week keep track of what you are learning in coding workshop with a learning log. Following each session, please add an entry here that answers the following questions.\nWeek_____\nName_________\nMy goal for today’s session was…\nI spent the session…..\nThe things that went well were….\nThe things that were challenging were….\nNext time I want to….\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:05+11:00"
+      "last_modified": "2021-02-18T15:19:43+11:00"
     },
     {
       "path": "create_content.html",
@@ -27,7 +27,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nBlog postshow to create a new blog post\n\nArticleshow to create a new article\nhow to create links\n\nFancy thingsTable of contents\nAsides\n\n\nBlog posts\nThere are a couple of blog posts in the template that you can edit to get started with your blog.\nintro_babynames.Rmd\nin the _posts/2020-11-30-intro-babynames folder, you will find an Rmd file called intro_babynames.Rmd. It is set up to plot the popularity of some famous musicians names, but you can customise the code to make it plot your names. Don’t forget to update the author details in the top section of the post too.\nwhatever.Rmd\nthis is a placeholder for your first real post. You can use it, or follow the instructions below to create a post from scratch.\nhow to create a new blog post\nTo create a new post, use the create_post() function. In the console, type…\n\ncreate_post(\"whatever you want the title to be\")\n\nThis function will open a new folder within the _posts folder and a new .Rmd template for you to write in. You should edit the authors (it will default to those used last), write a description for your post, and add your text. To add a picture, save it into the img folder and insert a chunk with the following code inside.\n\nknitr::include_graphics(here::here(\"img\", \"nameofyourimage.png\"))\n\n\n\n\nArticles\nYou can make other pages/articles appear in your site too. The template includes the following “articles”, which are all editable by you.\ncoding.Rmd This would be a good file to edit to keep notes on what you are learning in coding sessions.\nproject.Rmd\nThis would be a good file to edit as you make progress on your group project.\nhow to create a new article\nTo create a new post, use the create_article() function. In the console, type…\n\ncreate_article(\"whatever you want the title to be\")\n\nThis function will open a new .Rmd file in the main directory of your site folder. You should edit the authors (it will default to those used last), write a description for your article, and add your text. Remember that Rmd files can include text, pictures, code and output.\nhow to create links\nOnce you are happy with the content, you should link to your article from somewhere else in your site.\nYou could add a link to it…\non the home page by editing the index.Rmd file\non the navigation bar by editing the _site.yml file\non the how to page by editing the howto.Rmd file\nYou want to create a link using a combination of round and square brackets. Put the text that you want to be the link within square brackets and the html file that you want to link to in round brackets.\nHere is what the links on the how to page look like…\n\n\n\nFancy things\nTable of contents\nYou can include a table of contents by including a toc in the top section of your blog/article. Note this top section is called the YAML and it is VERY finickity about spacing. Make sure your toc command looks like this.\n\n\n\nAsides\nYou can put notes in the side bar using an aside…\n<aside>\nThis content will appear in the gutter of the article.\n<\/aside>\n\nThis content will appear in the gutter of the article.\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:05+11:00"
+      "last_modified": "2021-02-18T15:19:44+11:00"
     },
     {
       "path": "customise.html",
@@ -41,7 +41,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\nYou can customise the look and feel of your distill site pretty easily. See some examples of other sites made with distill here.\nhow to change the name of your site\nIn the top left corner, your site is currently called “internship blog”. You might want to change that to the name of your group. Open the **_site.yml** file and update the title.\nYou can also change the welcome message. Open the index.Rmd file and change the title.\nhow to change the theme\nYou can change the fonts and colour scheme by choosing a theme. I’ve imported several examples from other distill sites. Choose your favourite theme from the list below.\npiping.css\nhttps://www.pipinghotdata.com/\nsleep.css\nhttps://milesmcbain.xyz/\nmodels.css\nhttps://www.tidymodels.org/\nmock.css\nhttps://themockup.blog/\ntidy.css\nhttps://www.tidymodels.org/\nijemaka.css\nhttps://ijeamaka-anyene.netlify.app\nlendaway.css\nhttps://lisalendway.netlify.app/posts/2020-12-09-buildingdistill/\nTo apply the theme, open your **_site.yml** and insert the name of the theme where it says theme:\nhow to change the layout of the navigation bar\nIn the template, the top bar has links for Home, How to, Blog, Coding and Project. You can change the arrangement of these navigation links by editing the _site.yml file.\n\n\n\nYou can add links or change the order by editing the navbar code here. Make sure each text is linking to an .html file.\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:06+11:00"
+      "last_modified": "2021-02-18T15:19:44+11:00"
     },
     {
       "path": "git_tips.html",
@@ -55,7 +55,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nhow to git\nOption A git for beginnersusing the git tabStep 1: git pull\nStep 2-4: git add - commit - push\n\n\nOption B git for expertsusing the terminalStep 1: git pull\nStep 2: git add\nStep 3: git commit\nStep 4: git push\n\n\nNeed help?\n\nhow to git\nIn this course, we are using git and github to collaborate on code and writing. Github is really good at version control and allows different people to work on the same project at the same time, but it is not like google docs where you and your collaborators are making changes on a document in real time. Because everyone will be working independently and every so often “pushing” your changes to github, there is the potential for your changes to conflict. To avoid this happening, follow the golden rule of git:\n\nAlways “pull” before you “push”\n\nAs you are learning git, you might like to use the git tab within RStudio (Option A), but as you become more familiar with the process you might find it faster to type commands in the terminal (Option B).\n\n\n\nOption A git for beginners\nusing the git tab\nStep 1: git pull\nWhen you are working on a repo with someone else, it is possible that your collaborator has pushed their changes to your repo since the last time you were working. Whenever you sit down to work on your project/site, it is good practice to “pull” before you “push”.\n\n\n\nIt is a good idea to use git pull before you think about pushing new content, because by getting the latest version of the repo from git onto your local machine you are much less likely to create merge conflicts (aka clashes with your collaborators).\nStep 2-4: git add - commit - push\nWhen you have made some changes and want to push those changes to git, just knit your documents and then tell github that you have some content to add.\nFirst press the commit button.\n\n\n\nIn the popup window…\nadd: check the box next to each of the files you are ready to commit. This “stages” the files ready for the commit.\ncommit: on the right side of a the popup window, write a message explaining to your collaborators (or your future self) what changes have been made in this commit 3. click the commit button. Close out the popup box.\npush: press the “up” button to push your changes to github\n\n\n\nCheck your github repo to make sure that your changes have appeared.\nOption B git for experts\nusing the terminal\nOnce you get a bit more familiar with the process of pulling, committing and pushing your changes to github, you might like to speed up the process by typing commands into the terminal.\nFirst, does your RStudio have a Terminal tab? If not, choose Tools-Terminal-New Terminal to get one.\n\n\n\nStep 1: git pull\nYou want to pull the most up-to-date version of your project from git. Type…\n\ngit pull\n\n… into the terminal. If you already have the most recent version, it will let you know that you are Already up to date.\n\n\n\nStep 2: git add\nThen let github know which files you want to add. Type…\n\ngit add .\n\n… into the terminal. This one won’t give you any feedback. This says hey git, I want to add some stuff, in fact all things that have changed (aka .) This is the same as “staging” all the files that have changed.\n\n\n\nStep 3: git commit\nCommit your files with a message that lets your collaborators (or your future self) know what has changed. Type…\n\ngit commit -m “a message that makes sense”\n\n… into the terminal. This one will give you a list of files that have been changed as feedback.\n\n\n\nStep 4: git push\nAnd finally, push your changes to github. Type…\n\ngit push\n\n… into the terminal. Wait for it to chug and complete the push.\n\n\n\nCheck your github repo to make sure that your changes have appeared.\nNeed help?\nJenny Bryan who works for R-Studio has written a great site called happygitwithr which has lots of good tips and tricks if you are looking for more.\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:07+11:00"
+      "last_modified": "2021-02-18T15:19:45+11:00"
     },
     {
       "path": "howto.html",
@@ -63,14 +63,14 @@
       "description": "Some \"how to\" details about working with distill/RMarkdown",
       "author": [],
       "contents": "\nThis blog is created using a package called distill. It is an R-Markdown based platform specifically designed for science communication. The package website is a useful source of information about how to set up and maintain a distill site. You can see examples of other sites that have been created using distill here.\nHere are some tips for …\nworking in RMarkdown\ncustomising your site\ncreating new content\navoid git drama\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:07+11:00"
+      "last_modified": "2021-02-18T15:19:46+11:00"
     },
     {
       "path": "index.html",
       "title": "Welcome to my blog!",
       "author": [],
       "contents": "\n\n\n\nAbout me\nHi! I’m Bonnie, a third year Bachelor of Psychology student. This is my internship blog where I will be posting about my journey learning R and my progress in reproducing the data from various research papers.\nI love exploring the Blue Mountains and am a serious Swiftie (Taylor’s Version).\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:07+11:00"
+      "last_modified": "2021-02-18T15:19:46+11:00"
     },
     {
       "path": "markdown.html",
@@ -84,7 +84,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\nWriting in RMarkdown is different to writing in Word. What you see is not quite what you get. To preview what your formatted text will look like, use the “Knit” button on the top bar, or the keyboard shortcut Shift-Command-K.\n1. Italics and Bold\nIf you want italics or bold use asterisks.\nRaw Rmd\n*one asterisk* \n\n**two asterisks**\n\nKnitted Rmd\none asterisk\ntwo asterisks\n2. Levels of heading\nYou can get levels of heading with hash.\nRaw Rmd\n# BIG HEADING\n## Smaller Heading\n### even smaller heading\n\nKnitted Rmd\nBIG HEADING\nSMALLER HEADING\nEVEN SMALLER HEADING\n3. Bullets\nYou can get bullet points using dash…\nRaw Rmd\n- first important point\n- second point\n- and third... \n\nKnitted Rmd\nfirst important point\nsecond point\nand third…\n4. Code Chunks\nYou can insert code “chunks” by using the shortcut, Option-Command-I or choosing Insert R from the top menu bar.\nThe power of RMarkdown comes from being able to intersperse code chunks, output, and explanation in the same document.\nthis is a code chunk\n\n\nprint(\"hello world\")\n\n\n[1] \"hello world\"\n\n5. Images\nSave your image file in the img folder and tell R where to find it using the include_graphics() and here::here() functions\n\n\nknitr::include_graphics(here::here(\"img\", \"band.jpg\"))\n\n\n\n\nNeed help?\nThe RMarkdown reference guide is helpful in learning how to create formatted text in R-Markdown.\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:08+11:00"
+      "last_modified": "2021-02-18T15:19:47+11:00"
     },
     {
       "path": "project.html",
@@ -92,7 +92,7 @@
       "description": "a place for group project design thoughts",
       "author": [],
       "contents": "\nProject Goals\nInsert some text here about the paper you are trying to reproduce and what your goals are\n\n\n\n",
-      "last_modified": "2021-02-18T12:10:08+11:00"
+      "last_modified": "2021-02-18T15:19:47+11:00"
     },
     {
       "path": "week3.html",
@@ -106,7 +106,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nPaper 1\nPaper 2\nPaper 3\nPaper 4\nPaper 5\n\nPaper 1\nHill, S. E., Prokosch, M. L., DelPriore, D. J., Griskevicius, V., & Kramer, A. (2016). Low childhood socioeconomic status promotes eating in the absence of energy need. Psychological Science, 27, 354-364. https://doi.org/10.1177/0956797615621901\npaper\nOSF\nPaper 2\nPlebanek, D. J., & Sloutsky, V. M. (2017). Costs of selective attention: When children notice what adults miss. Psychological Science, 28(6), 723-732. https://doi.org/10.1177/0956797617693005\npaper\nOSF\nPaper 3\nPutnam, A. L., Ross, M. Q., Soter, L. K., & Roediger III, H. L. (2018). Collective narcissism: Americans exaggerate the role of their home state in appraising U.S. history. Psychological Science, 29(9), 1414-1422. https://doi.org/10.1177/0956797618772504\npaper\nOSF\nPaper 4\nMurphy, G., Loftus, E. F., Hofstein Grady, R., Levine, L. J., & Greene, C. M. (2019). False memories for fake news during Ireland’s abortion referndum. Psychological Science, 30(10), 1449-1459. https://doi.org/10.1177/0956797619864887\npaper\nOSF\nPaper 5\nLi, Q., Zhang, W., Heyman, G. D., Compton, B. J., & Lee, K. (2020). Susceptibility to being lured away by a stranger: A real-world field test of selective trust in early childhood. Psychological Science, 31(12), 1488-1496. https://doi.org/10.1177/0956797620966526\npaper\nOSF\n\n\n\n",
-      "last_modified": "2021-02-18T14:54:24+11:00"
+      "last_modified": "2021-02-18T15:19:48+11:00"
     }
   ],
   "collections": ["posts/posts.json"]
