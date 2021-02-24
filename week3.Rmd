@@ -37,7 +37,7 @@ Putnam, A. L., Ross, M. Q., Soter, L. K., & Roediger III, H. L. (2018). Collecti
 
 ## Paper 4
 
-Murphy, G., Loftus, E. F., Hofstein Grady, R., Levine, L. J., & Greene, C. M. (2019). False memories for fake news during Ireland's abortion referndum. *Psychological Science, 30(10)*, 1449-1459. https://doi.org/10.1177/0956797619864887
+Murphy, G., Loftus, E. F., Hofstein Grady, R., Levine, L. J., & Greene, C. M. (2019). False memories for fake news during Ireland's abortion referendum. *Psychological Science, 30(10)*, 1449-1459. https://doi.org/10.1177/0956797619864887
 
 - [paper](https://journals.sagepub.com/doi/full/10.1177/0956797619864887)
 - [OSF](https://osf.io/9q23j)
