@@ -119,7 +119,11 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nPaper 1\nPaper 2\nPaper 3\nPaper 4\nPaper 5\n\nPaper 1\nHill, S. E., Prokosch, M. L., DelPriore, D. J., Griskevicius, V., & Kramer, A. (2016). Low childhood socioeconomic status promotes eating in the absence of energy need. Psychological Science, 27, 354-364. https://doi.org/10.1177/0956797615621901\npaper\nOSF\nPaper 2\nPlebanek, D. J., & Sloutsky, V. M. (2017). Costs of selective attention: When children notice what adults miss. Psychological Science, 28(6), 723-732. https://doi.org/10.1177/0956797617693005\npaper\nOSF\nPaper 3\nPutnam, A. L., Ross, M. Q., Soter, L. K., & Roediger III, H. L. (2018). Collective narcissism: Americans exaggerate the role of their home state in appraising U.S. history. Psychological Science, 29(9), 1414-1422. https://doi.org/10.1177/0956797618772504\npaper\nOSF\nPaper 4\nMurphy, G., Loftus, E. F., Hofstein Grady, R., Levine, L. J., & Greene, C. M. (2019). False memories for fake news during Ireland’s abortion referendum. Psychological Science, 30(10), 1449-1459. https://doi.org/10.1177/0956797619864887\npaper\nOSF\nPaper 5\nLi, Q., Zhang, W., Heyman, G. D., Compton, B. J., & Lee, K. (2020). Susceptibility to being lured away by a stranger: A real-world field test of selective trust in early childhood. Psychological Science, 31(12), 1488-1496. https://doi.org/10.1177/0956797620966526\npaper\nOSF\n\n\n\n",
+<<<<<<< HEAD
       "last_modified": "2021-02-24T13:13:05+11:00"
+=======
+      "last_modified": "2021-02-24T13:09:28+11:00"
+>>>>>>> efcd6a13b542229c3d029912ecb185268e25c73a
     }
   ],
   "collections": ["posts/posts.json"]
