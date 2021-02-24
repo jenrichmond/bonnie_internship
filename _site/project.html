@@ -87,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>internship blog: project</title>
 
-  <meta property="description" itemprop="description" content="a place for group project design thoughts"/>
+  <meta property="description" itemprop="description" content="lets start paper 1 here"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="internship blog: project"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="a place for group project design thoughts"/>
+  <meta property="og:description" content="lets start paper 1 here"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="internship blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="internship blog: project"/>
-  <meta property="twitter:description" content="a place for group project design thoughts"/>
+  <meta property="twitter:description" content="lets start paper 1 here"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["project"]},{"type":"character","attributes":{},"value":["a place for group project design thoughts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["project"]},{"type":"character","attributes":{},"value":["lets start paper 1 here"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2386,7 +2386,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"project","description":"a place for group project design thoughts","authors":[]}
+{"title":"project","description":"lets start paper 1 here","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2416,13 +2416,85 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>project</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>a place for group project design thoughts</p></p>
+<p><p>lets start paper 1 here</p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="project-goals">Project Goals</h1>
-<p>Insert some text here about the paper you are trying to reproduce and what your goals are</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h1 id="summary">Summary</h1>
+<p>Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found.</p>
+<h1 id="plan">Plan</h1>
+<p>There are 3 studies reported in this paper. For each study, the goal is to reproduce the …</p>
+<ol type="1">
+<li>demographic descriptives (reported in Participants)</li>
+<li>figures (column graphs reporting total calories as a function of SES and energy need/condition/glucose)</li>
+<li>tables of descriptive statistics (M, SD, Range)</li>
+</ol>
+<h1 id="demographics">demographics</h1>
+<p>For each study the authors report…</p>
+<ul>
+<li>how many students participated</li>
+<li>mean, SD, range age</li>
+</ul>
+<p>They only included those with BMI &lt; 30 and excluded those with food allergies or diabetes</p>
+<h2 id="study-1">Study 1</h2>
+<h3 id="read-in-the-data">read in the data</h3>
+<p>Use the here() function to tell R where to find your data. And use clean_names() from janitor to make the variable names easier to work with.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Use glimpse() to familiarise yourself with what is in the file and find the demographic variables.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-the-participants">count the participants</h3>
+<p>Use the count function to count how many participants there were. Are those that were excluded due to BMI or allergies/diabetes included in the dataset??</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="summarise-age">summarise age</h3>
+Use the summarise function to get the mean, sd, min, and max age
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="study-2">Study 2</h2>
+<p>As for study 1, read in the data for Study 2, use count() to see how many participants there were, and summarise to get M, SD, min, and max age.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-the-participants-1">count the participants</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="summarise-age-1">summarise age</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-condition-assignment">count condition assignment</h3>
+<p>Which variable contains info about the condition participant were assigned to? Use tabyl to count how many were assigned to each condition.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="study-3">Study 3</h2>
+<p>Read the data and then use the count function to count how many participants there were in total and the tabyl function to count how many were men and women. Use summarise to get the mean, sd, min, and max age.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-the-participants-2">count the participants</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="summarise-age-2">summarise age</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-malefemale">count male/female</h3>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

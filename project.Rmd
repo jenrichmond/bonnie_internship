@@ -1,7 +1,7 @@
 ---
 title: "project"
 description: |
- a place for group project design thoughts
+ lets start paper 1 here
 ---
 
 ```{r setup, include=FALSE}
@@ -9,8 +9,129 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-# Project Goals
 
-Insert some text here about the paper you are trying to reproduce and what your goals are
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+```
 
+
+# Summary
+
+Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found. 
+
+# Plan
+
+There are 3 studies reported in this paper. For each study, the goal is to reproduce the ...
+
+1. demographic descriptives (reported in Participants)
+2. figures (column graphs reporting total calories as a function of SES and energy need/condition/glucose)
+3. tables of descriptive statistics (M, SD, Range)
+
+# demographics
+
+For each study the authors report...
+
+- how many students participated
+- mean, SD, range age
+
+They only included those with BMI < 30 and excluded those with food allergies or diabetes
+
+## Study 1
+
+### read in the data
+
+ Use the here() function to tell R where to find your data. And use clean_names() from janitor to make the variable names easier to work with. 
+
+```{r}
+s1 <- read_csv(here("research_data", "eating_correlational.csv")) %>%
+  clean_names()
+```
+
+Use glimpse() to familiarise yourself with what is in the file and find the demographic variables. 
+
+```{r}
+
+```
+
+
+### count the participants
+
+Use the count function to count how many participants there were. Are those that were excluded due to BMI or allergies/diabetes included in the dataset?? 
+
+
+```{r}
+
+
+```
+
+### summarise age
+
+Use the summarise function to get the mean, sd, min, and max age
+
+
+```{r}
+
+
+```
+
+
+## Study 2
+
+As for study 1, read in the data for Study 2, use count() to see how many participants there were, and summarise to get M, SD, min, and max age. 
+
+```{r}
+
+```
+
+### count the participants
+```{r}
+
+
+```
+
+### summarise age
+
+```{r}
+
+```
+
+
+### count condition assignment
+
+Which variable contains info about the condition participant were assigned to? Use tabyl to count how many were assigned to each condition. 
+
+```{r}
+
+```
+
+
+## Study 3
+
+Read the data and then use the count function to count how many participants there were in total and the tabyl function to count how many were men and women. Use summarise to get the mean, sd, min, and max age. 
+
+
+```{r}
+
+```
+
+### count the participants
+```{r}
+
+
+```
+
+### summarise age
+
+```{r}
+
+```
+
+### count male/female
+```{r}
+
+
+
+```
 
