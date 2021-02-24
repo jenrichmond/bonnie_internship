@@ -1,5 +1,5 @@
 ---
-title: "Week 3"
+title: "Papers I am planning to work on"
 description: |
  reproducibility project planning
 author:
