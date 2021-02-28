@@ -1,0 +1,39 @@
+---
+title: "week 2"
+description: |
+  Obtaining demographics on Paper 1 using basic functions on R.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-02-28
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# a recap on the second week
+
+Playing catch-up on my other courses had me neglecting this project for most of the week, so I'm glad I was able to spend Sunday reacquainting myself with R and running basic demographics for Paper 1 (2016). 
+
+I started by converting the open data from each study into a .csv file, since some were .sav and others in various other formats. I then familiarised myself with each paper to ascertain which files were required for data replication. Some papers had multiple datasets with vague names, so this was a little tricky!
+
+Jenny then put together a template for me to follow to perform the functions:
+
+- read_csv(here) to read in data from Excel
+
+- clean_names() to clean up the variable names and make them more decipherable
+
+- glimpse() to obtain a summary of the dataset
+
+- count() to determine the number of participants
+
+- summarise() to obtain demographics, e.g., mean, SD
+
+- tabyl() to count how many participants were assigned to each condition
+
+I had a basic understanding of R from the RYouWithMe online learning resources, but had not looked at these since mid-2020. So it was exciting to be presented with a new challenge and to encounter some unfamiliar functions (e.g., tabyl), and use various R blogs and databases to understand what each function performs and how to execute the command. It took some time trying to understand the aspects of the code (e.g., the piping function %>%), but I feel like I've learnt a lot today and already feel vastly more comfortable using R!

@@ -21,6 +21,12 @@ library(janitor)
 
 Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found. 
 
+Obesity is a growing health and financial burden across the world, and as such, it is becoming increasingly important to identify, and reduce or eliminate, risk factors for obesity. Research from the early 2000s suggests that low SES in childhood is a major predictor of obesity and insulin resistance in adulthood. This finding is consistent with life-history theory, which predicts that experience of conditions typical of low SES-environments in childhood will shape development such that the child learns how best to survive in harsh and unpredictable environments. That is, an individual may learn to eat as much as they can and whenever they can, if they grew up in a low SES-environment where food was unreliable or frequently unavailable.
+
+In line with these early findings and life-history theory, Hill and colleagues (2016) examined the relationship between childhood socioeconomic status (SES) and eating in the absence of energy need. In a series of studies, researchers  measured or manipulated (by asking participants to fast for 5 hours) each participant's current energy need, quantified as length of time since last meal, current level of hunger and/or blood glucose levels. Researchers then provided participants with the opportunity to eat snack foods. Participants reported their childhood and current SES. 
+
+Participants who grew up in high SES environments regulated their food intake according to their energy need. These participants ate more when their need was high than they did when their need was low. Conversely, participants who grew up in low SES consumed comparably large amounts of food when their energy need was both high and low. The researchers concluded that childhood SES may influence how an individual responds to internal, physiological cues in adulthood.
+
 # Plan
 
 There are 3 studies reported in this paper. For each study, the goal is to reproduce the ...
@@ -45,14 +51,14 @@ They only included those with BMI < 30 and excluded those with food allergies or
  Use the here() function to tell R where to find your data. And use clean_names() from janitor to make the variable names easier to work with. 
 
 ```{r}
-s1 <- read_csv(here("research_data", "eating_correlational.csv")) %>%
-  clean_names()
+s1 <- read_csv(here("research_data", "eating_correlational.csv"))
+  cleans1 <- clean_names(s1)
 ```
 
 Use glimpse() to familiarise yourself with what is in the file and find the demographic variables. 
 
 ```{r}
-
+glimpse(cleans1)
 ```
 
 
@@ -62,9 +68,11 @@ Use the count function to count how many participants there were. Are those that
 
 
 ```{r}
-
+count(cleans1, "p_id")
 
 ```
+
+31 participants. Participants excluded due to BMI/allergies/diabetes not included in dataset.
 
 ### summarise age
 
@@ -72,7 +80,11 @@ Use the summarise function to get the mean, sd, min, and max age
 
 
 ```{r}
-
+cleans1 %>%
+  summarise(meanage = mean(age, na.rm = TRUE),
+          sdage = sd(age, na.rm = TRUE),
+          minage = min(age, na.rm = TRUE),
+          maxage = max(age, na.rm = TRUE))
 
 ```
 
@@ -82,19 +94,24 @@ Use the summarise function to get the mean, sd, min, and max age
 As for study 1, read in the data for Study 2, use count() to see how many participants there were, and summarise to get M, SD, min, and max age. 
 
 ```{r}
-
+s2 <- read_csv(here("research_data", "eating_drink.csv"))
+  cleans2 <- clean_names(s2)
 ```
 
 ### count the participants
 ```{r}
-
+count(cleans2, "p_id")
 
 ```
 
 ### summarise age
 
 ```{r}
-
+cleans2 %>%
+  summarise(meanage = mean(age, na.rm = TRUE),
+          sdage = sd(age, na.rm = TRUE),
+          minage = min(age, na.rm = TRUE),
+          maxage = max(age, na.rm = TRUE))
 ```
 
 
@@ -102,10 +119,15 @@ As for study 1, read in the data for Study 2, use count() to see how many partic
 
 Which variable contains info about the condition participant were assigned to? Use tabyl to count how many were assigned to each condition. 
 
+dummy1_water_sprite & dummy2_sprite_water
+
 ```{r}
 
+cleans2 %>%
+  tabyl(dummy1_water_sprite)
 ```
 
+Sprite = 31; Water = 29
 
 ## Study 3
 
@@ -113,25 +135,28 @@ Read the data and then use the count function to count how many participants the
 
 
 ```{r}
-
+s3 <- read_csv(here("research_data", "eating_glucose.csv"))
+  cleans3 <- clean_names(s3)
 ```
 
 ### count the participants
 ```{r}
-
+count(cleans3, "p_id")
 
 ```
 
 ### summarise age
 
 ```{r}
-
+cleans3 %>%
+  summarise(meanage = mean(age, na.rm = TRUE),
+          sdage = sd(age, na.rm = TRUE),
+          minage = min(age, na.rm = TRUE),
+          maxage = max(age, na.rm = TRUE))
 ```
 
 ### count male/female
 ```{r}
-
-
-
+cleans3 %>%
+  tabyl(gender)
 ```
-
