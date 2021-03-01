@@ -2431,11 +2431,16 @@ Project
 
 
 <div class="d-article">
+<p>Hi bonnie, I changed the chunk option above to make the default behaviour echo = TRUE. It makes the code and output appear in your document.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://here.r-lib.org/'>here</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sfirke/janitor'>janitor</a></span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <h1 id="summary">Summary</h1>
-<p>Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found.</p>
 <p>Obesity is a growing health and financial burden across the world, and as such, it is becoming increasingly important to identify, and reduce or eliminate, risk factors for obesity. Research from the early 2000s suggests that low SES in childhood is a major predictor of obesity and insulin resistance in adulthood. This finding is consistent with life-history theory, which predicts that experience of conditions typical of low SES-environments in childhood will shape development such that the child learns how best to survive in harsh and unpredictable environments. That is, an individual may learn to eat as much as they can and whenever they can, if they grew up in a low SES-environment where food was unreliable or frequently unavailable.</p>
 <p>In line with these early findings and life-history theory, Hill and colleagues (2016) examined the relationship between childhood socioeconomic status (SES) and eating in the absence of energy need. In a series of studies, researchers measured or manipulated (by asking participants to fast for 5 hours) each participant’s current energy need, quantified as length of time since last meal, current level of hunger and/or blood glucose levels. Researchers then provided participants with the opportunity to eat snack foods. Participants reported their childhood and current SES.</p>
 <p>Participants who grew up in high SES environments regulated their food intake according to their energy need. These participants ate more when their need was high than they did when their need was low. Conversely, participants who grew up in low SES consumed comparably large amounts of food when their energy need was both high and low. The researchers concluded that childhood SES may influence how an individual responds to internal, physiological cues in adulthood.</p>
@@ -2457,10 +2462,18 @@ Project
 <h3 id="read-in-the-data">read in the data</h3>
 <p>Use the here() function to tell R where to find your data. And use clean_names() from janitor to make the variable names easier to work with.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>s1</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"research_data"</span>, <span class='st'>"eating_correlational.csv"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='va'>cleans1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='va'>s1</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Use glimpse() to familiarise yourself with what is in the file and find the demographic variables.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>glimpse</span><span class='op'>(</span><span class='va'>cleans1</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code>Rows: 31
 Columns: 25
 $ p_id                        &lt;dbl&gt; 101, 102, 103, 104, 105, 106, 1…
@@ -2492,6 +2505,10 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h3 id="count-the-participants">count the participants</h3>
 <p>Use the count function to count how many participants there were. Are those that were excluded due to BMI or allergies/diabetes included in the dataset??</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans1</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 2
   `&quot;p_id&quot;`     n
 * &lt;chr&gt;    &lt;int&gt;
@@ -2501,6 +2518,14 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h3 id="summarise-age">summarise age</h3>
 <p>Use the summarise function to get the mean, sd, min, and max age</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>meanage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          sdage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          minage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          maxage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 4
   meanage sdage minage maxage
     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -2509,10 +2534,18 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h2 id="study-2">Study 2</h2>
 <p>As for study 1, read in the data for Study 2, use count() to see how many participants there were, and summarise to get M, SD, min, and max age.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>s2</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"research_data"</span>, <span class='st'>"eating_drink.csv"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='va'>cleans2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='va'>s2</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <h3 id="count-the-participants-1">count the participants</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans2</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 2
   `&quot;p_id&quot;`     n
 * &lt;chr&gt;    &lt;int&gt;
@@ -2520,6 +2553,14 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 </div>
 <h3 id="summarise-age-1">summarise age</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans2</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>meanage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          sdage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          minage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          maxage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 4
   meanage sdage minage maxage
     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -2529,6 +2570,11 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <p>Which variable contains info about the condition participant were assigned to? Use tabyl to count how many were assigned to each condition.</p>
 <p>dummy1_water_sprite &amp; dummy2_sprite_water</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans2</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/tabyl.html'>tabyl</a></span><span class='op'>(</span><span class='va'>dummy1_water_sprite</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code> dummy1_water_sprite  n   percent
                    0 29 0.4833333
                    1 31 0.5166667</code></pre>
@@ -2537,10 +2583,18 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h2 id="study-3">Study 3</h2>
 <p>Read the data and then use the count function to count how many participants there were in total and the tabyl function to count how many were men and women. Use summarise to get the mean, sd, min, and max age.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>s3</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"research_data"</span>, <span class='st'>"eating_glucose.csv"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='va'>cleans3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='va'>s3</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <h3 id="count-the-participants-2">count the participants</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans3</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 2
   `&quot;p_id&quot;`     n
 * &lt;chr&gt;    &lt;int&gt;
@@ -2548,6 +2602,14 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 </div>
 <h3 id="summarise-age-2">summarise age</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans3</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>meanage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          sdage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          minage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+          maxage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>age</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 1 x 4
   meanage sdage minage maxage
     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -2555,9 +2617,70 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 </div>
 <h3 id="count-malefemale">count male/female</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans3</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/tabyl.html'>tabyl</a></span><span class='op'>(</span><span class='va'>gender</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code> gender  n  percent
       1 21 0.253012
       2 62 0.746988</code></pre>
+</div>
+<h1 id="tables">Tables</h1>
+<h2 id="study-1-1">Study 1</h2>
+<p>The goal is to reproduce the values and formatting of this table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"paper1_table1.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_table1.png" width="50%" /></p>
+</div>
+<h2 id="study-2-1">Study 2</h2>
+<p>The goal is to reproduce the values and formatting of this table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>, <span class='st'>"paper1_table2.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_table2.png" width="50%" /></p>
+</div>
+<h2 id="study-3-1">Study 3</h2>
+<p>The goal is to reproduce the values and formatting of this table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>, <span class='st'>"paper1_table3.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_table3.png" width="50%" /></p>
+</div>
+<h1 id="figures">Figures</h1>
+<h2 id="study-1-2">Study 1</h2>
+<p>The goal is to reproduce this column graph.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>, <span class='st'>"paper1_fig1.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_fig1.png" width="50%" /></p>
+</div>
+<h2 id="study-2-2">Study 2</h2>
+<p>The goal is to reproduce this column graph.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>, <span class='st'>"paper1_fig2.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_fig2.png" width="50%" /></p>
+</div>
+<h2 id="study-3-2">Study 3</h2>
+<p>The goal is to reproduce this column graph.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>, <span class='st'>"paper1_fig4.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="img/paper1_fig4.png" width="50%" /></p>
 </div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

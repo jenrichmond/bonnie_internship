@@ -5,10 +5,10 @@ description: |
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
+Hi bonnie, I changed the chunk option above to make the default behaviour echo = TRUE. It makes the code and output appear in your document. 
 
 ```{r}
 library(tidyverse)
@@ -19,11 +19,10 @@ library(janitor)
 
 # Summary
 
-Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found. 
 
 Obesity is a growing health and financial burden across the world, and as such, it is becoming increasingly important to identify, and reduce or eliminate, risk factors for obesity. Research from the early 2000s suggests that low SES in childhood is a major predictor of obesity and insulin resistance in adulthood. This finding is consistent with life-history theory, which predicts that experience of conditions typical of low SES-environments in childhood will shape development such that the child learns how best to survive in harsh and unpredictable environments. That is, an individual may learn to eat as much as they can and whenever they can, if they grew up in a low SES-environment where food was unreliable or frequently unavailable.
 
-In line with these early findings and life-history theory, Hill and colleagues (2016) examined the relationship between childhood socioeconomic status (SES) and eating in the absence of energy need. In a series of studies, researchers  measured or manipulated (by asking participants to fast for 5 hours) each participant's current energy need, quantified as length of time since last meal, current level of hunger and/or blood glucose levels. Researchers then provided participants with the opportunity to eat snack foods. Participants reported their childhood and current SES. 
+In line with these early findings and life-history theory, Hill and colleagues (2016) examined the relationship between childhood socioeconomic status (SES) and eating in the absence of energy need. In a series of studies, researchers measured or manipulated (by asking participants to fast for 5 hours) each participant's current energy need, quantified as length of time since last meal, current level of hunger and/or blood glucose levels. Researchers then provided participants with the opportunity to eat snack foods. Participants reported their childhood and current SES. 
 
 Participants who grew up in high SES environments regulated their food intake according to their energy need. These participants ate more when their need was high than they did when their need was low. Conversely, participants who grew up in low SES consumed comparably large amounts of food when their energy need was both high and low. The researchers concluded that childhood SES may influence how an individual responds to internal, physiological cues in adulthood.
 
@@ -159,4 +158,63 @@ cleans3 %>%
 ```{r}
 cleans3 %>%
   tabyl(gender)
+```
+
+
+# Tables
+
+## Study 1
+
+The goal is to reproduce the values and formatting of this table. 
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","paper1_table1.png"))
+```
+
+## Study 2
+
+The goal is to reproduce the values and formatting of this table.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_table2.png"))
+```
+
+
+## Study 3
+
+The goal is to reproduce the values and formatting of this table.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_table3.png"))
+```
+
+
+# Figures
+
+
+## Study 1
+
+The goal is to reproduce this column graph.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_fig1.png"))
+```
+
+
+
+## Study 2
+
+The goal is to reproduce this column graph.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_fig2.png"))
+```
+
+
+## Study 3
+
+The goal is to reproduce this column graph.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_fig4.png"))
 ```
