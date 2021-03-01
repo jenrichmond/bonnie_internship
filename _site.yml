@@ -12,10 +12,14 @@ navbar:
       href: howto.html
     - text: "Blog"
       href: blog_posts.html
-    - text: "Papers"
-      href: week3.html
     - text: "Project"
-      href: project.html
-    - text: "Coding"
-      href: coding.html
+      menu:
+        - text: "plan"
+          href:  papers_plan.html
+        - text: "paper1"
+          href:  paper1.html
+        - text: "paper2"
+          href:  paper2.html
+        - text: "paper3"
+          href:  paper3.html
 output: distill::distill_article

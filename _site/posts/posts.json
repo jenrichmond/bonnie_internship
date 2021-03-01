@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\na recap on the second week\nPlaying catch-up on my other courses had me neglecting this project for most of the week, so I’m glad I was able to spend Sunday reacquainting myself with R and running basic demographics for Paper 1 (2016).\nI started by converting the open data from each study into a .csv file, since some were .sav and others in various other formats. I then familiarised myself with each paper to ascertain which files were required for data replication. Some papers had multiple datasets with vague names, so this was a little tricky!\nJenny then put together a template for me to follow to perform the functions:\nread_csv(here) to read in data from Excel\nclean_names() to clean up the variable names and make them more decipherable\nglimpse() to obtain a summary of the dataset\ncount() to determine the number of participants\nsummarise() to obtain demographics, e.g., mean, SD\ntabyl() to count how many participants were assigned to each condition\nI had a basic understanding of R from the RYouWithMe online learning resources, but had not looked at these since mid-2020. So it was exciting to be presented with a new challenge and to encounter some unfamiliar functions (e.g., tabyl), and use various R blogs and databases to understand what each function performs and how to execute the command. It took some time trying to understand the aspects of the code (e.g., the piping function %>%), but I feel like I’ve learnt a lot today and already feel vastly more comfortable using R!\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-02-28T20:39:02+11:00",
-    "input_file": "week-2.utf8.md"
+    "last_modified": "2021-03-01T16:17:45+11:00",
+    "input_file": {}
   },
   {
     "path": "posts/2020-11-30-intro-babynames/",

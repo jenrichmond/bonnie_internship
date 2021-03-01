@@ -85,26 +85,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>internship blog: Welcome to my blog!</title>
+  <title>internship blog: paper1</title>
 
+  <meta property="description" itemprop="description" content="lets start paper 1 here"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="internship blog: Welcome to my blog!"/>
+  <meta property="og:title" content="internship blog: paper1"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="lets start paper 1 here"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="internship blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="internship blog: Welcome to my blog!"/>
+  <meta property="twitter:title" content="internship blog: paper1"/>
+  <meta property="twitter:description" content="lets start paper 1 here"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to my blog!"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["paper1"]},{"type":"character","attributes":{},"value":["lets start paper 1 here"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2383,7 +2386,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome to my blog!","authors":[]}
+{"title":"paper1","description":"lets start paper 1 here","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2420,21 +2423,143 @@ Project
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Welcome to my blog!</h1>
+<h1>paper1</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>lets start paper 1 here</p></p>
 </div>
 
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="blog_photo.jpg" width="40%" style="float:left; padding:5px" /></p>
+
 </div>
-<h1 id="about-me">About me</h1>
-<p>Hi! I’m Bonnie, a third year Bachelor of Psychology student. This is my internship blog where I will be posting about my journey learning R and my progress in reproducing the data from various research papers.</p>
-<p>I love exploring the Blue Mountains and am a serious Swiftie (Taylor’s Version).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="summary">Summary</h1>
+<p>Write a short summary of the paper here, covering what the problem is, why it is important, what the researchers did and what they found.</p>
+<p>Obesity is a growing health and financial burden across the world, and as such, it is becoming increasingly important to identify, and reduce or eliminate, risk factors for obesity. Research from the early 2000s suggests that low SES in childhood is a major predictor of obesity and insulin resistance in adulthood. This finding is consistent with life-history theory, which predicts that experience of conditions typical of low SES-environments in childhood will shape development such that the child learns how best to survive in harsh and unpredictable environments. That is, an individual may learn to eat as much as they can and whenever they can, if they grew up in a low SES-environment where food was unreliable or frequently unavailable.</p>
+<p>In line with these early findings and life-history theory, Hill and colleagues (2016) examined the relationship between childhood socioeconomic status (SES) and eating in the absence of energy need. In a series of studies, researchers measured or manipulated (by asking participants to fast for 5 hours) each participant’s current energy need, quantified as length of time since last meal, current level of hunger and/or blood glucose levels. Researchers then provided participants with the opportunity to eat snack foods. Participants reported their childhood and current SES.</p>
+<p>Participants who grew up in high SES environments regulated their food intake according to their energy need. These participants ate more when their need was high than they did when their need was low. Conversely, participants who grew up in low SES consumed comparably large amounts of food when their energy need was both high and low. The researchers concluded that childhood SES may influence how an individual responds to internal, physiological cues in adulthood.</p>
+<h1 id="plan">Plan</h1>
+<p>There are 3 studies reported in this paper. For each study, the goal is to reproduce the …</p>
+<ol type="1">
+<li>demographic descriptives (reported in Participants)</li>
+<li>figures (column graphs reporting total calories as a function of SES and energy need/condition/glucose)</li>
+<li>tables of descriptive statistics (M, SD, Range)</li>
+</ol>
+<h1 id="demographics">demographics</h1>
+<p>For each study the authors report…</p>
+<ul>
+<li>how many students participated</li>
+<li>mean, SD, range age</li>
+</ul>
+<p>They only included those with BMI &lt; 30 and excluded those with food allergies or diabetes</p>
+<h2 id="study-1">Study 1</h2>
+<h3 id="read-in-the-data">read in the data</h3>
+<p>Use the here() function to tell R where to find your data. And use clean_names() from janitor to make the variable names easier to work with.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Use glimpse() to familiarise yourself with what is in the file and find the demographic variables.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>Rows: 31
+Columns: 25
+$ p_id                        &lt;dbl&gt; 101, 102, 103, 104, 105, 106, 1…
+$ sex                         &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…
+$ age                         &lt;dbl&gt; 21, 19, 22, 21, 19, 20, 22, 18,…
+$ weight_1                    &lt;dbl&gt; 140, 138, 145, 160, 102, 110, 1…
+$ hungercurr                  &lt;dbl&gt; 6, 2, 5, 2, 6, 4, 5, 2, 4, 4, 4…
+$ hunger_recode               &lt;dbl&gt; 2, 6, 3, 6, 2, 4, 3, 6, 4, 4, 4…
+$ lastate_1                   &lt;dbl&gt; 0, 2, 1, 3, 2, NA, 1, 10, 9, 10…
+$ z_hunger_recode             &lt;dbl&gt; -1.7342012, 1.3823343, -0.95506…
+$ zlastate_1                  &lt;dbl&gt; -1.03257585, -0.51179846, -0.77…
+$ z_last_ate_hunger_composite &lt;dbl&gt; -1.38338854, 0.43526792, -0.863…
+$ p_delicious                 &lt;dbl&gt; 5, 5, 5, 4, 6, 5, 6, 7, 6, 5, 7…
+$ c_delicious                 &lt;dbl&gt; 7, 6, 6, 5, 5, 6, 5, 7, 7, 6, 4…
+$ familmoney                  &lt;dbl&gt; 6, 6, 7, 6, 6, 5, 7, 2, 7, 6, 7…
+$ neighborho                  &lt;dbl&gt; 6, 7, 7, 3, 4, 3, 6, 2, 5, 4, 7…
+$ wealthcomp                  &lt;dbl&gt; 6, 5, 7, 2, 4, 4, 6, 4, 6, 3, 6…
+$ childhood_ses_composite     &lt;dbl&gt; 6.000000, 6.000000, 7.000000, 3…
+$ weight_cookies_pre          &lt;dbl&gt; 59, 62, 60, 59, 59, 60, 61, 58,…
+$ weight_pretzels_pre         &lt;dbl&gt; 30, 30, 30, 29, 30, 30, 30, 30,…
+$ weight_cookies_post         &lt;dbl&gt; 45, 4, 45, 39, 30, 27, 54, 3, 3…
+$ weight_pretzels_post        &lt;dbl&gt; 22, 8, 22, 16, 26, 15, 28, 21, …
+$ grams_pretzels_eaten        &lt;dbl&gt; 8, 22, 8, 13, 4, 15, 2, 9, 10, …
+$ grams_cookies_eaten         &lt;dbl&gt; 14, 58, 15, 20, 29, 33, 7, 55, …
+$ pretzel_calories_eaten      &lt;dbl&gt; 30.760, 84.590, 30.760, 49.985,…
+$ cookie_calories_eaten       &lt;dbl&gt; 70, 290, 75, 100, 145, 165, 35,…
+$ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</code></pre>
+</div>
+<h3 id="count-the-participants">count the participants</h3>
+<p>Use the count function to count how many participants there were. Are those that were excluded due to BMI or allergies/diabetes included in the dataset??</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 2
+  `&quot;p_id&quot;`     n
+* &lt;chr&gt;    &lt;int&gt;
+1 p_id        31</code></pre>
+</div>
+<p>31 participants. Participants excluded due to BMI/allergies/diabetes not included in dataset.</p>
+<h3 id="summarise-age">summarise age</h3>
+<p>Use the summarise function to get the mean, sd, min, and max age</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 4
+  meanage sdage minage maxage
+    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1    19.2  1.26     18     22</code></pre>
+</div>
+<h2 id="study-2">Study 2</h2>
+<p>As for study 1, read in the data for Study 2, use count() to see how many participants there were, and summarise to get M, SD, min, and max age.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-the-participants-1">count the participants</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 2
+  `&quot;p_id&quot;`     n
+* &lt;chr&gt;    &lt;int&gt;
+1 p_id        60</code></pre>
+</div>
+<h3 id="summarise-age-1">summarise age</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 4
+  meanage sdage minage maxage
+    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1    19.3  1.52     18     24</code></pre>
+</div>
+<h3 id="count-condition-assignment">count condition assignment</h3>
+<p>Which variable contains info about the condition participant were assigned to? Use tabyl to count how many were assigned to each condition.</p>
+<p>dummy1_water_sprite &amp; dummy2_sprite_water</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code> dummy1_water_sprite  n   percent
+                   0 29 0.4833333
+                   1 31 0.5166667</code></pre>
+</div>
+<p>Sprite = 31; Water = 29</p>
+<h2 id="study-3">Study 3</h2>
+<p>Read the data and then use the count function to count how many participants there were in total and the tabyl function to count how many were men and women. Use summarise to get the mean, sd, min, and max age.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="count-the-participants-2">count the participants</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 2
+  `&quot;p_id&quot;`     n
+* &lt;chr&gt;    &lt;int&gt;
+1 p_id        83</code></pre>
+</div>
+<h3 id="summarise-age-2">summarise age</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 1 x 4
+  meanage sdage minage maxage
+    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1    20.1  1.96     18     27</code></pre>
+</div>
+<h3 id="count-malefemale">count male/female</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code> gender  n  percent
+      1 21 0.253012
+      2 62 0.746988</code></pre>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
