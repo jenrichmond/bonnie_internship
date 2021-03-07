@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Load packages
 ```{r}
+library(tableone)
 library(tidyverse)
 library(palmerpenguins)
 ```
