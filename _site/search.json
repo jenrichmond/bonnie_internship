@@ -2,10 +2,10 @@
   "articles": [
     {
       "path": "blog_posts.html",
-      "title": "welcome to our blog",
+      "title": "welcome to my blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-04T15:41:00+11:00"
+      "last_modified": "2021-03-07T16:38:18+11:00"
     },
     {
       "path": "coding.html",
@@ -85,6 +85,12 @@
       "date": "`r Sys.Date()`",
       "contents": "\nWriting in RMarkdown is different to writing in Word. What you see is not quite what you get. To preview what your formatted text will look like, use the “Knit” button on the top bar, or the keyboard shortcut Shift-Command-K.\n1. Italics and Bold\nIf you want italics or bold use asterisks.\nRaw Rmd\n*one asterisk* \n\n**two asterisks**\n\nKnitted Rmd\none asterisk\ntwo asterisks\n2. Levels of heading\nYou can get levels of heading with hash.\nRaw Rmd\n# BIG HEADING\n## Smaller Heading\n### even smaller heading\n\nKnitted Rmd\nBIG HEADING\nSMALLER HEADING\nEVEN SMALLER HEADING\n3. Bullets\nYou can get bullet points using dash…\nRaw Rmd\n- first important point\n- second point\n- and third... \n\nKnitted Rmd\nfirst important point\nsecond point\nand third…\n4. Code Chunks\nYou can insert code “chunks” by using the shortcut, Option-Command-I or choosing Insert R from the top menu bar.\nThe power of RMarkdown comes from being able to intersperse code chunks, output, and explanation in the same document.\nthis is a code chunk\n\n\nprint(\"hello world\")\n\n\n[1] \"hello world\"\n\n5. Images\nSave your image file in the img folder and tell R where to find it using the include_graphics() and here::here() functions\n\n\nknitr::include_graphics(here::here(\"img\", \"band.jpg\"))\n\n\n\n\nNeed help?\nThe RMarkdown reference guide is helpful in learning how to create formatted text in R-Markdown.\n\n\n\n",
       "last_modified": "2021-03-04T15:41:00+11:00"
+    },
+    {
+      "path": "palmerpenguins.html",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-03-07T13:58:33+11:00"
     },
     {
       "path": "paper1.html",

@@ -1,5 +1,5 @@
 ---
-title: "welcome to our blog"
+title: "welcome to my blog"
 site: distill::distill_website
 listing: posts
 ---
