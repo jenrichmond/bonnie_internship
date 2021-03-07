@@ -171,6 +171,21 @@ The goal is to reproduce the values and formatting of this table.
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img","paper1_table1.png"))
 ```
+### Using tableone
+```{r}
+CreateTableOne(data = cleans1)
+myVars <- c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten")
+tab2 <- CreateTableOne(vars = myVars, data = cleans1)
+print(tab2, minMax = TRUE, formatOptions = list(big.mark = ","))
+```
+Found an article indicating that "minMax" would toggle whether to show median (range). It did not appear to make any difference when including it in the print() function.
+
+### Using rndr function
+See https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html
+```{r}
+
+```
+
 
 ## Study 2
 
