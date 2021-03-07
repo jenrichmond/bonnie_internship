@@ -34,6 +34,23 @@
     "input_file": {}
   },
   {
+    "path": "posts/2021-03-07-week-3/",
+    "title": "week 3",
+    "description": "Using the TableOne package for the Paper 1 dataset.",
+    "author": [
+      {
+        "name": "Bonnie Butler",
+        "url": {}
+      }
+    ],
+    "date": "2021-03-07",
+    "categories": [],
+    "contents": "\nI have been tackling the Paper 1 dataset using the TableOne package. I hadn’t used TableOne before, so I first followed the instructions using the dataset from “Introduction to tableone” (https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html).\nI then applied the same instructions to the palmerpenguins dataset (https://allisonhorst.github.io/palmerpenguins/).\nWhen I felt comfortable using the package, I then turned to the dataset for Paper 1. I was able to easily replicate the mean and SD columns from Table 1, but there is no function in TableOne for range.\nI trawled the web searching for some kind of solution or work around. One PDF for the TableOne package (https://cran.r-project.org/web/packages/tableone/tableone.pdf) indicated that “The minMax argument toggles whether to show median [range]”. I had hoped this would give the minimum and maximum values for each, which may have been the best case scenario, but this was not the case.\nI finally stumbled upon the rndr (render) function that can be used for TableOne to display different statistics for different variables (https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html). It appears as though you can request that the minimum and maximum values are calculated for specific variables, although I can’t see an option to do this for all (and therefore not have to enter multiple lines of code requesting minimum and maximum values for each variable).\nMy first task for Week 4 will be to play around with the rndr function. Failing that, I will try to find a package that produces a similar table to TableOne, but includes mean, SD and range.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-03-07T20:22:26+11:00",
+    "input_file": "week-3.utf8.md"
+  },
+  {
     "path": "posts/2021-02-28-week-2/",
     "title": "week 2",
     "description": "Obtaining demographics on Paper 1 using basic functions on R.",
