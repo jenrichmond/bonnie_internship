@@ -1,0 +1,65 @@
+# Using tableone on dataset from palmerpenguins package
+
+## Load packages
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Read datasets
+```{r}
+data(penguins)
+```
+
+## Single group summary
+### Simplest use case
+```{r}
+CreateTableOne(data = penguins)
+```
+### Categorical variable conversion
+#### Get variable names
+```{r}
+dput(names(penguins))
+```
+#### Vector of variables to summarise
+```{r}
+myVars <- c("species", "island", "bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g", "sex", "year")
+```
+#### Vector of categorical variables that need transformation
+```{r}
+catVars <- c("species", "island", "sex", "year")
+```
+#### Create a TableOne object
+```{r}
+tab2 <- CreateTableOne(vars = myVars, data = penguins, factorVars = catVars)
+```
+
+### Showing all levels for categorical variables
+```{r}
+print(tab2, showAllLevels = TRUE, formatOptions = list(big.mark = ","))
+```
+### Detailed information including missingness
+```{r}
+summary(tab2)
+```
+## Multiple group summary
+```{r}
+tab3 <- CreateTableOne(vars = myVars, strata = "species", data = penguins, factorVars = catVars)
+print(tab3, formatOptions = list(big.mark = ","))
+```
+### Testing
+```{r}
+print(tab3, exact = "year", smd = TRUE)
+```
+
+## Miscellaneous
+### Categorical or continuous variables-only
+#### Categorical part only
+```{r}
+tab3$CatTable
+```
+#### Continuous part only
+```{r}
+print(tab3$ContTable)
+```
+
