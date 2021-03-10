@@ -21,16 +21,26 @@ As it turns out, there are at least 5 table 1 packages. Each offers similar func
 ### 1. tableone
 This is the package I used last week. It offers mean, SD, categorical variable conversion, summaries for non-normal variables, and displays the different descriptives as columns (which is the format I need).
 
+See - https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html
+
 ### 2. table1
 Offers the standard descriptives: mean and SD. Also provides median (minimum, maximum), different treatment conditions as the columns. It appears that you might have the option to change the columns, though.
+
+See - https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html
 
 ### 3. TableOne
 Standard descriptives plus median and IQR, and deals with dichotomous data.
 
+See - https://github.com/agapiospanos/TableOne
+
 ### 4. Table1
 Standard descriptives plus median and IQR, minimum and maximum values, and the ability to customise rows and columns.
 
+See - https://rpubs.com/emwozniak/195942
+
 ### 5. Furniture (table1)
 Standard descriptives plus median and IQR, and deals with bivariate test results.
+
+See - https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html
 
 Based on the above, I'm going to try Table1 (no. 4) and then table1 (no. 2), as these both provide minimum and maximum values. This appears to be the closest I can get to just displaying the range!
