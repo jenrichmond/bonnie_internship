@@ -1,0 +1,36 @@
+---
+title: "table 1 packages"
+description: |
+  A quick summary on the various table 1 packages.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-03-10
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+As it turns out, there are at least 5 table 1 packages. Each offers similar functions, with a few variations. I did a quick scan of the summaries for each package to see what might get me the closest to the descriptives table I am trying to replicate for Paper 1.
+
+### 1. tableone
+This is the package I used last week. It offers mean, SD, categorical variable conversion, summaries for non-normal variables, and displays the different descriptives as columns (which is the format I need).
+
+### 2. table1
+Offers the standard descriptives: mean and SD. Also provides median (minimum, maximum), different treatment conditions as the columns. It appears that you might have the option to change the columns, though.
+
+### 3. TableOne
+Standard descriptives plus median and IQR, and deals with dichotomous data.
+
+### 4. Table1
+Standard descriptives plus median and IQR, minimum and maximum values, and the ability to customise rows and columns.
+
+### 5. Furniture (table1)
+Standard descriptives plus median and IQR, and deals with bivariate test results.
+
+Based on the above, I'm going to try Table1 (no. 4) and then table1 (no. 2), as these both provide minimum and maximum values. This appears to be the closest I can get to just displaying the range!

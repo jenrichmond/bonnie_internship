@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-03-10-table-1-packages/",
+    "title": "table 1 packages",
+    "description": "A quick summary on the various table 1 packages.",
+    "author": [
+      {
+        "name": "Bonnie Butler",
+        "url": {}
+      }
+    ],
+    "date": "2021-03-10",
+    "categories": [],
+    "contents": "\nAs it turns out, there are at least 5 table 1 packages. Each offers similar functions, with a few variations. I did a quick scan of the summaries for each package to see what might get me the closest to the descriptives table I am trying to replicate for Paper 1.\n1. tableone\nThis is the package I used last week. It offers mean, SD, categorical variable conversion, summaries for non-normal variables, and displays the different descriptives as columns (which is the format I need).\n2. table1\nOffers the standard descriptives: mean and SD. Also provides median (minimum, maximum), different treatment conditions as the columns. It appears that you might have the option to change the columns, though.\n3. TableOne\nStandard descriptives plus median and IQR, and deals with dichotomous data.\n4. Table1\nStandard descriptives plus median and IQR, minimum and maximum values, and the ability to customise rows and columns.\n5. Furniture (table1)\nStandard descriptives plus median and IQR, and deals with bivariate test results.\nBased on the above, I’m going to try Table1 (no. 4) and then table1 (no. 2), as these both provide minimum and maximum values. This appears to be the closest I can get to just displaying the range!\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-03-10T15:07:25+11:00",
+    "input_file": "table-1-packages.utf8.md"
+  },
+  {
     "path": "posts/2021-03-07-tableone-introduction/",
     "title": "tableone introduction",
     "description": "I followed the \"Introduction to tableone\" notes by Kazuki Yoshida (see: https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html)",
