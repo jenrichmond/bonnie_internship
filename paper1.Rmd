@@ -15,6 +15,14 @@ library(tidyverse)
 library(here)
 library(janitor)
 library(tableone)
+library(devtools)
+install_github("emwozniak/Table1")
+library(Table1)
+library(TableOne)
+library(furniture)
+library(apaTables)
+library(arsenal)
+library(qwraps2)
 ```
 
 
@@ -178,12 +186,40 @@ myVars <- c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercu
 tab2 <- CreateTableOne(vars = myVars, data = cleans1)
 print(tab2, minMax = TRUE, formatOptions = list(big.mark = ","))
 ```
-Found an article indicating that "minMax" would toggle whether to show median (range). It did not appear to make any difference when including it in the print() function.
 
-### Using rndr function
-See https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html
+### Using Table1
 ```{r}
+make.table(dat = cleans1,
+           cont.varlist = c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten"))
+```
+### Using Furniture (table1)
+```{r}
+table1(cleans1)
+```
 
+### Using arsenal
+```{r}
+table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
+summary(table_one)
+```
+
+### Using qwraps2
+```{r}
+options(qwraps2_markup = "markdown")
+study1 <- as.data.frame(cleans1)
+summary_statistics <-
+  list (
+    "Current Hunger" = 
+      list (
+        "mean (sd)" = ~qwraps2::mean_sd(hungercurr, na_rm = TRUE),
+        "min" = ~min(hungercurr, na.rm = TRUE),
+        "max" = ~max(hungercurr, na.rm = TRUE)),
+    "Last Ate" =
+      list (
+        "mean (sd)" = ~qwraps2::mean_sd(lastate_1, na_rm = TRUE),
+        "min" = ~min(lastate_1, na.rm = TRUE),
+        "max" = ~max(lastate_1, na.rm = TRUE)))
+summary_table(study1, summary_statistics)
 ```
 
 

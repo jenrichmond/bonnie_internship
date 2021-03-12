@@ -16,31 +16,164 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-As it turns out, there are at least 5 table 1 packages. Each offers similar functions, with a few variations. I did a quick scan of the summaries for each package to see what might get me the closest to the descriptives table I am trying to replicate for Paper 1.
+As it so happens, there are at least 6 "Table 1" packages available. Each offers similar functions, with a few variations. I've provided a summary of each below, in an attempt to find a package that will provide me with the values (and hopefully also the layout) closest to the descriptives table I am trying to replicate for Paper 1.
 
 ### 1. tableone
-This is the package I used last week. It offers mean, SD, categorical variable conversion, summaries for non-normal variables, and displays the different descriptives as columns (which is the format I need).
+This is the package I used last week. 
+
+Pros:
+- Summarise continuous & categorical variables.
+- Categorical variables can be summarised as counts and/or percentages.
+- Continuous variables can be summarised "normally" (mean & SD) or "non-normally" (median & IQR).
+- Allows for layout where descriptive statistics are displayed as individual columns & all experimental variables are displayed as individual rows.
+
+Cons: 
+- No function for range.
+- Cannot customise the design of the table (e.g., in a style resembling APA format).
+
+Here is how descriptives are shown in tableone using the data from Paper 1:
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","tableone_1.png"))
+```
 
 See - https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html
 
 ### 2. table1
-Offers the standard descriptives: mean and SD. Also provides median (minimum, maximum), different treatment conditions as the columns. It appears that you might have the option to change the columns, though.
+Presents descriptive statistics of the study population stratified by treatment condition.
+
+Pros:
+- HTML output that can be used with knitr and Rmd without being affected.
+- Flexibility to customise (to some extent) table contents & layout.
+- Can request different statistics for specific variables (e.g., median & range for age; mean & SD for weight).
+
+Cons:
+- Cannot change the layout of the table so each column represents a descriptive statistic.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","table1.png"))
+```
+
+Note: the above table is taken from the CRAN vignette, as the Paper 1 data is messy when displayed in this kind of table.
 
 See - https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html
 
 ### 3. TableOne
-Standard descriptives plus median and IQR, and deals with dichotomous data.
+Not much information is available on this package; all Git data was last updated 2 years ago. 
+
+Pros:
+- Specific functions for summarising and presenting dichotomous, ordinal and continuous data.
+
+Cons:
+- The package appears to be quite limited in functionality.
+- Only accepts data directly from an Excel document.
 
 See - https://github.com/agapiospanos/TableOne
 
 ### 4. Table1
-Standard descriptives plus median and IQR, minimum and maximum values, and the ability to customise rows and columns.
+< Brief summary >
+
+Pros:
+- (make.table) can be outputted as PDF, HTML or printed to R console.
+- Optional inputs for headers, row names, summary statistics, etc. to customise the output.
+- Table can be stratified by one or more variables.
+- Quicker alternative (quick.table) classifies variables as categorical/continuous and generates a set of summary statistics for all available variables.
+
+Cons:
+- Cannot change the layout of the table so each column represents a descriptive statistic.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","Table1_1.png"))
+```
 
 See - https://rpubs.com/emwozniak/195942
 
 ### 5. Furniture (table1)
-Standard descriptives plus median and IQR, and deals with bivariate test results.
+Provides a simple summary table with means/counts and SDs/percentages.
+
+Pros:
+- Uses a similar API to tidyverse groups and can be used in a pipe.
+- Provides bivariate test results for variable with grouping variable.
+- Flexible output: printed in console output, in latex (e.g., through kable), markdown and pandoc.
+- Can be exported to CSV.
+
+Cons:
+- A little too simplistic; no clear row or column labels, no option for HTML format, limited ability to customise layout.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","furniture.png"))
+```
 
 See - https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html
 
-Based on the above, I'm going to try Table1 (no. 4) and then table1 (no. 2), as these both provide minimum and maximum values. This appears to be the closest I can get to just displaying the range!
+### 6. apaTables
+Produces tables that conform to APA style for several different types of analyses, e.g., correlation, ANOVA.
+
+Pros:
+- Automates the process by which tables are created from analyses using R.
+- Ensures the tables are reproducible.
+
+Cons:
+- Functions are restricted to specific analyses; limited ability to custome layout. 
+- Package is for tables generated from analyses only; no specific table for descriptives, although correlation or one-way ANOVA table functions will produce a descriptives table (showing mean and SD only).
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","apatables.png"))
+```
+Note: the above table is taken from the CRAN vignette.
+
+See - https://cran.r-project.org/web/packages/apaTables/index.html
+
+### 7. arsenal
+Comprises 6 functions designed to make statistical reporting easy. The relevant function for Table 1 is tableby(), which summarises a set of independent variables by one or more categorical variables. 
+
+Pros:
+- Lots of functionality: can customise most any aspect of the table.
+- Requires very little code, e.g., can create a table using only two lines of code.
+- Can stratify table by more than one grouping variable.
+- Can create a very simple table without any groupings.
+
+Cons:
+- None that I am aware of at this stage!
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","arsenal.png"))
+```
+
+See - https://github.com/mayoverse/arsenal
+
+### 8. qwraps2
+Comprises numerous functions to summarise data and format results. These functions, or similar, can be found in other R packages.
+
+Pros:
+- Extremely flexible; can customise every single line of a summary table.
+- Formatting tools, e.g., summary_table() for data summary tables in markdown; mean_sd, mean_ci for reporting formatted summary statistics.
+- Plotting tools, e.g., ggplot2_extract_legend() to extract the legend from a ggplot.
+
+Cons:
+- Long lines of code.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","qwraps.png"))
+```
+
+See - https://github.com/dewittpe/qwraps2/
+
+### 9. amisc
+Little information on this package as it is currently only available on GitHub. 
+
+Pros:
+
+Cons:
+
+To be continued!...
+
+### 10. tangram
+
+### 11. compareGroups
+
+### 12. htmltable
+
+### 13. gt
+
+### Decision

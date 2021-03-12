@@ -1477,23 +1477,109 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<p>As it turns out, there are at least 5 table 1 packages. Each offers similar functions, with a few variations. I did a quick scan of the summaries for each package to see what might get me the closest to the descriptives table I am trying to replicate for Paper 1.</p>
+<p>As it so happens, there are at least 6 “Table 1” packages available. Each offers similar functions, with a few variations. I’ve provided a summary of each below, in an attempt to find a package that will provide me with the values (and hopefully also the layout) closest to the descriptives table I am trying to replicate for Paper 1.</p>
 <h3 id="tableone">1. tableone</h3>
-<p>This is the package I used last week. It offers mean, SD, categorical variable conversion, summaries for non-normal variables, and displays the different descriptives as columns (which is the format I need).</p>
+<p>This is the package I used last week.</p>
+<p>Pros: - Summarise continuous &amp; categorical variables. - Categorical variables can be summarised as counts and/or percentages. - Continuous variables can be summarised “normally” (mean &amp; SD) or “non-normally” (median &amp; IQR). - Allows for layout where descriptive statistics are displayed as individual columns &amp; all experimental variables are displayed as individual rows.</p>
+<p>Cons: - No function for range. - Cannot customise the design of the table (e.g., in a style resembling APA format).</p>
+<p>Here is how descriptives are shown in tableone using the data from Paper 1:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"tableone_1.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/tableone_1.png" width="50%" /></p>
+</div>
 <p>See - <a href="https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html" class="uri">https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html</a></p>
 <h3 id="table1">2. table1</h3>
-<p>Offers the standard descriptives: mean and SD. Also provides median (minimum, maximum), different treatment conditions as the columns. It appears that you might have the option to change the columns, though.</p>
+<p>Presents descriptive statistics of the study population stratified by treatment condition.</p>
+<p>Pros: - HTML output that can be used with knitr and Rmd without being affected. - Flexibility to customise (to some extent) table contents &amp; layout. - Can request different statistics for specific variables (e.g., median &amp; range for age; mean &amp; SD for weight).</p>
+<p>Cons: - Cannot change the layout of the table so each column represents a descriptive statistic.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"table1.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/table1.png" width="50%" /></p>
+</div>
+<p>Note: the above table is taken from the CRAN vignette, as the Paper 1 data is messy when displayed in this kind of table.</p>
 <p>See - <a href="https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html" class="uri">https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html</a></p>
 <h3 id="tableone-1">3. TableOne</h3>
-<p>Standard descriptives plus median and IQR, and deals with dichotomous data.</p>
+<p>Not much information is available on this package; all Git data was last updated 2 years ago.</p>
+<p>Pros: - Specific functions for summarising and presenting dichotomous, ordinal and continuous data.</p>
+<p>Cons: - The package appears to be quite limited in functionality. - Only accepts data directly from an Excel document.</p>
 <p>See - <a href="https://github.com/agapiospanos/TableOne" class="uri">https://github.com/agapiospanos/TableOne</a></p>
 <h3 id="table1-1">4. Table1</h3>
-<p>Standard descriptives plus median and IQR, minimum and maximum values, and the ability to customise rows and columns.</p>
+<p>&lt; Brief summary &gt;</p>
+<p>Pros: - (make.table) can be outputted as PDF, HTML or printed to R console. - Optional inputs for headers, row names, summary statistics, etc. to customise the output. - Table can be stratified by one or more variables. - Quicker alternative (quick.table) classifies variables as categorical/continuous and generates a set of summary statistics for all available variables.</p>
+<p>Cons: - Cannot change the layout of the table so each column represents a descriptive statistic.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"Table1_1.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/Table1_1.png" width="50%" /></p>
+</div>
 <p>See - <a href="https://rpubs.com/emwozniak/195942" class="uri">https://rpubs.com/emwozniak/195942</a></p>
 <h3 id="furniture-table1">5. Furniture (table1)</h3>
-<p>Standard descriptives plus median and IQR, and deals with bivariate test results.</p>
+<p>Provides a simple summary table with means/counts and SDs/percentages.</p>
+<p>Pros: - Uses a similar API to tidyverse groups and can be used in a pipe. - Provides bivariate test results for variable with grouping variable. - Flexible output: printed in console output, in latex (e.g., through kable), markdown and pandoc. - Can be exported to CSV.</p>
+<p>Cons: - A little too simplistic; no clear row or column labels, no option for HTML format, limited ability to customise layout.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"furniture.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/furniture.png" width="50%" /></p>
+</div>
 <p>See - <a href="https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html" class="uri">https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html</a></p>
-<p>Based on the above, I’m going to try Table1 (no. 4) and then table1 (no. 2), as these both provide minimum and maximum values. This appears to be the closest I can get to just displaying the range!</p>
+<h3 id="apatables">6. apaTables</h3>
+<p>Produces tables that conform to APA style for several different types of analyses, e.g., correlation, ANOVA.</p>
+<p>Pros: - Automates the process by which tables are created from analyses using R. - Ensures the tables are reproducible.</p>
+<p>Cons: - Functions are restricted to specific analyses; limited ability to custome layout. - Package is for tables generated from analyses only; no specific table for descriptives, although correlation or one-way ANOVA table functions will produce a descriptives table (showing mean and SD only).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"apatables.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/apatables.png" width="50%" /></p>
+</div>
+<p>Note: the above table is taken from the CRAN vignette.</p>
+<p>See - <a href="https://cran.r-project.org/web/packages/apaTables/index.html" class="uri">https://cran.r-project.org/web/packages/apaTables/index.html</a></p>
+<h3 id="arsenal">7. arsenal</h3>
+<p>Comprises 6 functions designed to make statistical reporting easy. The relevant function for Table 1 is tableby(), which summarises a set of independent variables by one or more categorical variables.</p>
+<p>Pros: - Lots of functionality: can customise most any aspect of the table. - Requires very little code, e.g., can create a table using only two lines of code. - Can stratify table by more than one grouping variable. - Can create a very simple table without any groupings.</p>
+<p>Cons: - None that I am aware of at this stage!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"arsenal.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/arsenal.png" width="50%" /></p>
+</div>
+<p>See - <a href="https://github.com/mayoverse/arsenal" class="uri">https://github.com/mayoverse/arsenal</a></p>
+<h3 id="qwraps2">8. qwraps2</h3>
+<p>Comprises numerous functions to summarise data and format results. These functions, or similar, can be found in other R packages.</p>
+<p>Pros: - Extremely flexible; can customise every single line of a summary table. - Formatting tools, e.g., summary_table() for data summary tables in markdown; mean_sd, mean_ci for reporting formatted summary statistics. - Plotting tools, e.g., ggplot2_extract_legend() to extract the legend from a ggplot.</p>
+<p>Cons: - Long lines of code.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"qwraps.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/qwraps.png" width="50%" /></p>
+</div>
+<p>See - <a href="https://github.com/dewittpe/qwraps2/" class="uri">https://github.com/dewittpe/qwraps2/</a></p>
+<h3 id="amisc">9. amisc</h3>
+<p>Little information on this package as it is currently only available on GitHub.</p>
+<p>Pros:</p>
+<p>Cons:</p>
+<p>To be continued!…</p>
+<h3 id="tangram">10. tangram</h3>
+<h3 id="comparegroups">11. compareGroups</h3>
+<h3 id="htmltable">12. htmltable</h3>
+<h3 id="gt">13. gt</h3>
+<h3 id="decision">Decision</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
