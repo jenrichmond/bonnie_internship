@@ -18,11 +18,14 @@ library(tableone)
 library(devtools)
 install_github("emwozniak/Table1")
 library(Table1)
-library(TableOne)
 library(furniture)
 library(apaTables)
 library(arsenal)
 library(qwraps2)
+library(tangram)
+library(compareGroups)
+library(Gmisc)
+library(gt)
 ```
 
 
@@ -220,6 +223,32 @@ summary_statistics <-
         "min" = ~min(lastate_1, na.rm = TRUE),
         "max" = ~max(lastate_1, na.rm = TRUE)))
 summary_table(study1, summary_statistics)
+```
+
+### Using tangram
+```{r}
+tan <- tangram::tangram("sex ~ weight_1 + hungercurr + lastate_1",
+                        data = cleans1,
+                        msd = TRUE,
+                        quant = seq(0, 1, 0.25)
+)
+html5(tan, fragment = TRUE,
+      caption = "Descriptives Table 1",
+      id = "tb12")
+```
+
+### Using compareGroups
+```{r}
+res <- compareGroups(sex ~ weight_1 + hungercurr + lastate_1,
+                     data = cleans1)
+summary(res)
+```
+
+### Using gt
+```{r}
+cleans1 %>% 
+  gt()
+fmt_number(columns)
 ```
 
 

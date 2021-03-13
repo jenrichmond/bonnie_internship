@@ -6,9 +6,7 @@ author:
   - name: Bonnie Butler
     url: {}
 date: 2021-03-10
-output:
-  distill::distill_article:
-    self_contained: false
+
 ---
 
 
@@ -71,7 +69,6 @@ Cons:
 See - https://github.com/agapiospanos/TableOne
 
 ### 4. Table1
-< Brief summary >
 
 Pros:
 - (make.table) can be outputted as PDF, HTML or printed to R console.
@@ -163,17 +160,81 @@ See - https://github.com/dewittpe/qwraps2/
 Little information on this package as it is currently only available on GitHub. 
 
 Pros:
+- Produces a simple summary table showing key descriptives, e.g., mean, median, IQR, etc.
+- Uses pandoc.table() function to create a tidy, comprehensible table.
 
 Cons:
+- Rather a basic package with little functionality.
 
-To be continued!...
+See - https://github.com/ablejec/amisc
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","amisc.png"))
+```
+
+Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
 
 ### 10. tangram
+"A grammar of tables"; essentially a list of lists comprising cells that can be subclassed from almost anything.
+
+Pros:
+- Nice aesthetics; short code.
+- High fuctionality.
+- Two types of style: one is internal to a cell and its formatting of text; the other is the overall styling of a table.
+
+Cons:
+- Only knits to HTML.
+- Table does not show missing values by default.
+
+See - https://github/spgarbet/tangram
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","tangram.png"))
+```
+
+Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
 
 ### 11. compareGroups
 
-### 12. htmltable
+Pros:
+- Can create tables showing results of univariate analyses, stratified or not be categorical variable groupings.
+- Tables can be exported to csv, HTML, PDF, Word, xlsx, or inserted in R-markdown files.
+- Three main functions:
+  1) compareGroups creates an object that can be printed, summarised, plotted or updated
+  2) createTable creates an object that can be printed or summarised
+  3) export2csv, export2html, etc. will export results to csv, HTML, etc.
+- Quite simple to use.
+- Function descrTable builds descriptive statistics in a single step.
 
-### 13. gt
+Cons:
+- Doesn't display missing values by default.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","compareGroups.png"))
+```
+
+See - https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html
+
+### 12. gmisc
+A tool for producing "Table 1", a transition plot displaying changes between categories, flow charts and a method for variable selection.
+
+Pros:
+- getDescriptionStatsBy function returns everything you need to generate a descriptive table stratified by different variables.
+- mergeDesc function allows you to merge a set of outputs into a htmlTable.
+- Easy to re-label variables.
+
+Cons:
+- Table can only be created in an HTML file.
+- Long lines of code.
+
+See - https://cran.r-project.org/web/packages/Gmisc/index.html
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","gmisc.png"))
+```
+
+Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
 
 ### Decision
+
+TO BE CONTINUED...

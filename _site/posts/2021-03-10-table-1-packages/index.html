@@ -2540,14 +2540,56 @@ Project
 <p>See - <a href="https://github.com/dewittpe/qwraps2/" class="uri">https://github.com/dewittpe/qwraps2/</a></p>
 <h3 id="amisc">9. amisc</h3>
 <p>Little information on this package as it is currently only available on GitHub.</p>
-<p>Pros:</p>
-<p>Cons:</p>
-<p>To be continued!…</p>
+<p>Pros: - Produces a simple summary table showing key descriptives, e.g., mean, median, IQR, etc. - Uses pandoc.table() function to create a tidy, comprehensible table.</p>
+<p>Cons: - Rather a basic package with little functionality.</p>
+<p>See - <a href="https://github.com/ablejec/amisc" class="uri">https://github.com/ablejec/amisc</a></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"amisc.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/amisc.png" width="50%" /></p>
+</div>
+<p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="tangram">10. tangram</h3>
+<p>“A grammar of tables”; essentially a list of lists comprising cells that can be subclassed from almost anything.</p>
+<p>Pros: - Nice aesthetics; short code. - High fuctionality. - Two types of style: one is internal to a cell and its formatting of text; the other is the overall styling of a table.</p>
+<p>Cons: - Only knits to HTML. - Table does not show missing values by default.</p>
+<p>See - <a href="https://github/spgarbet/tangram" class="uri">https://github/spgarbet/tangram</a></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"tangram.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/tangram.png" width="50%" /></p>
+</div>
+<p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="comparegroups">11. compareGroups</h3>
-<h3 id="htmltable">12. htmltable</h3>
-<h3 id="gt">13. gt</h3>
+<p>Pros: - Can create tables showing results of univariate analyses, stratified or not be categorical variable groupings. - Tables can be exported to csv, HTML, PDF, Word, xlsx, or inserted in R-markdown files. - Three main functions: 1) compareGroups creates an object that can be printed, summarised, plotted or updated 2) createTable creates an object that can be printed or summarised 3) export2csv, export2html, etc. will export results to csv, HTML, etc. - Quite simple to use. - Function descrTable builds descriptive statistics in a single step.</p>
+<p>Cons: - Doesn’t display missing values by default.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"compareGroups.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/compareGroups.png" width="50%" /></p>
+</div>
+<p>See - <a href="https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html" class="uri">https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html</a></p>
+<h3 id="gmisc">12. gmisc</h3>
+<p>A tool for producing “Table 1”, a transition plot displaying changes between categories, flow charts and a method for variable selection.</p>
+<p>Pros: - getDescriptionStatsBy function returns everything you need to generate a descriptive table stratified by different variables. - mergeDesc function allows you to merge a set of outputs into a htmlTable. - Easy to re-label variables.</p>
+<p>Cons: - Table can only be created in an HTML file. - Long lines of code.</p>
+<p>See - <a href="https://cran.r-project.org/web/packages/Gmisc/index.html" class="uri">https://cran.r-project.org/web/packages/Gmisc/index.html</a></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"gmisc.png"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="/Users/siobhanbutler/Desktop/bonnie_internship/img/gmisc.png" width="50%" /></p>
+</div>
+<p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="decision">Decision</h3>
+<p>TO BE CONTINUED…</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
