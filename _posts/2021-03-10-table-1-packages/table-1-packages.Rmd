@@ -16,6 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 As it so happens, there are at least 6 "Table 1" packages available. Each offers similar functions, with a few variations. I've provided a summary of each below, in an attempt to find a package that will provide me with the values (and hopefully also the layout) closest to the descriptives table I am trying to replicate for Paper 1.
 
+A few things to note:
+- Some of the table examples I have provided will contain data from Paper 1 I am examining, some have been taken from other sites.
+- The last 6 (# 7 - 12) packages summarised below were found through the blog: https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
+
 ### 1. tableone
 This is the package I used last week. 
 
@@ -65,6 +69,7 @@ Pros:
 Cons:
 - The package appears to be quite limited in functionality.
 - Only accepts data directly from an Excel document.
+- Not yet available through CRAN.
 
 See - https://github.com/agapiospanos/TableOne
 
@@ -78,6 +83,7 @@ Pros:
 
 Cons:
 - Cannot change the layout of the table so each column represents a descriptive statistic.
+- Not available through CRAN.
 
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img","Table1_1.png"))
@@ -137,7 +143,7 @@ Cons:
 knitr::include_graphics(here::here("img","arsenal.png"))
 ```
 
-See - https://github.com/mayoverse/arsenal
+See - https://cran.r-project.org/web/packages/arsenal/index.html
 
 ### 8. qwraps2
 Comprises numerous functions to summarise data and format results. These functions, or similar, can be found in other R packages.
@@ -154,7 +160,7 @@ Cons:
 knitr::include_graphics(here::here("img","qwraps.png"))
 ```
 
-See - https://github.com/dewittpe/qwraps2/
+See - https://cran.r-project.org/web/packages/qwraps2/index.html
 
 ### 9. amisc
 Little information on this package as it is currently only available on GitHub. 
@@ -186,7 +192,7 @@ Cons:
 - Only knits to HTML.
 - Table does not show missing values by default.
 
-See - https://github/spgarbet/tangram
+See - https://cran.r-project.org/web/packages/tangram/index.html
 
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img","tangram.png"))
