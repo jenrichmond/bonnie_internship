@@ -18,5 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 I was initially made aware of another four packages designed to produce Table 1, all variations on the spelling of the package I used (tableone). The rndr function that I learned about is actually part of a separate package, and so I decided tableone was not going to be adequate for the data I needed to replicate in Table 1 for Paper 1.
 
-In trying to determine which of the other four packages would be best suited for Table 1, I happened upon 
+In trying to determine which of the other four packages would be best suited for Table 1, I happened upon a total of 12 "Table 1" packages. I realised that each of the papers is likely going to require slightly different data in the tables, and as such, decided it would be worth doing a review of all 12. I tried producing a table from each of the packages using the Paper 1 data, but there were a few packages that were too complex (for me) or that didn't work for the data I had, in which case, I inserted a screenshot of the example tables given on the respective package vignette. 
+
+After reviewing each of the packages, I have decided arsenal is the best choice. It provides the descriptives I need for Table 1 (mean, sd, range) and has a lot of functionality so I can customise it to replicate Paper 1 as closely as possible.
+
+I had hoped to reproduce all tables and graphs from Paper 1 this week, but I'm glad that I'm now aware of the different table packages and feel more comfortable finding one to best replicate each of the papers I have chosen. For the week ahead, I hope to achieve what I couldn't last week - reproducing all tables and graphs from Paper 1!
 
