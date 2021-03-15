@@ -20,18 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -51,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -116,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["img/tableone_1.png","table-1-packages_files/anchor-4.2.2/anchor.min.js","table-1-packages_files/bowser-1.9.3/bowser.min.js","table-1-packages_files/distill-2.2.21/template.v2.js","table-1-packages_files/header-attrs-2.6/header-attrs.js","table-1-packages_files/jquery-1.11.3/jquery.min.js","table-1-packages_files/popper-2.6.0/popper.min.js","table-1-packages_files/tippy-6.2.7/tippy-bundle.umd.min.js","table-1-packages_files/tippy-6.2.7/tippy-light-border.css","table-1-packages_files/tippy-6.2.7/tippy.css","table-1-packages_files/tippy-6.2.7/tippy.umd.min.js","table-1-packages_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["img/amisc.png","img/apatables.png","img/arsenal.png","img/compareGroups.png","img/furniture.png","img/gmisc.png","img/qwraps.png","img/Table1_1.png","img/table1.png","img/tableone_1.png","img/tangram.png","table-1-packages_files/anchor-4.2.2/anchor.min.js","table-1-packages_files/bowser-1.9.3/bowser.min.js","table-1-packages_files/distill-2.2.21/template.v2.js","table-1-packages_files/header-attrs-2.6/header-attrs.js","table-1-packages_files/jquery-1.11.3/jquery.min.js","table-1-packages_files/popper-2.6.0/popper.min.js","table-1-packages_files/tippy-6.2.7/tippy-bundle.umd.min.js","table-1-packages_files/tippy-6.2.7/tippy-light-border.css","table-1-packages_files/tippy-6.2.7/tippy.css","table-1-packages_files/tippy-6.2.7/tippy.umd.min.js","table-1-packages_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2374,7 +2375,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2466,10 +2466,10 @@ Project
 <p>Cons: - Cannot change the layout of the table so each column represents a descriptive statistic.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"table1.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/table1.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/table1.png" width="50%" /></p>
+<p><img src="img/table1.png" width="50%" /></p>
 </div>
 <p>Note: the above table is taken from the CRAN vignette, as the Paper 1 data is messy when displayed in this kind of table.</p>
 <p>See - <a href="https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html" class="uri">https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html</a></p>
@@ -2483,10 +2483,10 @@ Project
 <p>Cons: - Cannot change the layout of the table so each column represents a descriptive statistic. - Not available through CRAN.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"Table1_1.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/Table1_1.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/Table1_1.png" width="50%" /></p>
+<p><img src="img/Table1_1.png" width="50%" /></p>
 </div>
 <p>See - <a href="https://rpubs.com/emwozniak/195942" class="uri">https://rpubs.com/emwozniak/195942</a></p>
 <h3 id="furniture-table1">5. Furniture (table1)</h3>
@@ -2495,10 +2495,10 @@ Project
 <p>Cons: - A little too simplistic; no clear row or column labels, no option for HTML format, limited ability to customise layout.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"furniture.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/furniture.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/furniture.png" width="50%" /></p>
+<p><img src="img/furniture.png" width="50%" /></p>
 </div>
 <p>See - <a href="https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html" class="uri">https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html</a></p>
 <h3 id="apatables">6. apaTables</h3>
@@ -2507,10 +2507,10 @@ Project
 <p>Cons: - Functions are restricted to specific analyses; limited ability to custome layout. - Package is for tables generated from analyses only; no specific table for descriptives, although correlation or one-way ANOVA table functions will produce a descriptives table (showing mean and SD only).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"apatables.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/apatables.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/apatables.png" width="50%" /></p>
+<p><img src="img/apatables.png" width="50%" /></p>
 </div>
 <p>Note: the above table is taken from the CRAN vignette.</p>
 <p>See - <a href="https://cran.r-project.org/web/packages/apaTables/index.html" class="uri">https://cran.r-project.org/web/packages/apaTables/index.html</a></p>
@@ -2520,10 +2520,10 @@ Project
 <p>Cons: - None that I am aware of at this stage!</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"arsenal.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/arsenal.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/arsenal.png" width="50%" /></p>
+<p><img src="img/arsenal.png" width="50%" /></p>
 </div>
 <p>See - <a href="https://cran.r-project.org/web/packages/arsenal/index.html" class="uri">https://cran.r-project.org/web/packages/arsenal/index.html</a></p>
 <h3 id="qwraps2">8. qwraps2</h3>
@@ -2532,10 +2532,10 @@ Project
 <p>Cons: - Long lines of code.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"qwraps.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/qwraps.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/qwraps.png" width="50%" /></p>
+<p><img src="img/qwraps.png" width="50%" /></p>
 </div>
 <p>See - <a href="https://cran.r-project.org/web/packages/qwraps2/index.html" class="uri">https://cran.r-project.org/web/packages/qwraps2/index.html</a></p>
 <h3 id="amisc">9. amisc</h3>
@@ -2545,10 +2545,10 @@ Project
 <p>See - <a href="https://github.com/ablejec/amisc" class="uri">https://github.com/ablejec/amisc</a></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"amisc.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/amisc.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/amisc.png" width="50%" /></p>
+<p><img src="img/amisc.png" width="50%" /></p>
 </div>
 <p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="tangram">10. tangram</h3>
@@ -2558,10 +2558,10 @@ Project
 <p>See - <a href="https://cran.r-project.org/web/packages/tangram/index.html" class="uri">https://cran.r-project.org/web/packages/tangram/index.html</a></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"tangram.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/tangram.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/tangram.png" width="50%" /></p>
+<p><img src="img/tangram.png" width="50%" /></p>
 </div>
 <p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="comparegroups">11. compareGroups</h3>
@@ -2569,10 +2569,10 @@ Project
 <p>Cons: - Doesn’t display missing values by default.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"compareGroups.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/compareGroups.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/compareGroups.png" width="50%" /></p>
+<p><img src="img/compareGroups.png" width="50%" /></p>
 </div>
 <p>See - <a href="https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html" class="uri">https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html</a></p>
 <h3 id="gmisc">12. gmisc</h3>
@@ -2582,10 +2582,10 @@ Project
 <p>See - <a href="https://cran.r-project.org/web/packages/Gmisc/index.html" class="uri">https://cran.r-project.org/web/packages/Gmisc/index.html</a></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"img"</span>,<span class='st'>"gmisc.png"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"img/gmisc.png"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="/Users/jenny/Desktop/git/bonnie_internship/img/gmisc.png" width="50%" /></p>
+<p><img src="img/gmisc.png" width="50%" /></p>
 </div>
 <p>Note: above image is taken from <a href="https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/" class="uri">https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/</a></p>
 <h3 id="decision">Decision</h3>

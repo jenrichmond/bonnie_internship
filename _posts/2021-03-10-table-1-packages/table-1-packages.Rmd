@@ -56,7 +56,8 @@ Cons:
 - Cannot change the layout of the table so each column represents a descriptive statistic.
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","table1.png"))
+
+knitr::include_graphics("img/table1.png")
 ```
 
 Note: the above table is taken from the CRAN vignette, as the Paper 1 data is messy when displayed in this kind of table.
@@ -89,7 +90,8 @@ Cons:
 - Not available through CRAN.
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","Table1_1.png"))
+
+knitr::include_graphics("img/Table1_1.png")
 ```
 
 See - https://rpubs.com/emwozniak/195942
@@ -107,7 +109,8 @@ Cons:
 - A little too simplistic; no clear row or column labels, no option for HTML format, limited ability to customise layout.
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","furniture.png"))
+
+knitr::include_graphics("img/furniture.png")
 ```
 
 See - https://cran.r-project.org/web/packages/furniture/vignettes/Table1.html
@@ -124,7 +127,8 @@ Cons:
 - Package is for tables generated from analyses only; no specific table for descriptives, although correlation or one-way ANOVA table functions will produce a descriptives table (showing mean and SD only).
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","apatables.png"))
+
+knitr::include_graphics("img/apatables.png")
 ```
 Note: the above table is taken from the CRAN vignette.
 
@@ -143,7 +147,8 @@ Cons:
 - None that I am aware of at this stage!
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","arsenal.png"))
+
+knitr::include_graphics("img/arsenal.png")
 ```
 
 See - https://cran.r-project.org/web/packages/arsenal/index.html
@@ -160,7 +165,8 @@ Cons:
 - Long lines of code.
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","qwraps.png"))
+
+knitr::include_graphics("img/qwraps.png")
 ```
 
 See - https://cran.r-project.org/web/packages/qwraps2/index.html
@@ -178,7 +184,8 @@ Cons:
 See - https://github.com/ablejec/amisc
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","amisc.png"))
+
+knitr::include_graphics("img/amisc.png")
 ```
 
 Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
@@ -198,7 +205,8 @@ Cons:
 See - https://cran.r-project.org/web/packages/tangram/index.html
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","tangram.png"))
+
+knitr::include_graphics("img/tangram.png")
 ```
 
 Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
@@ -219,7 +227,8 @@ Cons:
 - Doesn't display missing values by default.
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","compareGroups.png"))
+
+knitr::include_graphics("img/compareGroups.png")
 ```
 
 See - https://cran.r-project.org/web/packages/compareGroups/vignettes/compareGroups_vignette.html
@@ -239,7 +248,8 @@ Cons:
 See - https://cran.r-project.org/web/packages/Gmisc/index.html
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","gmisc.png"))
+
+knitr::include_graphics("img/gmisc.png")
 ```
 
 Note: above image is taken from https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/
