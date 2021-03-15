@@ -38,7 +38,8 @@ Cons:
 Here is how descriptives are shown in tableone using the data from Paper 1:
 
 ```{r out.width = "50%"}
-knitr::include_graphics(here::here("img","tableone_1.png"))
+
+knitr::include_graphics("img/tableone_1.png")
 ```
 
 See - https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html
