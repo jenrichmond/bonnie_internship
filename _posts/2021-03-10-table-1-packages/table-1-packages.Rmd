@@ -243,4 +243,4 @@ Note: above image is taken from https://thatdatatho.com/easily-create-descriptiv
 
 ### Decision
 
-TO BE CONTINUED...
+Based on the above, I think arsenal is the best package for replicating Table 1 from Paper 1. It will certainly be helpful to have this summary to refer to, though, as the tables for the other papers may be better served by another package!
