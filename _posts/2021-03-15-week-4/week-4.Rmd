@@ -1,0 +1,22 @@
+---
+title: "week 4"
+description: |
+  Summarising all known table packages available in R.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-03-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I was initially made aware of another four packages designed to produce Table 1, all variations on the spelling of the package I used (tableone). The rndr function that I learned about is actually part of a separate package, and so I decided tableone was not going to be adequate for the data I needed to replicate in Table 1 for Paper 1.
+
+In trying to determine which of the other four packages would be best suited for Table 1, I happened upon 
+

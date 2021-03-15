@@ -14,7 +14,7 @@ date: 2021-03-10
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-As it so happens, there are at least 6 "Table 1" packages available. Each offers similar functions, with a few variations. I've provided a summary of each below, in an attempt to find a package that will provide me with the values (and hopefully also the layout) closest to the descriptives table I am trying to replicate for Paper 1.
+As it so happens, there are at least 12 "Table 1" packages available. Each offers similar functions, with a few variations. I've provided a summary of each below, in an attempt to find a package that will provide me with the values (and hopefully also the layout) closest to the descriptives table I am trying to replicate for Paper 1.
 
 A few things to note:
 - Some of the table examples I have provided will contain data from Paper 1 I am examining, some have been taken from other sites.
