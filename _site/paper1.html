@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -87,39 +86,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--radix_placeholder_meta_tags-->
   <title>internship blog: paper1</title>
-  
+
   <meta property="description" itemprop="description" content="lets start paper 1 here"/>
-  
-  
-  
+
+
+
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="internship blog: paper1"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="lets start paper 1 here"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="internship blog"/>
-  
+
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="internship blog: paper1"/>
   <meta property="twitter:description" content="lets start paper 1 here"/>
-  
+
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
-  
+
   <script type="text/json" id="radix-rmarkdown-metadata">
   {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["paper1"]},{"type":"character","attributes":{},"value":["lets start paper 1 here"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
   <meta name="distill:offset" content=""/>
-  
+
   <script type="application/javascript">
-  
+
     window.headroom_prevent_pin = false;
-  
+
     window.document.addEventListener("DOMContentLoaded", function (event) {
-  
+
       // initialize headroom for banner
       var header = $('header').get(0);
       var headerHeight = header.offsetHeight;
@@ -136,13 +135,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       if(window.location.hash)
         headroom.unpin();
       $(header).addClass('headroom--transition');
-  
+
       // offset scroll location for banner on hash change
       // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
       window.addEventListener("hashchange", function(event) {
         window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
       });
-  
+
       // responsive menu
       $('.distill-site-header').each(function(i, val) {
         var topnav = $(this);
@@ -151,7 +150,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           topnav.toggleClass('responsive');
         });
       });
-  
+
       // nav dropdowns
       $('.nav-dropbtn').click(function(e) {
         $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
@@ -166,99 +165,99 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       });
     });
   </script>
-  
+
   <style type="text/css">
-  
+
   /* Theme (user-documented overrideables for nav appearance) */
-  
+
   .distill-site-nav {
     color: rgba(255, 255, 255, 0.8);
     background-color: #0F2E3D;
     font-size: 15px;
     font-weight: 300;
   }
-  
+
   .distill-site-nav a {
     color: inherit;
     text-decoration: none;
   }
-  
+
   .distill-site-nav a:hover {
     color: white;
   }
-  
+
   @media print {
     .distill-site-nav {
       display: none;
     }
   }
-  
+
   .distill-site-header {
-  
+
   }
-  
+
   .distill-site-footer {
-  
+
   }
-  
-  
+
+
   /* Site Header */
-  
+
   .distill-site-header {
     width: 100%;
     box-sizing: border-box;
     z-index: 3;
   }
-  
+
   .distill-site-header .nav-left {
     display: inline-block;
     margin-left: 8px;
   }
-  
+
   @media screen and (max-width: 768px) {
     .distill-site-header .nav-left {
       margin-left: 0;
     }
   }
-  
-  
+
+
   .distill-site-header .nav-right {
     float: right;
     margin-right: 8px;
   }
-  
+
   .distill-site-header a,
   .distill-site-header .title {
     display: inline-block;
     text-align: center;
     padding: 14px 10px 14px 10px;
   }
-  
+
   .distill-site-header .title {
     font-size: 18px;
     min-width: 150px;
   }
-  
+
   .distill-site-header .logo {
     padding: 0;
   }
-  
+
   .distill-site-header .logo img {
     display: none;
     max-height: 20px;
     width: auto;
     margin-bottom: -4px;
   }
-  
+
   .distill-site-header .nav-image img {
     max-height: 18px;
     width: auto;
     display: inline-block;
     margin-bottom: -3px;
   }
-  
-  
-  
+
+
+
   @media screen and (min-width: 1000px) {
     .distill-site-header .logo img {
       display: inline-block;
@@ -273,17 +272,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 12px;
     }
   }
-  
-  
+
+
   .distill-site-header .nav-toggle {
     display: none;
   }
-  
+
   .nav-dropdown {
     display: inline-block;
     position: relative;
   }
-  
+
   .nav-dropdown .nav-dropbtn {
     border: none;
     outline: none;
@@ -297,7 +296,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1px;
     z-index: 2;
   }
-  
+
   .nav-dropdown-content {
     display: none;
     position: absolute;
@@ -312,18 +311,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 4px;
     padding-bottom: 4px;
   }
-  
+
   .nav-dropdown-content hr {
     margin-top: 4px;
     margin-bottom: 4px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .nav-dropdown-active {
     display: block;
   }
-  
+
   .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
     color: black;
     padding: 6px 24px;
@@ -331,7 +330,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     display: block;
     text-align: left;
   }
-  
+
   .nav-dropdown-content .nav-dropdown-header {
     display: block;
     padding: 5px 24px;
@@ -341,21 +340,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #999999;
     white-space: nowrap;
   }
-  
+
   .nav-dropdown:hover .nav-dropbtn {
     color: white;
   }
-  
+
   .nav-dropdown-content a:hover {
     background-color: #ddd;
     color: black;
   }
-  
+
   .nav-right .nav-dropdown-content {
     margin-left: -45%;
     right: 0;
   }
-  
+
   @media screen and (max-width: 768px) {
     .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
     .distill-site-header a.nav-toggle {
@@ -375,8 +374,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       margin-left: 0;
     }
   }
-  
-  
+
+
   @media screen and (max-width: 768px) {
     .distill-site-header.responsive {position: relative; min-height: 500px; }
     .distill-site-header.responsive a.nav-toggle {
@@ -401,9 +400,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       text-align: left;
     }
   }
-  
+
   /* Site Footer */
-  
+
   .distill-site-footer {
     width: 100%;
     overflow: hidden;
@@ -414,19 +413,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-bottom: 30px;
     text-align: center;
   }
-  
+
   /* Headroom */
-  
+
   d-title {
     padding-top: 6rem;
   }
-  
+
   @media print {
     d-title {
       padding-top: 4rem;
     }
   }
-  
+
   .headroom {
     z-index: 1000;
     position: fixed;
@@ -434,36 +433,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     left: 0;
     right: 0;
   }
-  
+
   .headroom--transition {
     transition: all .4s ease-in-out;
   }
-  
+
   .headroom--unpinned {
     top: -100px;
   }
-  
+
   .headroom--pinned {
     top: 0;
   }
-  
+
   /* adjust viewport for navbar height */
   /* helps vertically center bootstrap (non-distill) content */
   .min-vh-100 {
     min-height: calc(100vh - 100px) !important;
   }
-  
+
   </style>
-  
+
   <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-  
+
   <script type="application/javascript">
-  
+
   function getMeta(metaName) {
     var metas = document.getElementsByTagName('meta');
     for (let i = 0; i < metas.length; i++) {
@@ -473,14 +472,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     }
     return '';
   }
-  
+
   function offsetURL(url) {
     var offset = getMeta('distill:offset');
     return offset ? offset + '/' + url : url;
   }
-  
+
   function createFuseIndex() {
-  
+
     // create fuse index
     var options = {
       keys: [
@@ -493,7 +492,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       threshold: 0
     };
     var fuse = new window.Fuse([], options);
-  
+
     // fetch the main search.json
     return fetch(offsetURL('search.json'))
       .then(function(response) {
@@ -523,7 +522,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
               return fuse;
             });
           });
-  
+
         } else {
           return Promise.reject(
             new Error('Unexpected status from search index request: ' +
@@ -532,20 +531,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         }
       });
   }
-  
+
   window.document.addEventListener("DOMContentLoaded", function (event) {
-  
+
     // get search element (bail if we don't have one)
     var searchEl = window.document.getElementById('distill-search');
     if (!searchEl)
       return;
-  
+
     createFuseIndex()
       .then(function(fuse) {
-  
+
         // make search box visible
         searchEl.classList.remove('hidden');
-  
+
         // initialize autocomplete
         var options = {
           autoselect: true,
@@ -594,19 +593,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       .catch(function(error) {
         console.log(error);
       });
-  
+
   });
-  
+
   </script>
-  
+
   <style type="text/css">
-  
+
   .nav-search {
     font-size: x-small;
   }
-  
+
   /* Algolioa Autocomplete */
-  
+
   .algolia-autocomplete {
     display: inline-block;
     margin-left: 10px;
@@ -620,8 +619,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border: 1px #0F2E3D solid;
     width: 180px;
   }
-  
-  
+
+
   @media screen and (max-width: 768px) {
     .distill-site-nav .algolia-autocomplete {
       display: none;
@@ -637,13 +636,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       max-height: 400px;
     }
   }
-  
+
   .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
     width: 90%;
     outline: none;
     border: none;
   }
-  
+
   .algolia-autocomplete .aa-hint {
     color: #999;
   }
@@ -660,30 +659,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border: 1px solid #999;
     border-top: none;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
     cursor: pointer;
     padding: 5px 4px;
     border-bottom: 1px solid #eee;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
     border-bottom: none;
     margin-bottom: 2px;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
     overflow: hidden;
     font-size: 0.8em;
     line-height: 1.4em;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
     font-size: 1rem;
     margin-block-start: 0;
     margin-block-end: 5px;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
     display: inline-block;
     overflow: hidden;
@@ -691,22 +690,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 80%;
     margin-right: 4%;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
     display: inline-block;
     width: 15%;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
     height: 3em;
     width: auto;
     display: none;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
     display: initial;
   }
-  
+
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
     background-color: #eee;
   }
@@ -714,47 +713,47 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: bold;
     font-style: normal;
   }
-  
+
   </style>
-  
-  
+
+
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-  
+
   <style type="text/css">
-  
+
   body {
     background-color: white;
   }
-  
+
   .pandoc-table {
     width: 100%;
   }
-  
+
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-  
+
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-  
+
   .pagedtable-footer {
     font-size: 15px;
   }
-  
+
   d-byline .byline {
     grid-template-columns: 2fr 2fr;
   }
-  
+
   d-byline .byline h3 {
     margin-block-start: 1.5em;
   }
-  
+
   d-byline .byline .authors-affiliations h3 {
     margin-block-start: 0.5em;
   }
-  
+
   .authors-affiliations .orcid-id {
     width: 16px;
     height:16px;
@@ -763,12 +762,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     vertical-align: middle;
     padding-bottom: 2px;
   }
-  
+
   d-title .dt-tags {
     margin-top: 1em;
     grid-column: text;
   }
-  
+
   .dt-tags .dt-tag {
     text-decoration: none;
     display: inline-block;
@@ -782,24 +781,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
   }
-  
+
   .html-widget {
     margin-bottom: 2.0em;
   }
-  
+
   .l-screen-inset {
     padding-right: 16px;
   }
-  
+
   .l-screen .caption {
     margin-left: 10px;
   }
-  
+
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -807,75 +806,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .shaded-content {
     background: white;
   }
-  
+
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-  
+
   .hidden {
     display: none !important;
   }
-  
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-  
+
   d-appendix {
     padding-top: 30px;
   }
-  
+
   d-article>p>img {
     width: 100%;
   }
-  
+
   d-article h2 {
     margin: 1rem 0 1.5rem 0;
   }
-  
+
   d-article h3 {
     margin-top: 1.5rem;
   }
-  
+
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-  
+
   /* Tweak code blocks */
-  
+
   d-article div.sourceCode code,
   d-article pre code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: auto;
   }
-  
+
   d-article div.sourceCode {
     background-color: white;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
-  
+
   d-article pre {
     font-size: 12px;
     color: black;
@@ -887,50 +886,50 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   d-article pre a {
     border-bottom: none;
   }
-  
+
   d-article pre a:hover {
     border-bottom: none;
     text-decoration: underline;
   }
-  
+
   d-article details {
     grid-column: text;
     margin-bottom: 0.8em;
   }
-  
+
   @media(min-width: 768px) {
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: visible !important;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
   }
-  
+
   d-article pre {
     font-size: 14px;
   }
-  
+
   }
-  
+
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -938,9 +937,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   /* CSS for d-contents */
-  
+
   .d-contents {
     grid-column: text;
     color: rgba(0,0,0,0.8);
@@ -952,7 +951,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 0.25em;
     justify-self: start;
   }
-  
+
   @media(min-width: 1000px) {
     .d-contents.d-contents-float {
       height: 0;
@@ -963,82 +962,82 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 2em;
     }
   }
-  
+
   .d-contents nav h3 {
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 1em;
   }
-  
+
   .d-contents li {
     list-style-type: none
   }
-  
+
   .d-contents nav > ul {
     padding-left: 0;
   }
-  
+
   .d-contents ul {
     padding-left: 1em
   }
-  
+
   .d-contents nav ul li {
     margin-top: 0.6em;
     margin-bottom: 0.2em;
   }
-  
+
   .d-contents nav a {
     font-size: 13px;
     border-bottom: none;
     text-decoration: none
     color: rgba(0, 0, 0, 0.8);
   }
-  
+
   .d-contents nav a:hover {
     text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-  
+
   .d-contents nav > ul > li > a {
     font-weight: 600;
   }
-  
+
   .d-contents nav > ul > li > ul {
     font-weight: inherit;
   }
-  
+
   .d-contents nav > ul > li > ul > li {
     margin-top: 0.2em;
   }
-  
-  
+
+
   .d-contents nav ul {
     margin-top: 0;
     margin-bottom: 0.25em;
   }
-  
+
   .d-article-with-toc h2:nth-child(2) {
     margin-top: 0;
   }
-  
-  
+
+
   /* Figure */
-  
+
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-  
+
   .figure img {
     width: 100%;
   }
-  
+
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-  
+
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1046,42 +1045,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-  
+
   /* Citations */
-  
+
   d-article .citation {
     color: inherit;
     cursor: inherit;
   }
-  
+
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
   }
-  
+
   /* Citation hover box */
-  
+
   .tippy-box[data-theme~=light-border] {
     background-color: rgba(250, 250, 250, 0.95);
   }
-  
+
   .tippy-content > p {
     margin-bottom: 0;
     padding: 2px;
   }
-  
-  
+
+
   /* Tweak 1000px media break to show more text */
-  
+
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -1097,11 +1096,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-  
+
     .grid {
       grid-column-gap: 16px;
     }
-  
+
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -1110,7 +1109,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       font-size: 13px;
     }
   }
-  
+
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -1126,16 +1125,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-  
+
     .grid {
       grid-column-gap: 32px;
     }
   }
-  
-  
+
+
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-  
+
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -1152,9 +1151,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
+
   /* Include appendix styles here so they can be overridden */
-  
+
   d-appendix {
     contain: layout style;
     font-size: 0.8em;
@@ -1166,7 +1165,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 60px;
     padding-bottom: 48px;
   }
-  
+
   d-appendix h3 {
     grid-column: page-start / text-start;
     font-size: 15px;
@@ -1175,59 +1174,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-bottom: 0;
     color: rgba(0,0,0,0.65);
   }
-  
+
   d-appendix h3 + * {
     margin-top: 1em;
   }
-  
+
   d-appendix ol {
     padding: 0 0 0 15px;
   }
-  
+
   @media (min-width: 768px) {
     d-appendix ol {
       padding: 0 0 0 30px;
       margin-left: -30px;
     }
   }
-  
+
   d-appendix li {
     margin-bottom: 1em;
   }
-  
+
   d-appendix a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   d-appendix > * {
     grid-column: text;
   }
-  
+
   d-appendix > d-footnote-list,
   d-appendix > d-citation-list,
   d-appendix > distill-appendix {
     grid-column: screen;
   }
-  
+
   /* Include footnote styles here so they can be overridden */
-  
+
   d-footnote-list {
     contain: layout style;
   }
-  
+
   d-footnote-list > * {
     grid-column: text;
   }
-  
+
   d-footnote-list a.footnote-backlink {
     color: rgba(0,0,0,0.3);
     padding-left: 0.5em;
   }
-  
-  
-  
+
+
+
   /* Anchor.js */
-  
+
   .anchorjs-link {
     /*transition: all .25s linear; */
     text-decoration: none;
@@ -1238,86 +1237,86 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: none;
     border-bottom: none;
   }
-  
+
   /* Social footer */
-  
+
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-  
+
   .disqus-comments {
     margin-right: 30px;
   }
-  
+
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-  
+
   #disqus_thread {
     margin-top: 30px;
   }
-  
+
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-  
+
   .article-sharing a:hover {
     border-bottom: none;
   }
-  
+
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .subscribe p {
     margin-bottom: 0.5em;
   }
-  
-  
+
+
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-  
-  
+
+
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .custom p {
     margin-bottom: 0.5em;
   }
-  
+
   /* Styles for listing layout (hide title) */
   .layout-listing d-title, .layout-listing .d-title {
     display: none;
   }
-  
+
   /* Styles for posts lists (not auto-injected) */
-  
-  
+
+
   .posts-with-sidebar {
     padding-left: 45px;
     padding-right: 45px;
   }
-  
+
   .posts-list .description h2,
   .posts-list .description p {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   .posts-list .description h2 {
     font-weight: 700;
     border-bottom: none;
     padding-bottom: 0;
   }
-  
+
   .posts-list h2.post-tag {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 12px;
@@ -1326,7 +1325,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 60px;
     margin-bottom: 24px;
   }
-  
+
   .posts-list .post-preview {
     text-decoration: none;
     overflow: hidden;
@@ -1334,29 +1333,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 24px 0;
   }
-  
+
   .post-preview-last {
     border-bottom: none !important;
   }
-  
+
   .posts-list .posts-list-caption {
     grid-column: screen;
     font-weight: 400;
   }
-  
+
   .posts-list .post-preview h2 {
     margin: 0 0 6px 0;
     line-height: 1.2em;
     font-style: normal;
     font-size: 24px;
   }
-  
+
   .posts-list .post-preview p {
     margin: 0 0 12px 0;
     line-height: 1.4em;
     font-size: 16px;
   }
-  
+
   .posts-list .post-preview .thumbnail {
     box-sizing: border-box;
     margin-bottom: 24px;
@@ -1367,32 +1366,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 100%;
     display: block;
   }
-  
+
   .posts-list .metadata {
     font-size: 12px;
     line-height: 1.4em;
     margin-bottom: 18px;
   }
-  
+
   .posts-list .metadata > * {
     display: inline-block;
   }
-  
+
   .posts-list .metadata .publishedDate {
     margin-right: 2em;
   }
-  
+
   .posts-list .metadata .dt-authors {
     display: block;
     margin-top: 0.3em;
     margin-right: 2em;
   }
-  
+
   .posts-list .dt-tags {
     display: block;
     line-height: 1em;
   }
-  
+
   .posts-list .dt-tags .dt-tag {
     display: inline-block;
     color: rgba(0,0,0,0.6);
@@ -1405,24 +1404,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   .posts-list img {
     opacity: 1;
   }
-  
+
   .posts-list img[data-src] {
     opacity: 0;
   }
-  
+
   .posts-more {
     clear: both;
   }
-  
-  
+
+
   .posts-sidebar {
     font-size: 16px;
   }
-  
+
   .posts-sidebar h3 {
     font-size: 16px;
     margin-top: 0;
@@ -1430,39 +1429,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 400;
     text-transform: uppercase;
   }
-  
+
   .sidebar-section {
     margin-bottom: 30px;
   }
-  
+
   .categories ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .categories li {
     color: rgba(0, 0, 0, 0.8);
     margin-bottom: 0;
   }
-  
+
   .categories li>a {
     border-bottom: none;
   }
-  
+
   .categories li>a:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
-  
+
   .categories .active {
     font-weight: 600;
   }
-  
+
   .categories .category-count {
     color: rgba(0, 0, 0, 0.4);
   }
-  
-  
+
+
   @media(min-width: 768px) {
     .posts-list .post-preview h2 {
       font-size: 26px;
@@ -1498,55 +1497,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-bottom: 24px;
     }
   }
-  
-  
+
+
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-  
+
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-  
+
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-  
+
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-  
+
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-  
+
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-  
+
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-  
-  
+
+
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -1558,11 +1557,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 40px;
     padding-bottom: 48px;
   }
-  
+
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-  
+
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -1579,7 +1578,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -1599,14 +1598,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 900px;
   }
   }
-  
+
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-  
+
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -1617,27 +1616,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   .downlevel .posts-list .post-preview {
     color: inherit;
   }
-  
-  
-  
+
+
+
   </style>
-  
+
   <script type="application/javascript">
-  
+
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -1646,20 +1645,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       return window.load_distill_framework === undefined;
     }
   }
-  
+
   // show body when load is complete
   function on_load_complete() {
-  
+
     // add anchors
     if (window.anchors) {
       window.anchors.options.placement = 'left';
       window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
     }
-  
-  
+
+
     // set body to visible
     document.body.style.visibility = 'visible';
-  
+
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -1672,39 +1671,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         });
       });
     }
-  
+
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-  
+
   function init_distill() {
-  
+
     init_common();
-  
+
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-  
+
     // create d-title
     $('.d-title').changeElementType('d-title');
-  
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-  
+
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-  
+
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-  
+
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-  
+
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
+
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -1720,10 +1719,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     });
     // remove footnotes
     $('.footnotes').remove();
-  
+
     // move refs into #references-listing
     $('#references-listing').replaceWith($('#refs'));
-  
+
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
@@ -1733,16 +1732,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-  
+
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
+
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-  
+
       // capture layout
       var layout = $(this).attr('data-layout');
-  
+
       // apply layout to markdown level block elements
       var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
@@ -1755,40 +1754,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).wrap(layout_div);
         }
       });
-  
-  
+
+
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-  
+
     // remove code block used to force  highlighting css
     $('.distill-force-highlighting-css').parent().remove();
-  
+
     // remove empty line numbers inserted by pandoc when using a
     // custom syntax highlighting theme
     $('code.sourceCode a:empty').remove();
-  
+
     // load distill framework
     load_distill_framework();
-  
+
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-  
+
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-  
+
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-  
+
       // article with toc class
       $('.d-contents').parent().addClass('d-article-with-toc');
-  
+
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-  
+
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
@@ -1803,12 +1802,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).append(a);
         }
       });
-  
+
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-  
+
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -1820,11 +1819,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-  
+
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-  
+
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -1844,22 +1843,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-  
+
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-  
+
       // remove d-appendix and d-footnote-list local styles
       $('d-appendix > style:first-child').remove();
       $('d-footnote-list > style:first-child').remove();
-  
+
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-  
+
       // hoverable references
       $('span.citation[data-cites]').each(function() {
         var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
@@ -1873,39 +1872,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
-  
+
       // clear polling timer
       clearInterval(tid);
-  
+
       // show body now that everything is ready
       on_load_complete();
     }
-  
+
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-  
+
   }
-  
+
   function init_downlevel() {
-  
+
     init_common();
-  
+
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-  
+
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-  
+
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-  
+
     // remove toc
     $('.d-contents').remove();
-  
+
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -1913,62 +1912,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-  
-  
+
+
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-  
+
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-  
+
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-  
+
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-  
+
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-  
+
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-  
+
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-  
+
     $('body').addClass('downlevel');
-  
+
     on_load_complete();
   }
-  
-  
+
+
   function init_common() {
-  
+
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-  
+
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-  
+
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-  
+
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-  
+
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
@@ -1980,35 +1979,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-  
+
       }
     });
-  
+
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-  
+
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
         $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
       });
     }
-  
+
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-  
+
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-  
+
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-  
+
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -2022,31 +2021,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
     });
   }
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-  
+
   </script>
-  
+
   <style type="text/css">
   /* base variables */
-  
+
   /* Edit the CSS properties in this file to create a custom
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
      you may set its value to: unset
      All rows must end with a semi-colon.                      */
-  
+
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
-  
-  
-  
+
+
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -2066,7 +2065,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
-  
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -2074,13 +2073,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-size:       0.8rem;
     --body-color:      rgba(0, 0, 0, 0.8);
   }
-  
+
   /*-- ARTICLE TABLE OF CONTENTS --*/
   .d-contents {
     --heading-size:    18px;
     --contents-size:   13px;
   }
-  
+
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
     --heading-size:    15px;
@@ -2088,10 +2087,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --text-size:       0.8em;
     --text-color:      rgba(0, 0, 0, 0.5);
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   /* These properties only apply to Distill sites and blogs  */
-  
+
   .distill-site-header {
     --title-size:       18px;
     --text-color:       rgba(255, 255, 255, 0.8);
@@ -2099,32 +2098,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
   </style>
   <style type="text/css">/* base variables */
-  
+
   /* Edit the CSS properties in this file to create a custom
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
      you may set its value to: unset
      All rows must end with a semi-colon.                      */
-  
+
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
   @import url('https://fonts.googleapis.com/css2?family=Cardo');
   @import url('https://fonts.googleapis.com/css2?family=Alata');
-  
-  
+
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -2144,7 +2143,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-font:       'Cardo', serif;             /* edited */
     --navbar-font:     'Alata', sans-serif;        /* edited */
   }
-  
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -2152,13 +2151,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-size:       0.8rem;
     --body-color:      rgba(0, 0, 0, 0.8);
   }
-  
+
   /*-- ARTICLE TABLE OF CONTENTS --*/
   .d-contents {
     --heading-size:    18px;
     --contents-size:   13px;
   }
-  
+
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
     --heading-size:    15px;
@@ -2166,10 +2165,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --text-size:       1.075rem;                   /* edited */
     --text-color:      rgb(0, 0, 0);               /* edited */
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   /* These properties only apply to Distill sites and blogs  */
-  
+
   .distill-site-header {
     --title-size:       18px;
     --text-color:       #000;                     /* edited */
@@ -2177,80 +2176,80 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --hover-color:      #ff00ff;                  /* edited */
     --bkgd-color:       #fff;                     /* edited */
   }
-  
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   /*-- Additional custom styles --*/
-  
+
   .categories li > a:hover {
       color: #00ff00;
       border-bottom: 1px #00ff00;
   }
-  
+
   p a:hover  {
       color: #00ff00;
   }
-  
+
   /* Change appearance of headers */
   h1, h2, h3, h4, h5 {
       font-weight: 700;
   }
-  
+
   /* Use specific font in the body of the text */
   html, body, p {
       font-weight: 200;
       /*line-height: 1.3rem; */
       /*font-style: normal;*/
   }
-  
+
   ul > li::marker {
       font-weight: 700;
       font-size: 1.125em;
   }</style>
   <style type="text/css">
   /* base style */
-  
+
   /* FONT FAMILIES */
-  
+
   :root {
     --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   body,
   .posts-list .post-preview p,
   .posts-list .description p {
     font-family: var(--body-font), var(--body-default);
   }
-  
+
   h1, h2, h3, h4, h5, h6,
   .posts-list .post-preview h2,
   .posts-list .description h2 {
     font-family: var(--heading-font), var(--heading-default);
   }
-  
+
   d-article div.sourceCode code,
   d-article pre code {
     font-family: var(--mono-font), var(--mono-default);
   }
-  
-  
+
+
   /*-- TITLE --*/
   d-title h1,
   .posts-list > h1 {
     color: var(--title-color, black);
   }
-  
+
   d-title h1 {
     font-size: var(--title-size, 50px);
   }
-  
+
   /*-- HEADERS --*/
   d-article h1,
   d-article h2,
@@ -2260,7 +2259,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article h6 {
     color: var(--header-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   /*-- BODY --*/
   d-article > p,  /* only text inside of <p> tags */
   d-article > ul, /* lists */
@@ -2268,20 +2267,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--body-color, rgba(0, 0, 0, 0.8));
     font-size: var(--body-size, 1.06rem);
   }
-  
-  
+
+
   /*-- CODE --*/
   d-article div.sourceCode code,
   d-article pre code {
     font-size: var(--code-size, 14px);
   }
-  
+
   /*-- ASIDE --*/
   d-article aside {
     font-size: var(--aside-size, 12px);
     color: var(--aside-color, rgba(0, 0, 0, 0.6));
   }
-  
+
   /*-- FIGURE CAPTIONS --*/
   figure .caption,
   figure figcaption,
@@ -2289,84 +2288,85 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: var(--fig-cap-size, 13px);
     color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
   }
-  
+
   /*-- METADATA --*/
   d-byline h3 {
     font-size: var(--heading-size, 0.6rem);
     color: var(--heading-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   d-byline {
     font-size: var(--body-size, 0.8rem);
     color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   d-byline a,
   d-article d-byline a {
     color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   /*-- TABLE OF CONTENTS --*/
   .d-contents nav h3 {
     font-size: var(--heading-size, 18px);
   }
-  
+
   .d-contents nav a {
     font-size: var(--contents-size, 13px);
   }
-  
+
   /*-- APPENDIX --*/
   d-appendix h3 {
     font-size: var(--heading-size, 15px);
     color: var(--heading-color, rgba(0, 0, 0, 0.65));
   }
-  
+
   d-appendix {
     font-size: var(--text-size, 0.8em);
     color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   d-appendix d-footnote-list a.footnote-backlink {
     color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   .distill-site-header .title {
     font-size: var(--title-size, 18px);
     font-family: var(--navbar-font), var(--heading-default);
   }
-  
+
   .distill-site-header a,
   .nav-dropdown .nav-dropbtn {
     font-family: var(--navbar-font), var(--heading-default);
   }
-  
+
   .nav-dropdown .nav-dropbtn {
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     font-size: var(--text-size, 15px);
   }
-  
+
   .distill-site-header a:hover,
   .nav-dropdown:hover .nav-dropbtn {
     color: var(--hover-color, white);
   }
-  
+
   .distill-site-header {
     font-size: var(--text-size, 15px);
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     background-color: var(--bkgd-color, #0F2E3D);
   }
-  
+
   .distill-site-footer {
     font-size: var(--text-size, 15px);
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     background-color: var(--bkgd-color, #0F2E3D);
   }
-  
+
   .distill-site-footer a:hover {
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2438,6 +2438,18 @@ Project
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://here.r-lib.org/'>here</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sfirke/janitor'>janitor</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/kaz-yos/tableone'>tableone</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://devtools.r-lib.org/'>devtools</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"emwozniak/Table1"</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>Table1</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>furniture</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/dstanley4/apaTables'>apaTables</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/mayoverse/arsenal'>arsenal</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/dewittpe/qwraps2/'>qwraps2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/spgarbet/tangram'>tangram</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>compareGroups</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://gforge.se'>Gmisc</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/gt'>gt</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/distill'>distill</a></span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2507,7 +2519,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <p>Use the count function to count how many participants there were. Are those that were excluded due to BMI or allergies/diabetes included in the dataset??</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans1</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.stats.html'>count</a></span><span class='op'>(</span><span class='va'>cleans1</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 2
@@ -2544,7 +2556,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h3 id="count-the-participants-1">count the participants</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans2</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.stats.html'>count</a></span><span class='op'>(</span><span class='va'>cleans2</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 2
@@ -2593,7 +2605,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
 <h3 id="count-the-participants-2">count the participants</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count</span><span class='op'>(</span><span class='va'>cleans3</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.stats.html'>count</a></span><span class='op'>(</span><span class='va'>cleans3</span>, <span class='st'>"p_id"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 1 x 2
@@ -2689,11 +2701,1619 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.…</co
   p_delicious (mean (SD))               5.45 (0.89)  
   total_calories_eaten (mean (SD))    199.59 (119.53)</code></pre>
 </div>
-<p>Found an article indicating that “minMax” would toggle whether to show median (range). It did not appear to make any difference when including it in the print() function.</p>
-<h3 id="using-rndr-function">Using rndr function</h3>
-See <a href="https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html" class="uri">https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html</a>
+<h3 id="using-table1">Using Table1</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/Table1/man/make.table.html'>make.table</a></span><span class='op'>(</span>dat <span class='op'>=</span> <span class='va'>cleans1</span>,
+           cont.varlist <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"age"</span>, <span class='st'>"weight_1"</span>, <span class='st'>"childhood_ses_composite"</span>, <span class='st'>"lastate_1"</span>, <span class='st'>"hungercurr"</span>, <span class='st'>"c_delicious"</span>, <span class='st'>"p_delicious"</span>, <span class='st'>"total_calories_eaten"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                      Variable         Overall
+ age                                          
+    Count                                   28
+    Mean (SD)                     19.21 (1.26)
+    Median (IQR)                  19.00 (2.00)
+    Q1, Q3                           18.00, 20
+    Min, Max                         18.00, 22
+    Missing                                  3
+                                              
+ weight_1                                     
+    Count                                   31
+    Mean (SD)                   140.61 (22.98)
+    Median (IQR)                139.00 (21.50)
+    Q1, Q3                         126.50, 148
+    Min, Max                       102.00, 215
+    Missing                                  0
+                                              
+ hungercurr                                   
+    Count                                   31
+    Mean (SD)                      3.77 (1.28)
+    Median (IQR)                   4.00 (2.00)
+    Q1, Q3                             3.00, 5
+    Min, Max                           2.00, 6
+    Missing                                  0
+                                              
+ lastate_1                                    
+    Count                                   29
+    Mean (SD)                      3.97 (3.84)
+    Median (IQR)                   2.00 (8.00)
+    Q1, Q3                             1.00, 9
+    Min, Max                          0.00, 10
+    Missing                                  2
+                                              
+ p_delicious                                  
+    Count                                   31
+    Mean (SD)                      5.45 (0.89)
+    Median (IQR)                   5.00 (1.00)
+    Q1, Q3                             5.00, 6
+    Min, Max                           4.00, 7
+    Missing                                  0
+                                              
+ c_delicious                                  
+    Count                                   31
+    Mean (SD)                      5.58 (1.29)
+    Median (IQR)                   6.00 (1.50)
+    Q1, Q3                           5.00, 6.5
+    Min, Max                           2.00, 7
+    Missing                                  0
+                                              
+ childhood_ses_composite                      
+    Count                                   31
+    Mean (SD)                      5.25 (1.54)
+    Median (IQR)                   6.00 (2.33)
+    Q1, Q3                          4.33, 6.67
+    Min, Max                           1.33, 7
+    Missing                                  0
+                                              
+ total_calories_eaten                         
+    Count                                   31
+    Mean (SD)                  199.59 (119.53)
+    Median (IQR)               161.14 (192.30)
+    Q1, Q3                       98.26, 290.56
+    Min, Max                      42.69, 396.5
+    Missing                                  0
+                                              </code></pre>
+</div>
+<h3 id="using-furniture-table1">Using Furniture (table1)</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/furniture/man/table1.html'>table1</a></span><span class='op'>(</span><span class='va'>cleans1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+───────────────────────────────────────────────
+                             Mean/Count (SD/%)
+                             n = 26           
+ p_id                                         
+                             115.9 (9.3)      
+ sex                                          
+                             2.0 (0.0)        
+ age                                          
+                             19.2 (1.3)       
+ weight_1                                     
+                             141.6 (22.2)     
+ hungercurr                                   
+                             3.7 (1.4)        
+ hunger_recode                                
+                             4.3 (1.4)        
+ lastate_1                                    
+                             4.3 (3.9)        
+ z_hunger_recode                              
+                             0.1 (1.1)        
+ zlastate_1                                   
+                             0.1 (1.0)        
+ z_last_ate_hunger_composite                  
+                             0.1 (0.9)        
+ p_delicious                                  
+                             5.5 (0.9)        
+ c_delicious                                  
+                             5.7 (1.1)        
+ familmoney                                   
+                             5.9 (1.7)        
+ neighborho                                   
+                             5.2 (1.9)        
+ wealthcomp                                   
+                             4.8 (1.9)        
+ childhood_ses_composite                      
+                             5.3 (1.6)        
+ weight_cookies_pre                           
+                             60.1 (1.6)       
+ weight_pretzels_pre                          
+                             29.8 (0.7)       
+ weight_cookies_post                          
+                             28.5 (19.8)      
+ weight_pretzels_post                         
+                             16.4 (8.1)       
+ grams_pretzels_eaten                         
+                             13.4 (8.2)       
+ grams_cookies_eaten                          
+                             31.6 (20.0)      
+ pretzel_calories_eaten                       
+                             51.6 (31.4)      
+ cookie_calories_eaten                        
+                             158.1 (99.9)     
+ total_calories_eaten                         
+                             209.7 (122.3)    
+───────────────────────────────────────────────</code></pre>
+</div>
+<h3 id="using-arsenal">Using arsenal</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_one</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='op'>~</span> <span class='va'>age</span> <span class='op'>+</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>childhood_ses_composite</span> <span class='op'>+</span> <span class='va'>lastate_1</span> <span class='op'>+</span> <span class='va'>hungercurr</span> <span class='op'>+</span> <span class='va'>c_delicious</span> <span class='op'>+</span> <span class='va'>p_delicious</span> <span class='op'>+</span> <span class='va'>total_calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans1</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_one</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
 
+|                            |  Overall (N=31)   |
+|:---------------------------|:-----------------:|
+|**age**                     |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;N-Miss    |         3         |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  19.214 (1.258)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  18.000 - 22.000  |
+|**weight_1**                |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) | 140.613 (22.976)  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     | 102.000 - 215.000 |
+|**childhood_ses_composite** |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |   5.247 (1.540)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |   1.333 - 7.000   |
+|**lastate_1**               |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;N-Miss    |         2         |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |   3.966 (3.840)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  0.000 - 10.000   |
+|**hungercurr**              |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |   3.774 (1.283)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |   2.000 - 6.000   |
+|**c_delicious**             |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |   5.581 (1.285)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |   2.000 - 7.000   |
+|**p_delicious**             |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |   5.452 (0.888)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |   4.000 - 7.000   |
+|**total_calories_eaten**    |                   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) | 199.588 (119.526) |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     | 42.690 - 396.505  |</code></pre>
+</div>
+<h3 id="using-qwraps2">Using qwraps2</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>qwraps2_markup <span class='op'>=</span> <span class='st'>"markdown"</span><span class='op'>)</span>
+<span class='va'>study1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>cleans1</span><span class='op'>)</span>
+<span class='va'>summary_statistics</span> <span class='op'>&lt;-</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span> <span class='op'>(</span>
+    <span class='st'>"Current Hunger"</span> <span class='op'>=</span> 
+      <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span> <span class='op'>(</span>
+        <span class='st'>"mean (sd)"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'>qwraps2</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/qwraps2/man/mean_sd.html'>mean_sd</a></span><span class='op'>(</span><span class='va'>hungercurr</span>, na_rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+        <span class='st'>"min"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>hungercurr</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+        <span class='st'>"max"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>hungercurr</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>,
+    <span class='st'>"Last Ate"</span> <span class='op'>=</span>
+      <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span> <span class='op'>(</span>
+        <span class='st'>"mean (sd)"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'>qwraps2</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/qwraps2/man/mean_sd.html'>mean_sd</a></span><span class='op'>(</span><span class='va'>lastate_1</span>, na_rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+        <span class='st'>"min"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>lastate_1</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+        <span class='st'>"max"</span> <span class='op'>=</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>lastate_1</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/qwraps2/man/summary_table.html'>summary_table</a></span><span class='op'>(</span><span class='va'>study1</span>, <span class='va'>summary_statistics</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+
+|                       |study1 (N = 31)        |
+|:----------------------|:----------------------|
+|**Current Hunger**     |&amp;nbsp;&amp;nbsp;           |
+|&amp;nbsp;&amp;nbsp; mean (sd) |3.77 &amp;plusmn; 1.28     |
+|&amp;nbsp;&amp;nbsp; min       |2                      |
+|&amp;nbsp;&amp;nbsp; max       |6                      |
+|**Last Ate**           |&amp;nbsp;&amp;nbsp;           |
+|&amp;nbsp;&amp;nbsp; mean (sd) |29; 3.97 &amp;plusmn; 3.84 |
+|&amp;nbsp;&amp;nbsp; min       |0                      |
+|&amp;nbsp;&amp;nbsp; max       |10                     |</code></pre>
+</div>
+<h3 id="using-tangram">Using tangram</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tan</span> <span class='op'>&lt;-</span> <span class='fu'>tangram</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tangram/man/tangram.html'>tangram</a></span><span class='op'>(</span><span class='st'>"sex ~ weight_1 + hungercurr + lastate_1"</span>,
+                        data <span class='op'>=</span> <span class='va'>cleans1</span>,
+                        msd <span class='op'>=</span> <span class='cn'>TRUE</span>,
+                        quant <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0.25</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/tangram/man/html5.html'>html5</a></span><span class='op'>(</span><span class='va'>tan</span>, fragment <span class='op'>=</span> <span class='cn'>TRUE</span>,
+      caption <span class='op'>=</span> <span class='st'>"Descriptives Table 1"</span>,
+      id <span class='op'>=</span> <span class='st'>"tb12"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="tb12" class="figure">
+<style>
+
+    #tb12 .figure  {  font-family: "Computer Modern Serif", serif;
+            margin-left:  auto;
+                  margin-right: auto;
+                  font-size: 66%;
+  -webkit-print-color-adjust: exact;
+         }
+
+    #tb12 .caption { text-align:   center;
+             margin-left:  auto;
+             margin-right: auto;
+             padding: 1.5em 0 1.5em 0;
+           }
+
+    #tb12 .figbody {
+               text-align:   center;
+             margin-left:  auto;
+             margin-right: auto;
+             border-style: double none solid none;
+             border-width: 3pt 0 1pt 0;
+             width:        100%;
+         }
+
+    #tb12 .figbody td {
+                      padding: 0.2em 0.5em 0.2em 0.5em;
+            }
+
+    #tb12 .tangram { border-spacing: 0; }
+
+    #tb12 thead td {text-align: center;}
+
+    #tb12 .subheader    { font-size: smaller; }
+
+    #tb12 .subheader tr { border-collapse: collapse; }
+    #tb12 .subheader td { border-bottom: 1pt solid black; }
+
+    #tb12 tbody .variable {
+    float:      left;
+    text-align: left;
+}
+
+    #tb12 .units {
+    float:      right;
+    font-size:  x-small;
+    text-align: right;
+    padding-left: 1em;
+    vertical-align: text-bottom; /* FIXME why doesn't this work */
+}
+
+    #tb12 thead .header {font-weight: bold;}
+    #tb12 .header.N  { font-style: italic; }
+
+    #tb12 .nobr {
+   white-space: nowrap;
+}
+
+    #tb12 .supsub {
+   display: inline-block;
+   margin: -9em 0;
+   vertical-align: -0.55em;
+   line-height: 1.35em;
+   font-size: x-small;
+   text-align: left;
+}
+
+    #tb12 .sup { font-size: x-small; vertical-align: super; }
+    #tb12 .sub { font-size: x-small; vertical-align: sub;}
+
+</style>
+<div class="caption">
+Descriptives Table 1
+</div>
+<div class="figbody">
+<table class="tangram">
+<thead>
+<tr>
+<th class="header even tg-label">
+<span class="variable"></span>
+</th>
+<th class="header even tg-label">
+<span class="variable">N</span>
+</th>
+<th class="header even tg-label">
+<span class="variable">sex</span>
+</th>
+</tr>
+<tr class="subheaderrow">
+<th class="subheader header even tg-label">
+<span class="variable"></span>
+</th>
+<th class="subheader header even tg-label">
+<span class="variable"></span>
+</th>
+<th class="subheader header even data N">
+<span class="N">(N=31)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="header odd tg-label">
+<span class="variable">weight_1</span>
+</td>
+<td class="odd data N">
+<span class="N">31</span>
+</td>
+<td class="odd">
+ρ=NA
+</td>
+</tr>
+<tr>
+<td class="header even tg-label">
+<span class="variable">hungercurr</span>
+</td>
+<td class="even data N">
+<span class="N">31</span>
+</td>
+<td class="even">
+ρ=NA
+</td>
+</tr>
+<tr>
+<td class="header odd tg-label">
+<span class="variable">lastate_1</span>
+</td>
+<td class="odd data N">
+<span class="N">29</span>
+</td>
+<td class="odd">
+ρ=NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footnote">
+N is the number of non-missing value. <sup>1</sup>Kruskal-Wallis. <sup>2</sup>Pearson. <sup>3</sup>Wilcoxon.
+</div>
+</div>
+</div>
+<h3 id="using-comparegroups">Using compareGroups</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/compareGroups/man/compareGroups.html'>compareGroups</a></span><span class='op'>(</span><span class='va'>sex</span> <span class='op'>~</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>hungercurr</span> <span class='op'>+</span> <span class='va'>lastate_1</span>,
+                     data <span class='op'>=</span> <span class='va'>cleans1</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>res</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+ --- Descriptives of each row-variable by groups of &#39;sex&#39; ---
+
+------------------- 
+row-variable: weight_1 
+
+      N  mean     sd       lower    upper    p.overall
+[ALL] 31 140.6129 22.97633 132.1851 149.0407          
+2     31 140.6129 22.97633 132.1851 149.0407 .        
+
+------------------- 
+row-variable: hungercurr 
+
+      N  mean     sd       lower    upper    p.overall
+[ALL] 31 3.774194 1.283476 3.303411 4.244977          
+2     31 3.774194 1.283476 3.303411 4.244977 .        
+
+------------------- 
+row-variable: lastate_1 
+
+      N  mean     sd       lower    upper    p.overall
+[ALL] 29 3.965517 3.840413 2.504702 5.426332          
+2     29 3.965517 3.840413 2.504702 5.426332 .        </code></pre>
+</div>
+<h3 id="using-gt">Using gt</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans1</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#wfcyuksmne .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wfcyuksmne .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wfcyuksmne .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wfcyuksmne .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wfcyuksmne .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wfcyuksmne .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wfcyuksmne .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wfcyuksmne .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wfcyuksmne .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wfcyuksmne .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wfcyuksmne .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wfcyuksmne .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wfcyuksmne .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#wfcyuksmne .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfcyuksmne .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wfcyuksmne .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wfcyuksmne .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wfcyuksmne .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wfcyuksmne .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wfcyuksmne .gt_left {
+  text-align: left;
+}
+
+#wfcyuksmne .gt_center {
+  text-align: center;
+}
+
+#wfcyuksmne .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wfcyuksmne .gt_font_normal {
+  font-weight: normal;
+}
+
+#wfcyuksmne .gt_font_bold {
+  font-weight: bold;
+}
+
+#wfcyuksmne .gt_font_italic {
+  font-style: italic;
+}
+
+#wfcyuksmne .gt_super {
+  font-size: 65%;
+}
+
+#wfcyuksmne .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="wfcyuksmne" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p_id</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">sex</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">weight_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">hungercurr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">hunger_recode</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">lastate_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">z_hunger_recode</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">zlastate_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">z_last_ate_hunger_composite</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p_delicious</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">c_delicious</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">familmoney</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">neighborho</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">wealthcomp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">childhood_ses_composite</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">weight_cookies_pre</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">weight_pretzels_pre</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">weight_cookies_post</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">weight_pretzels_post</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">grams_pretzels_eaten</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">grams_cookies_eaten</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">pretzel_calories_eaten</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cookie_calories_eaten</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">total_calories_eaten</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_right">101</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">140</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">-1.7342012</td>
+      <td class="gt_row gt_right">-1.03257585</td>
+      <td class="gt_row gt_right">-1.38338854</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.000000</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">8</td>
+      <td class="gt_row gt_right">14</td>
+      <td class="gt_row gt_right">30.760</td>
+      <td class="gt_row gt_right">70</td>
+      <td class="gt_row gt_right">100.760</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">102</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">138</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">-0.51179846</td>
+      <td class="gt_row gt_right">0.43526792</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6.000000</td>
+      <td class="gt_row gt_right">62</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">8</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">58</td>
+      <td class="gt_row gt_right">84.590</td>
+      <td class="gt_row gt_right">290</td>
+      <td class="gt_row gt_right">374.590</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">103</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">145</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.86362725</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">8</td>
+      <td class="gt_row gt_right">15</td>
+      <td class="gt_row gt_right">30.760</td>
+      <td class="gt_row gt_right">75</td>
+      <td class="gt_row gt_right">105.760</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">104</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">-0.25140977</td>
+      <td class="gt_row gt_right">0.56546227</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">3.666667</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">39</td>
+      <td class="gt_row gt_right">16</td>
+      <td class="gt_row gt_right">13</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">49.985</td>
+      <td class="gt_row gt_right">100</td>
+      <td class="gt_row gt_right">149.985</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">105</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">102</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">-1.7342012</td>
+      <td class="gt_row gt_right">-0.51179846</td>
+      <td class="gt_row gt_right">-1.12299984</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4.666667</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">15.380</td>
+      <td class="gt_row gt_right">145</td>
+      <td class="gt_row gt_right">160.380</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">106</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">-0.17593346</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">27</td>
+      <td class="gt_row gt_right">15</td>
+      <td class="gt_row gt_right">15</td>
+      <td class="gt_row gt_right">33</td>
+      <td class="gt_row gt_right">57.675</td>
+      <td class="gt_row gt_right">165</td>
+      <td class="gt_row gt_right">222.675</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">107</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">185</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.86362725</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.333333</td>
+      <td class="gt_row gt_right">61</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">54</td>
+      <td class="gt_row gt_right">28</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.690</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">42.690</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">108</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">215</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.47682269</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">2.666667</td>
+      <td class="gt_row gt_right">58</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">55</td>
+      <td class="gt_row gt_right">34.605</td>
+      <td class="gt_row gt_right">275</td>
+      <td class="gt_row gt_right">309.605</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">109</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">146</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">1.31092238</td>
+      <td class="gt_row gt_right">0.56749446</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">57</td>
+      <td class="gt_row gt_right">38.450</td>
+      <td class="gt_row gt_right">285</td>
+      <td class="gt_row gt_right">323.450</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">140</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">0.69768881</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">4.333333</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">47</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">13</td>
+      <td class="gt_row gt_right">34.605</td>
+      <td class="gt_row gt_right">65</td>
+      <td class="gt_row gt_right">99.605</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">111</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">140</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.47406031</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.666667</td>
+      <td class="gt_row gt_right">64</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">41</td>
+      <td class="gt_row gt_right">17</td>
+      <td class="gt_row gt_right">12</td>
+      <td class="gt_row gt_right">23</td>
+      <td class="gt_row gt_right">46.140</td>
+      <td class="gt_row gt_right">115</td>
+      <td class="gt_row gt_right">161.140</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">112</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">132</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-1.03257585</td>
+      <td class="gt_row gt_right">-0.60425465</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.333333</td>
+      <td class="gt_row gt_right">61</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">54</td>
+      <td class="gt_row gt_right">28</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.690</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">42.690</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">113</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">122</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.47406031</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4.333333</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">46</td>
+      <td class="gt_row gt_right">28</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">14</td>
+      <td class="gt_row gt_right">7.690</td>
+      <td class="gt_row gt_right">70</td>
+      <td class="gt_row gt_right">77.690</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">114</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">140</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">-0.25140977</td>
+      <td class="gt_row gt_right">-0.60323856</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.666667</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">51</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">12</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">46.140</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">91.140</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">115</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">134</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">-0.51179846</td>
+      <td class="gt_row gt_right">-0.73343290</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">1.333333</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">56</td>
+      <td class="gt_row gt_right">15.380</td>
+      <td class="gt_row gt_right">280</td>
+      <td class="gt_row gt_right">295.380</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">116</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">154</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.47682269</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">2.666667</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">40</td>
+      <td class="gt_row gt_right">13</td>
+      <td class="gt_row gt_right">16</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">61.520</td>
+      <td class="gt_row gt_right">95</td>
+      <td class="gt_row gt_right">156.520</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">117</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">126</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">0.6032004</td>
+      <td class="gt_row gt_right">-0.51179846</td>
+      <td class="gt_row gt_right">0.04570098</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">3.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">28</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">56</td>
+      <td class="gt_row gt_right">99.970</td>
+      <td class="gt_row gt_right">280</td>
+      <td class="gt_row gt_right">379.970</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">118</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">125</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">0.00897892</td>
+      <td class="gt_row gt_right">0.69565661</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6.666667</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">25</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">38.450</td>
+      <td class="gt_row gt_right">175</td>
+      <td class="gt_row gt_right">213.450</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">119</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">120</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-0.25140977</td>
+      <td class="gt_row gt_right">-0.21367161</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6.666667</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">32</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">28</td>
+      <td class="gt_row gt_right">76.900</td>
+      <td class="gt_row gt_right">140</td>
+      <td class="gt_row gt_right">216.900</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">120</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">117</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.47406031</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">5.333333</td>
+      <td class="gt_row gt_right">58</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">51</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">11.535</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">46.535</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">121</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">150</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">0.6032004</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.08725575</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.000000</td>
+      <td class="gt_row gt_right">63</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">58</td>
+      <td class="gt_row gt_right">99.970</td>
+      <td class="gt_row gt_right">290</td>
+      <td class="gt_row gt_right">389.970</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">122</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">145</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.47682269</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">5.000000</td>
+      <td class="gt_row gt_right">63</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">99.970</td>
+      <td class="gt_row gt_right">295</td>
+      <td class="gt_row gt_right">394.970</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">123</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">130</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">0.6032004</td>
+      <td class="gt_row gt_right">-0.25140977</td>
+      <td class="gt_row gt_right">0.17589533</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">25</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">80.745</td>
+      <td class="gt_row gt_right">175</td>
+      <td class="gt_row gt_right">255.745</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">124</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">128</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-0.51179846</td>
+      <td class="gt_row gt_right">-0.34386596</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4.333333</td>
+      <td class="gt_row gt_right">62</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">25</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">23</td>
+      <td class="gt_row gt_right">37</td>
+      <td class="gt_row gt_right">88.435</td>
+      <td class="gt_row gt_right">185</td>
+      <td class="gt_row gt_right">273.435</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">125</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">124</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-1.7342012</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-1.25319419</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">6.000000</td>
+      <td class="gt_row gt_right">62</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">55</td>
+      <td class="gt_row gt_right">26</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">15.380</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">50.380</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">126</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">150</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">-0.77218716</td>
+      <td class="gt_row gt_right">-0.86362725</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">3.666667</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">17</td>
+      <td class="gt_row gt_right">12</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">43</td>
+      <td class="gt_row gt_right">69.210</td>
+      <td class="gt_row gt_right">215</td>
+      <td class="gt_row gt_right">284.210</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">127</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">127</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">-0.1759335</td>
+      <td class="gt_row gt_right">-1.03257585</td>
+      <td class="gt_row gt_right">-0.60425465</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">5.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">31</td>
+      <td class="gt_row gt_right">53</td>
+      <td class="gt_row gt_right">22</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">34.605</td>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">69.605</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">128</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">185</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">-0.9550673</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">-0.95506734</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">31</td>
+      <td class="gt_row gt_right">47</td>
+      <td class="gt_row gt_right">17</td>
+      <td class="gt_row gt_right">14</td>
+      <td class="gt_row gt_right">13</td>
+      <td class="gt_row gt_right">53.830</td>
+      <td class="gt_row gt_right">65</td>
+      <td class="gt_row gt_right">118.830</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">129</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">0.6032004</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.08725575</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">7.000000</td>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">32</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">29</td>
+      <td class="gt_row gt_right">57</td>
+      <td class="gt_row gt_right">111.505</td>
+      <td class="gt_row gt_right">285</td>
+      <td class="gt_row gt_right">396.505</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">130</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">19</td>
+      <td class="gt_row gt_right">130</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">0.6032004</td>
+      <td class="gt_row gt_right">1.57131108</td>
+      <td class="gt_row gt_right">1.08725575</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">5</td>
+      <td class="gt_row gt_right">4.666667</td>
+      <td class="gt_row gt_right">58</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">17</td>
+      <td class="gt_row gt_right">9</td>
+      <td class="gt_row gt_right">21</td>
+      <td class="gt_row gt_right">41</td>
+      <td class="gt_row gt_right">80.745</td>
+      <td class="gt_row gt_right">205</td>
+      <td class="gt_row gt_right">285.745</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">131</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">18</td>
+      <td class="gt_row gt_right">139</td>
+      <td class="gt_row gt_right">2</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1.3823343</td>
+      <td class="gt_row gt_right">-0.25140977</td>
+      <td class="gt_row gt_right">0.56546227</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">6.666667</td>
+      <td class="gt_row gt_right">59</td>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">23</td>
+      <td class="gt_row gt_right">7</td>
+      <td class="gt_row gt_right">14</td>
+      <td class="gt_row gt_right">26.915</td>
+      <td class="gt_row gt_right">70</td>
+      <td class="gt_row gt_right">96.915</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># fmt_number(columns)</span>
+</code></pre>
+</div>
 </div>
 <h2 id="study-2-1">Study 2</h2>
 <p>The goal is to reproduce the values and formatting of this table.</p>
@@ -2741,7 +4361,7 @@ See <a href="https://cran.r-project.org/web/packages/table1/vignettes/table1-exa
 </div>
 <p><img src="img/paper1_fig4.png" width="50%" /></p>
 </div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

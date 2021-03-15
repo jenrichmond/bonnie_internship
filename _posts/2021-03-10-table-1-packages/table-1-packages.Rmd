@@ -6,7 +6,9 @@ author:
   - name: Bonnie Butler
     url: {}
 date: 2021-03-10
-
+output:
+  distill::distill_article:
+    self_contained: false
 ---
 
 

@@ -248,8 +248,9 @@ summary(res)
 ### Using gt
 ```{r}
 cleans1 %>% 
-  gt()
-fmt_number(columns)
+  gt() 
+
+# fmt_number(columns)
 ```
 
 
