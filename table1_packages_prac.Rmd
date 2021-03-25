@@ -1,0 +1,78 @@
+---
+title: "table1_packages_prac"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Using tableone
+```{r}
+CreateTableOne(data = cleans1)
+myVars <- c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten")
+tab2 <- CreateTableOne(vars = myVars, data = cleans1)
+print(tab2, minMax = TRUE, formatOptions = list(big.mark = ","))
+```
+
+### Using Table1
+```{r}
+make.table(dat = cleans1,
+           cont.varlist = c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten"))
+```
+### Using Furniture (table1)
+```{r}
+table1(cleans1)
+```
+
+### Using arsenal
+```{r}
+table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
+summary(table_one)
+```
+
+### Using qwraps2
+```{r}
+options(qwraps2_markup = "markdown")
+study1 <- as.data.frame(cleans1)
+summary_statistics <-
+  list (
+    "Current Hunger" = 
+      list (
+        "mean (sd)" = ~qwraps2::mean_sd(hungercurr, na_rm = TRUE),
+        "min" = ~min(hungercurr, na.rm = TRUE),
+        "max" = ~max(hungercurr, na.rm = TRUE)),
+    "Last Ate" =
+      list (
+        "mean (sd)" = ~qwraps2::mean_sd(lastate_1, na_rm = TRUE),
+        "min" = ~min(lastate_1, na.rm = TRUE),
+        "max" = ~max(lastate_1, na.rm = TRUE)))
+summary_table(study1, summary_statistics)
+```
+
+### Using tangram
+```{r}
+tan <- tangram::tangram("sex ~ weight_1 + hungercurr + lastate_1",
+                        data = cleans1,
+                        msd = TRUE,
+                        quant = seq(0, 1, 0.25)
+)
+html5(tan, fragment = TRUE,
+      caption = "Descriptives Table 1",
+      id = "tb12")
+```
+
+### Using compareGroups
+```{r}
+res <- compareGroups(sex ~ weight_1 + hungercurr + lastate_1,
+                     data = cleans1)
+summary(res)
+```
+
+### Using gt
+```{r}
+cleans1 %>% 
+  gt() 
+
+# fmt_number(columns)
+```

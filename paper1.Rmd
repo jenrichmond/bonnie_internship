@@ -14,19 +14,7 @@ Hi bonnie, I changed the chunk option above to make the default behaviour echo =
 library(tidyverse)
 library(here)
 library(janitor)
-library(tableone)
-library(devtools)
-install_github("emwozniak/Table1")
-library(Table1)
-library(furniture)
-library(apaTables)
 library(arsenal)
-library(qwraps2)
-library(tangram)
-library(compareGroups)
-library(Gmisc)
-library(gt)
-library(distill)
 ```
 
 
@@ -183,76 +171,31 @@ The goal is to reproduce the values and formatting of this table.
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img","paper1_table1.png"))
 ```
-### Using tableone
-```{r}
-CreateTableOne(data = cleans1)
-myVars <- c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten")
-tab2 <- CreateTableOne(vars = myVars, data = cleans1)
-print(tab2, minMax = TRUE, formatOptions = list(big.mark = ","))
-```
-
-### Using Table1
-```{r}
-make.table(dat = cleans1,
-           cont.varlist = c("age", "weight_1", "childhood_ses_composite", "lastate_1", "hungercurr", "c_delicious", "p_delicious", "total_calories_eaten"))
-```
-### Using Furniture (table1)
-```{r}
-table1(cleans1)
-```
 
 ### Using arsenal
 ```{r}
 table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
+
 summary(table_one)
-```
 
-### Using qwraps2
-```{r}
-options(qwraps2_markup = "markdown")
-study1 <- as.data.frame(cleans1)
-summary_statistics <-
-  list (
-    "Current Hunger" = 
-      list (
-        "mean (sd)" = ~qwraps2::mean_sd(hungercurr, na_rm = TRUE),
-        "min" = ~min(hungercurr, na.rm = TRUE),
-        "max" = ~max(hungercurr, na.rm = TRUE)),
-    "Last Ate" =
-      list (
-        "mean (sd)" = ~qwraps2::mean_sd(lastate_1, na_rm = TRUE),
-        "min" = ~min(lastate_1, na.rm = TRUE),
-        "max" = ~max(lastate_1, na.rm = TRUE)))
-summary_table(study1, summary_statistics)
-```
-
-### Using tangram
-```{r}
-tan <- tangram::tangram("sex ~ weight_1 + hungercurr + lastate_1",
-                        data = cleans1,
-                        msd = TRUE,
-                        quant = seq(0, 1, 0.25)
+my_labels <- list(
+  age = "Age (years)",
+  weight_1 = "Weight (pounds)",
+  childhood_ses_composite = "Childhood socioeconomic status (1-7)",
+  lastate_1 = "Hours since eating",
+  hungercurr = "Hunger (1-7)",
+  c_delicious = "Liking of the cookies (1-7)",
+  p_delicious = "Liking of the pretzels (1-7)",
+  total_calories_eaten = "Total calories consumed"
 )
-html5(tan, fragment = TRUE,
-      caption = "Descriptives Table 1",
-      id = "tb12")
+
+table_two <- tableby (~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
+
+summary(table_two,
+        labelTranslations = my_labels,
+        title = "Table 1. Descriptive Statistics for Study 1")
+
 ```
-
-### Using compareGroups
-```{r}
-res <- compareGroups(sex ~ weight_1 + hungercurr + lastate_1,
-                     data = cleans1)
-summary(res)
-```
-
-### Using gt
-```{r}
-cleans1 %>% 
-  gt() 
-
-# fmt_number(columns)
-```
-
 
 ## Study 2
 
@@ -261,6 +204,7 @@ The goal is to reproduce the values and formatting of this table.
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img", "paper1_table2.png"))
 ```
+
 
 
 ## Study 3
