@@ -15,6 +15,7 @@ library(tidyverse)
 library(here)
 library(janitor)
 library(arsenal)
+library(naniar)
 ```
 
 
@@ -205,6 +206,28 @@ The goal is to reproduce the values and formatting of this table.
 knitr::include_graphics(here::here("img", "paper1_table2.png"))
 ```
 
+### Using arsenal
+```{r}
+table_three <- tableby(~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
+
+summary(table_three)
+
+my_labels <- list(
+  weight_1 = "Weight (pounds)",
+  child_ses = "Childhood socioeconomic status",
+  currnt_ses = "Current socioeconomic status (single item; 1-7)",
+  hrs_no_eat = "Hours since eating",
+  hunglvl = "Hunger (1-7)",
+  delicious_taste = "Liking of the cookies (1-7)",
+  calories_eaten = "Total calories consumed"
+)
+
+table_four <- tableby (~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
+
+summary(table_four,
+        labelTranslations = my_labels,
+        title = "Table 2. Descriptive Statistics for Study 2")
+```
 
 
 ## Study 3

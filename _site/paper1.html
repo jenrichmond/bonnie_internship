@@ -2438,6 +2438,7 @@ Project
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://here.r-lib.org/'>here</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sfirke/janitor'>janitor</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/mayoverse/arsenal'>arsenal</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/njtierney/naniar'>naniar</a></span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2736,6 +2737,85 @@ Table: (\#tab:unnamed-chunk-15)Table 1. Descriptive Statistics for Study 1
 </div>
 <p><img src="img/paper1_table2.png" width="50%" /></p>
 </div>
+<h3 id="using-arsenal-1">Using arsenal</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_three</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='op'>~</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>currnt_ses</span> <span class='op'>+</span> <span class='va'>hrs_no_eat_1</span> <span class='op'>+</span> <span class='va'>hunglvl</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans2</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_three</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+
+|                            |  Overall (N=60)  |
+|:---------------------------|:----------------:|
+|**weight_1**                |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) | 135.400 (19.896) |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     | 90.000 - 190.000 |
+|**child_ses**               |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  4.433 (0.981)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  2.000 - 7.000   |
+|**currnt_ses**              |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  4.917 (0.979)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  2.000 - 7.000   |
+|**hrs_no_eat_1**            |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  9.483 (1.142)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  4.000 - 10.000  |
+|**hunglvl**                 |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  2.800 (0.755)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  1.000 - 5.000   |
+|**delicious_taste**         |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) |  5.950 (0.891)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     |  3.000 - 7.000   |
+|**calories_eaten**          |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD) | 61.751 (47.918)  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range     | 9.286 - 143.930  |</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>my_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  weight_1 <span class='op'>=</span> <span class='st'>"Weight (pounds)"</span>,
+  child_ses <span class='op'>=</span> <span class='st'>"Childhood socioeconomic status"</span>,
+  currnt_ses <span class='op'>=</span> <span class='st'>"Current socioeconomic status (single item; 1-7)"</span>,
+  hrs_no_eat <span class='op'>=</span> <span class='st'>"Hours since eating"</span>,
+  hunglvl <span class='op'>=</span> <span class='st'>"Hunger (1-7)"</span>,
+  delicious_taste <span class='op'>=</span> <span class='st'>"Liking of the cookies (1-7)"</span>,
+  calories_eaten <span class='op'>=</span> <span class='st'>"Total calories consumed"</span>
+<span class='op'>)</span>
+
+<span class='va'>table_four</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span> <span class='op'>(</span><span class='op'>~</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>currnt_ses</span> <span class='op'>+</span> <span class='va'>hrs_no_eat_1</span> <span class='op'>+</span> <span class='va'>hunglvl</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans2</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_four</span>,
+        labelTranslations <span class='op'>=</span> <span class='va'>my_labels</span>,
+        title <span class='op'>=</span> <span class='st'>"Table 2. Descriptive Statistics for Study 2"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+
+Table: (\#tab:unnamed-chunk-17)Table 2. Descriptive Statistics for Study 2
+
+|                                                    |  Overall (N=60)  |
+|:---------------------------------------------------|:----------------:|
+|**Weight (pounds)**                                 |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         | 135.400 (19.896) |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             | 90.000 - 190.000 |
+|**Childhood socioeconomic status**                  |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         |  4.433 (0.981)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             |  2.000 - 7.000   |
+|**Current socioeconomic status (single item; 1-7)** |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         |  4.917 (0.979)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             |  2.000 - 7.000   |
+|**hrs_no_eat_1**                                    |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         |  9.483 (1.142)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             |  4.000 - 10.000  |
+|**Hunger (1-7)**                                    |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         |  2.800 (0.755)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             |  1.000 - 5.000   |
+|**Liking of the cookies (1-7)**                     |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         |  5.950 (0.891)   |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             |  3.000 - 7.000   |
+|**Total calories consumed**                         |                  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Mean (SD)                         | 61.751 (47.918)  |
+|&amp;nbsp;&amp;nbsp;&amp;nbsp;Range                             | 9.286 - 143.930  |</code></pre>
+</div>
 <h2 id="study-3-1">Study 3</h2>
 <p>The goal is to reproduce the values and formatting of this table.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2773,7 +2853,7 @@ Table: (\#tab:unnamed-chunk-15)Table 1. Descriptive Statistics for Study 1
 </div>
 <p><img src="img/paper1_fig4.png" width="50%" /></p>
 </div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
