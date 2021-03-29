@@ -174,10 +174,13 @@ knitr::include_graphics(here::here("img","paper1_table1.png"))
 ```
 
 ### Using arsenal
-```{r}
-table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
 
-summary(table_one)
+
+
+
+```{r}
+table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, 
+                     data = cleans1)
 
 my_labels <- list(
   age = "Age (years)",
@@ -189,23 +192,22 @@ my_labels <- list(
   p_delicious = "Liking of the pretzels (1-7)",
   total_calories_eaten = "Total calories consumed"
 )
+```
 
-table_two <- tableby (~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
 
-summary(table_two,
-        labelTranslations = my_labels,
+```{r, results= "asis"}
+
+summary(table_one, labelTranslations = my_labels,
         title = "Table 1. Descriptive Statistics for Study 1")
 
 ```
 
-## Study 2
 
-The goal is to reproduce the values and formatting of this table.
+- checking missing values
 
-```{r out.width = "50%"}
-knitr::include_graphics(here::here("img", "paper1_table2.png"))
-```
+https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html
 
+<<<<<<< HEAD
 ### Using arsenal
 ```{r}
 table_three <- tableby(~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
@@ -228,6 +230,44 @@ summary(table_four,
         labelTranslations = my_labels,
         title = "Table 2. Descriptive Statistics for Study 2")
 ```
+=======
+```{r}
+library(naniar)
+>>>>>>> 692967ef31f7e5a6d240811dcd15e3fb5d1a320a
+
+vis_miss(cleans1)
+```
+```{r}
+cleans1 %>%
+  na.omit() %>%
+  vis_miss()
+
+cleans1_nona <- cleans1 %>%
+  na.omit()
+
+cleans1_agena <- cleans1 %>%
+  drop_na(age)
+```
+
+
+```{r}
+
+table_two <- tableby (~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, data = cleans1)
+
+summary(table_two,
+        labelTranslations = my_labels,
+        title = "Table 1. Descriptive Statistics for Study 1")
+
+```
+
+## Study 2
+
+The goal is to reproduce the values and formatting of this table.
+
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img", "paper1_table2.png"))
+```
+
 
 
 ## Study 3
@@ -239,32 +279,3 @@ knitr::include_graphics(here::here("img", "paper1_table3.png"))
 ```
 
 
-# Figures
-
-
-## Study 1
-
-The goal is to reproduce this column graph.
-
-```{r out.width = "50%"}
-knitr::include_graphics(here::here("img", "paper1_fig1.png"))
-```
-
-
-
-## Study 2
-
-The goal is to reproduce this column graph.
-
-```{r out.width = "50%"}
-knitr::include_graphics(here::here("img", "paper1_fig2.png"))
-```
-
-
-## Study 3
-
-The goal is to reproduce this column graph.
-
-```{r out.width = "50%"}
-knitr::include_graphics(here::here("img", "paper1_fig4.png"))
-```
