@@ -128,6 +128,16 @@ cleans2 %>%
   tabyl(dummy1_water_sprite)
 ```
 
+
+```{r}
+cleans2 <- cleans2 %>%
+  mutate(condition = case_when(dummy1_water_sprite == 1 ~ "water",
+                               dummy1_water_sprite == 0 ~ "sprite")) %>%
+  relocate(condition, .before = "gender")
+ 
+names(cleans2)                             
+```
+
 Sprite = 31; Water = 29
 
 ## Study 3
