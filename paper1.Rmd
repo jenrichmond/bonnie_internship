@@ -258,7 +258,7 @@ View(cleans2_water)
 ```
 
 ```{r}
-table_two <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_water)
+table_two <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
 
 my_labels <- list(
   weight_1 = "Weight (pounds)",
@@ -283,7 +283,7 @@ View(cleans2_sprite)
 ```
 
 ```{r}
-table_two2 <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_sprite)
+table_two2 <- tableby(condition ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
 
 my_labels <- list(
   weight_1 = "Weight (pounds)",
