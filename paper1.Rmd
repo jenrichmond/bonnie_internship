@@ -253,12 +253,7 @@ knitr::include_graphics(here::here("img", "paper1_table2.png"))
 ### Using arsenal
 
 ```{r}
-cleans2_water <- cleans2 %>% filter (dummy1_water_sprite == "1")
-View(cleans2_water)
-```
-
-```{r}
-table_two <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_water)
+table_two <- tableby(condition ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
 
 my_labels <- list(
   weight_1 = "Weight (pounds)",
