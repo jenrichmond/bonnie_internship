@@ -175,9 +175,6 @@ knitr::include_graphics(here::here("img","paper1_table1.png"))
 
 ### Using arsenal
 
-
-
-
 ```{r}
 table_one <- tableby(~ age + weight_1 + childhood_ses_composite + lastate_1 + hungercurr + c_delicious + p_delicious + total_calories_eaten, 
                      data = cleans1)
@@ -207,33 +204,8 @@ summary(table_one, labelTranslations = my_labels,
 
 https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html
 
-<<<<<<< HEAD
-### Using arsenal
-```{r}
-table_three <- tableby(~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
-
-summary(table_three)
-
-my_labels <- list(
-  weight_1 = "Weight (pounds)",
-  child_ses = "Childhood socioeconomic status",
-  currnt_ses = "Current socioeconomic status (single item; 1-7)",
-  hrs_no_eat = "Hours since eating",
-  hunglvl = "Hunger (1-7)",
-  delicious_taste = "Liking of the cookies (1-7)",
-  calories_eaten = "Total calories consumed"
-)
-
-table_four <- tableby (~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
-
-summary(table_four,
-        labelTranslations = my_labels,
-        title = "Table 2. Descriptive Statistics for Study 2")
-```
-=======
 ```{r}
 library(naniar)
->>>>>>> 692967ef31f7e5a6d240811dcd15e3fb5d1a320a
 
 vis_miss(cleans1)
 ```
@@ -268,7 +240,57 @@ The goal is to reproduce the values and formatting of this table.
 knitr::include_graphics(here::here("img", "paper1_table2.png"))
 ```
 
+### Using arsenal
 
+```{r}
+cleans2_filter <- cleans2 %>% filter (dummy1_water_sprite == "1")
+View(cleans2_filter)
+```
+
+```{r}
+table_two <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_filter)
+
+my_labels <- list(
+  weight_1 = "Weight (pounds)",
+  child_ses = "Childhood socioeconomic status",
+  currnt_ses = "Current socioeconomic status (single item; 1-7)",
+  hrs_no_eat_1 = "Hours since eating",
+  hunglvl = "Hunger (1-7)",
+  delicious_taste = "Liking of the cookies (1-7)",
+  calories_eaten = "Total calories consumed"
+)
+```
+
+```{r, results= "asis"}
+
+summary(table_two, labelTranslations = my_labels,
+        title = "Table 2. Descriptive Statistics for Study 2")
+```
+
+```{r}
+cleans2_filter2 <- cleans2 %>% filter (dummy2_sprite_water == "1")
+View(cleans2_filter2)
+```
+
+```{r}
+table_two2 <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_filter)
+
+my_labels <- list(
+  weight_1 = "Weight (pounds)",
+  child_ses = "Childhood socioeconomic status",
+  currnt_ses = "Current socioeconomic status (single item; 1-7)",
+  hrs_no_eat_1 = "Hours since eating",
+  hunglvl = "Hunger (1-7)",
+  delicious_taste = "Liking of the cookies (1-7)",
+  calories_eaten = "Total calories consumed"
+)
+```
+
+```{r, results= "asis"}
+
+summary(table_two2, labelTranslations = my_labels,
+        title = "Table 2. Descriptive Statistics for Study 2")
+```
 
 ## Study 3
 
@@ -278,4 +300,23 @@ The goal is to reproduce the values and formatting of this table.
 knitr::include_graphics(here::here("img", "paper1_table3.png"))
 ```
 
+### Using arsenal
+```{r}
+table_three <- tableby(sprite_water_dummy2 ~ weight + child_ses + adult_ses + blood_draw_2_post_maip + delicious_taste + calories_eaten, data = cleans3)
 
+my_labels <- list(
+  weight = "Weight (pounds)",
+  child_ses = "Childhood socioeconomic status (1-7)",
+  adult_ses = "Current socioeconomic status (1-7)",
+  blood_draw_2_post_maip = "Blood glucose level (mg/dl)",
+  delicious_taste = "Liking of the cookies (1-7)",
+  calories_eaten = "Total calories consumed"
+)
+```
+
+```{r, results= "asis"}
+
+summary(table_three, labelTranslations = my_labels,
+        title = "Table 3. Descriptive Statistics for Study 3")
+
+```
