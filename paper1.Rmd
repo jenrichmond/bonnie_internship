@@ -273,7 +273,7 @@ View(cleans2_filter2)
 ```
 
 ```{r}
-table_two2 <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_filter)
+table_two2 <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_filter2)
 
 my_labels <- list(
   weight_1 = "Weight (pounds)",
