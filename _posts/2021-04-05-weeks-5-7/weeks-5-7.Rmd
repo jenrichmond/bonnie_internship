@@ -1,0 +1,59 @@
+---
+title: "weeks 5-7"
+description: |
+  A recap of the past three weeks.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-04-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+My goal for Week 5 had been to reproduce all tables and graphs from Paper 1. Unfortunately, I was not able to do so, for several reasons.
+
+With respect to the graphs for Paper 1, Jenny and I agreed that they are too complex to reproduce in ggplot, and it would be a better use of time to reproduce graphs that are less complex (but not too simple) - somewhere in the middle. I've chosen to reproduce Figure 1 from Paper 5, as it seems to meet this criteria. This will involve:
+
+- Plotting the results of Experiment 1 separately
+
+- Plotting the results of Experiment 2 separately
+
+- Using the "Patchwork" package to paste the two plots together
+
+With respect to the tables for Paper 1, I was able to reproduce Table 1 quite well, with the following exceptions:
+
+- Unable to successfully remove the missing values reported in the table. The tableby function in arsenal displays missing values by default (as "N-miss"), and after trying various methods*, we were unable to find a way to stop the function from reporting the missing values OR from removing the missing values without removing the values for all other measures for that participant. 
+
+* Methods included na.omit & drop_na (amongst others).
+
+- Unable to change the alignment and font size of the title for Table 1 - perhaps the arsenal package does not have this ability.
+
+- Some discrepancies: (1) The range I obtained for Weight was 102-215 pounds, yet this shows as 102-211 pounds in the paper. The M and SD for Weight were replicated. (2) The M I obtained for Hunger was 3.774, yet this shows as 4.23 in the paper. The SD and range for Hunger were replicated. (3) The range I obtained for "Liking of the pretzels" was 4-7, yet this shows as 4-5 in the paper. The M and SD for "Liking of the pretzels" were replicated. 
+
+Given the above results were obtained using the same data, and that some of the descriptives for certain measures (e.g., M and SD for Weight, and SD and range for Hunger) were replicated, it is likely that there was some manual error by the experimenters when transferring results from one program to Word (or the like).
+
+I then tried to use the tableby function to reproduce Tables 2 and 3 for Paper 1. However, in doing so, I encountered the following issues:
+
+- Both group results by condition (Water or Sprite). The tableby function allows you to group results by a certain factor, however, because of how the data were set out by the experimenters (such that for each participant, they receive a 1 for the condition they were exposed to and a 0 for the condition they weren't), it doesn't do so successfully.
+
+- My understanding was that for Tables 2 and 3, I would need to transform/mutate the existing variables somehow (dummy1_water_sprite) and (dummy2_sprite_water) so they would show as 0 or 1 under the title "Condition". For Table 2, I used the filter function (from the tidyverse package), which filtered out the Sprite condition and left only the Water condition. I obtained a table based only on this data, and did the same for the Sprite condition.
+
+- For Table 3, I tried a different method. I used the space before the ~ to group by "sprite_water_dummy". I believe this produced a better table, albeit not in a particularly pretty or clear format. The descriptives I obtained for the Water condition (1, N = 42) appeared to be much closer to the values reported in the paper, whereas those I obtained for the Sprite condition (0, N = 41) appeared to be quite different.
+
+- In summary, I was only able to replicate ~ 50% of the descriptives for Tables 2 and 3.
+
+After discussing these issues with Jenny, we established that this discrepancy in descriptives is likely to not be due to any errors on my part, but instead to possible manual errors by the experimenter (see above). To produce a clearer table separating the Water and Sprite conditions, we can mutate the data set to add an extra column for Condition - Sprite or Water. In doing so, I can also change the names of how the conditions appear (i.e., dummy1_water_sprite), since they are rather messy. 
+
+My goals for Week 8 are as follows:
+
+- For Tables 2 and 3: ascertain why I have the opposite sample sizes for the Sprite and Water conditions (e.g., for Table 2, Water condition N = 31 and Sprite condition N = 29, but the paper states the opposite). This *could* be a case of me having misinterpreted the condition labels (e.g., dummy1_water_sprite).
+
+- Reproduce Tables 2 and 3 as well as I can, and then evaluate this process. What replicated? What didn't? Is there a pattern in the descriptives that did/didn't replicate? What are my suspicions about why some descriptives didn't replicate?
+
+- Plot Paper 5 Figure 1 by plotting Experiment 1 and 2 separately, and then combining them using the "Patchwork" package.
