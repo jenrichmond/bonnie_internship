@@ -2581,6 +2581,25 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.9…</c
                    0 29 0.4833333
                    1 31 0.5166667</code></pre>
 </div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans2</span> <span class='op'>&lt;-</span> <span class='va'>cleans2</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>condition <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='va'>dummy1_water_sprite</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"water"</span>,
+                               <span class='va'>dummy1_water_sprite</span> <span class='op'>==</span> <span class='fl'>0</span> <span class='op'>~</span> <span class='st'>"sprite"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>relocate</span><span class='op'>(</span><span class='va'>condition</span>, .before <span class='op'>=</span> <span class='st'>"gender"</span><span class='op'>)</span>
+ 
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>cleans2</span><span class='op'>)</span>                             
+</code></pre>
+</div>
+<pre><code> [1] &quot;participant_id&quot;      &quot;dummy1_water_sprite&quot; &quot;dummy2_sprite_water&quot;
+ [4] &quot;condition&quot;           &quot;gender&quot;              &quot;age&quot;                
+ [7] &quot;weight_1&quot;            &quot;hrs_no_eat_1&quot;        &quot;hunglvl&quot;            
+[10] &quot;delicious_taste&quot;     &quot;currnt_ses&quot;          &quot;child_ses&quot;          
+[13] &quot;fam_money&quot;           &quot;wlthy_ngbr&quot;          &quot;wlth_kids&quot;          
+[16] &quot;hrs_eat_check&quot;       &quot;foodweigh1&quot;          &quot;foodweigh2&quot;         
+[19] &quot;food_eaten&quot;          &quot;calories_eaten&quot;      &quot;finish_drink&quot;       
+[22] &quot;drink_drank_oz&quot;      &quot;childhood_ses_mean&quot; </code></pre>
+</div>
 <p>Sprite = 31; Water = 29</p>
 <h2 id="study-3">Study 3</h2>
 <p>Read the data and then use the count function to count how many participants there were in total and the tabyl function to count how many were men and women. Use summarise to get the mean, sd, min, and max age.</p>
@@ -2664,7 +2683,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.9…</c
 </code></pre>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-16">Table 1: </span>Table 1. Descriptive Statistics for Study 1</caption>
+<caption><span id="tab:unnamed-chunk-17">Table 1: </span>Table 1. Descriptive Statistics for Study 1</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -2790,7 +2809,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.9…</c
 <span class='fu'><a href='http://visdat.njtierney.com//reference/vis_miss.html'>vis_miss</a></span><span class='op'>(</span><span class='va'>cleans1</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="paper1_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+<p><img src="paper1_files/figure-html5/unnamed-chunk-18-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2799,7 +2818,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.9…</c
   <span class='fu'><a href='http://visdat.njtierney.com//reference/vis_miss.html'>vis_miss</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<img src="paper1_files/figure-html5/unnamed-chunk-18-1.png" width="624" />
+<img src="paper1_files/figure-html5/unnamed-chunk-19-1.png" width="624" />
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans1_nona</span> <span class='op'>&lt;-</span> <span class='va'>cleans1</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span>
@@ -2820,7 +2839,7 @@ $ total_calories_eaten        &lt;dbl&gt; 100.760, 374.590, 105.760, 149.9…</c
 </div>
 <pre><code>
 
-Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
+Table: (\#tab:unnamed-chunk-20)Table 1. Descriptive Statistics for Study 1
 
 |                                         |  Overall (N=31)   |
 |:----------------------------------------|:-----------------:|
@@ -2863,7 +2882,16 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 <h3 id="using-arsenal-1">Using arsenal</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_three</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='va'>dummy1_water_sprite</span> <span class='op'>~</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>currnt_ses</span> <span class='op'>+</span> <span class='va'>hrs_no_eat_1</span> <span class='op'>+</span> <span class='va'>hunglvl</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans2</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans2</span> <span class='op'>&lt;-</span> <span class='va'>cleans2</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>condition <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='va'>dummy2_sprite_water</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Water condition"</span>,
+                               <span class='va'>dummy1_water_sprite</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Sprite condition"</span>
+                               <span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_two</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='va'>condition</span> <span class='op'>~</span> <span class='va'>weight_1</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>currnt_ses</span> <span class='op'>+</span> <span class='va'>hrs_no_eat_1</span> <span class='op'>+</span> <span class='va'>hunglvl</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans2</span><span class='op'>)</span>
 
 <span class='va'>my_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
   weight_1 <span class='op'>=</span> <span class='st'>"Weight (pounds)"</span>,
@@ -2879,17 +2907,17 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_three</span>, labelTranslations <span class='op'>=</span> <span class='va'>my_labels</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_two</span>, labelTranslations <span class='op'>=</span> <span class='va'>my_labels</span>,
         title <span class='op'>=</span> <span class='st'>"Table 2. Descriptive Statistics for Study 2"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-22">Table 2: </span>Table 2. Descriptive Statistics for Study 2</caption>
+<caption><span id="tab:unnamed-chunk-24">Table 2: </span>Table 2. Descriptive Statistics for Study 2</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
-<th style="text-align: center;">0 (N=29)</th>
-<th style="text-align: center;">1 (N=31)</th>
+<th style="text-align: center;">Sprite condition (N=31)</th>
+<th style="text-align: center;">Water condition (N=29)</th>
 <th style="text-align: center;">Total (N=60)</th>
 <th style="text-align: right;">p value</th>
 </tr>
@@ -2904,15 +2932,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">137.241 (20.320)</td>
 <td style="text-align: center;">133.677 (19.666)</td>
+<td style="text-align: center;">137.241 (20.320)</td>
 <td style="text-align: center;">135.400 (19.896)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">107.000 - 190.000</td>
 <td style="text-align: center;">90.000 - 180.000</td>
+<td style="text-align: center;">107.000 - 190.000</td>
 <td style="text-align: center;">90.000 - 190.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -2925,15 +2953,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">4.586 (0.983)</td>
 <td style="text-align: center;">4.290 (0.973)</td>
+<td style="text-align: center;">4.586 (0.983)</td>
 <td style="text-align: center;">4.433 (0.981)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">2.000 - 7.000</td>
 <td style="text-align: center;">2.000 - 6.000</td>
+<td style="text-align: center;">2.000 - 7.000</td>
 <td style="text-align: center;">2.000 - 7.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -2946,15 +2974,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">5.069 (0.842)</td>
 <td style="text-align: center;">4.774 (1.087)</td>
+<td style="text-align: center;">5.069 (0.842)</td>
 <td style="text-align: center;">4.917 (0.979)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">4.000 - 7.000</td>
 <td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: center;">4.000 - 7.000</td>
 <td style="text-align: center;">2.000 - 7.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -2967,15 +2995,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">9.207 (1.449)</td>
 <td style="text-align: center;">9.742 (0.682)</td>
+<td style="text-align: center;">9.207 (1.449)</td>
 <td style="text-align: center;">9.483 (1.142)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">4.000 - 10.000</td>
 <td style="text-align: center;">7.000 - 10.000</td>
+<td style="text-align: center;">4.000 - 10.000</td>
 <td style="text-align: center;">4.000 - 10.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -2988,15 +3016,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">2.690 (0.712)</td>
 <td style="text-align: center;">2.903 (0.790)</td>
+<td style="text-align: center;">2.690 (0.712)</td>
 <td style="text-align: center;">2.800 (0.755)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">1.000 - 4.000</td>
 <td style="text-align: center;">2.000 - 5.000</td>
+<td style="text-align: center;">1.000 - 4.000</td>
 <td style="text-align: center;">1.000 - 5.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -3009,15 +3037,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">6.000 (0.926)</td>
 <td style="text-align: center;">5.903 (0.870)</td>
+<td style="text-align: center;">6.000 (0.926)</td>
 <td style="text-align: center;">5.950 (0.891)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">3.000 - 7.000</td>
 <td style="text-align: center;">4.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
 <td style="text-align: center;">3.000 - 7.000</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -3030,15 +3058,15 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </tr>
 <tr class="even">
 <td style="text-align: left;">   Mean (SD)</td>
-<td style="text-align: center;">70.924 (50.234)</td>
 <td style="text-align: center;">53.169 (44.756)</td>
+<td style="text-align: center;">70.924 (50.234)</td>
 <td style="text-align: center;">61.751 (47.918)</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">   Range</td>
-<td style="text-align: center;">13.929 - 143.930</td>
 <td style="text-align: center;">9.286 - 139.287</td>
+<td style="text-align: center;">13.929 - 143.930</td>
 <td style="text-align: center;">9.286 - 143.930</td>
 <td style="text-align: right;"></td>
 </tr>
@@ -3054,7 +3082,355 @@ Table: (\#tab:unnamed-chunk-19)Table 1. Descriptive Statistics for Study 1
 </div>
 <p><img src="img/paper1_table3.png" width="50%" /></p>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cleans3</span> <span class='op'>&lt;-</span> <span class='va'>cleans3</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>condition <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='va'>sprite_water_dummy2</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Water condition"</span>,
+                               <span class='va'>water_sprite_dummy</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Sprite condition"</span>
+                               <span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_three</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='va'>condition</span> <span class='op'>~</span> <span class='va'>weight</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>adult_ses</span> <span class='op'>+</span> <span class='va'>blood_draw_2_post_maip</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans3</span><span class='op'>)</span>
+
+<span class='va'>my_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  weight <span class='op'>=</span> <span class='st'>"Weight (pounds)"</span>,
+  child_ses <span class='op'>=</span> <span class='st'>"Childhood socioeconomic status (1-7)"</span>,
+  adult_ses <span class='op'>=</span> <span class='st'>"Current socioeconomic status (1-7)"</span>,
+  blood_draw_2_post_maip <span class='op'>=</span> <span class='st'>"Blood glucose level (mg/dl)"</span>,
+  delicious_taste <span class='op'>=</span> <span class='st'>"Liking of the cookies (1-7)"</span>,
+  calories_eaten <span class='op'>=</span> <span class='st'>"Total calories consumed"</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_three</span>, labelTranslations <span class='op'>=</span> <span class='va'>my_labels</span>,
+        title <span class='op'>=</span> <span class='st'>"Table 3. Descriptive Statistics for Study 3"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<table>
+<caption><span id="tab:unnamed-chunk-28">Table 3: </span>Table 3. Descriptive Statistics for Study 3</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sprite condition (N=41)</th>
+<th style="text-align: center;">Water condition (N=42)</th>
+<th style="text-align: center;">Total (N=83)</th>
+<th style="text-align: right;">p value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Weight (pounds)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.406</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">138.780 (26.729)</td>
+<td style="text-align: center;">143.714 (27.052)</td>
+<td style="text-align: center;">141.277 (26.843)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">103.000 - 196.000</td>
+<td style="text-align: center;">95.000 - 225.000</td>
+<td style="text-align: center;">95.000 - 225.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Childhood socioeconomic status (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.192</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">4.659 (1.039)</td>
+<td style="text-align: center;">4.333 (1.203)</td>
+<td style="text-align: center;">4.494 (1.130)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Current socioeconomic status (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.277</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">5.000 (1.095)</td>
+<td style="text-align: center;">4.738 (1.083)</td>
+<td style="text-align: center;">4.867 (1.091)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Blood glucose level (mg/dl)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">115.951 (21.561)</td>
+<td style="text-align: center;">82.381 (9.386)</td>
+<td style="text-align: center;">98.964 (23.579)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">73.000 - 183.000</td>
+<td style="text-align: center;">62.000 - 119.000</td>
+<td style="text-align: center;">62.000 - 183.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Liking of the cookies (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.970</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   N-Miss</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">6.150 (0.802)</td>
+<td style="text-align: center;">6.143 (0.899)</td>
+<td style="text-align: center;">6.146 (0.848)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">4.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total calories consumed</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.935</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">92.321 (51.194)</td>
+<td style="text-align: center;">91.429 (47.486)</td>
+<td style="text-align: center;">91.869 (49.052)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">9.143 - 146.286</td>
+<td style="text-align: center;">13.714 - 146.286</td>
+<td style="text-align: center;">9.143 - 146.286</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="using-arsenal-2">Using arsenal</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>table_three</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://mayoverse.github.io/arsenal/reference/tableby.html'>tableby</a></span><span class='op'>(</span><span class='va'>sprite_water_dummy2</span> <span class='op'>~</span> <span class='va'>weight</span> <span class='op'>+</span> <span class='va'>child_ses</span> <span class='op'>+</span> <span class='va'>adult_ses</span> <span class='op'>+</span> <span class='va'>blood_draw_2_post_maip</span> <span class='op'>+</span> <span class='va'>delicious_taste</span> <span class='op'>+</span> <span class='va'>calories_eaten</span>, data <span class='op'>=</span> <span class='va'>cleans3</span><span class='op'>)</span>
+
+<span class='va'>my_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+  weight <span class='op'>=</span> <span class='st'>"Weight (pounds)"</span>,
+  child_ses <span class='op'>=</span> <span class='st'>"Childhood socioeconomic status (1-7)"</span>,
+  adult_ses <span class='op'>=</span> <span class='st'>"Current socioeconomic status (1-7)"</span>,
+  blood_draw_2_post_maip <span class='op'>=</span> <span class='st'>"Blood glucose level (mg/dl)"</span>,
+  delicious_taste <span class='op'>=</span> <span class='st'>"Liking of the cookies (1-7)"</span>,
+  calories_eaten <span class='op'>=</span> <span class='st'>"Total calories consumed"</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>table_three</span>, labelTranslations <span class='op'>=</span> <span class='va'>my_labels</span>,
+        title <span class='op'>=</span> <span class='st'>"Table 3. Descriptive Statistics for Study 3"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<table>
+<caption><span id="tab:unnamed-chunk-30">Table 4: </span>Table 3. Descriptive Statistics for Study 3</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">0 (N=41)</th>
+<th style="text-align: center;">1 (N=42)</th>
+<th style="text-align: center;">Total (N=83)</th>
+<th style="text-align: right;">p value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Weight (pounds)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.406</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">138.780 (26.729)</td>
+<td style="text-align: center;">143.714 (27.052)</td>
+<td style="text-align: center;">141.277 (26.843)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">103.000 - 196.000</td>
+<td style="text-align: center;">95.000 - 225.000</td>
+<td style="text-align: center;">95.000 - 225.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Childhood socioeconomic status (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.192</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">4.659 (1.039)</td>
+<td style="text-align: center;">4.333 (1.203)</td>
+<td style="text-align: center;">4.494 (1.130)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: center;">2.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Current socioeconomic status (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.277</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">5.000 (1.095)</td>
+<td style="text-align: center;">4.738 (1.083)</td>
+<td style="text-align: center;">4.867 (1.091)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Blood glucose level (mg/dl)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">115.951 (21.561)</td>
+<td style="text-align: center;">82.381 (9.386)</td>
+<td style="text-align: center;">98.964 (23.579)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">73.000 - 183.000</td>
+<td style="text-align: center;">62.000 - 119.000</td>
+<td style="text-align: center;">62.000 - 183.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Liking of the cookies (1-7)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.970</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   N-Miss</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">6.150 (0.802)</td>
+<td style="text-align: center;">6.143 (0.899)</td>
+<td style="text-align: center;">6.146 (0.848)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">4.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: center;">3.000 - 7.000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total calories consumed</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">0.935</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">   Mean (SD)</td>
+<td style="text-align: center;">92.321 (51.194)</td>
+<td style="text-align: center;">91.429 (47.486)</td>
+<td style="text-align: center;">91.869 (49.052)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">   Range</td>
+<td style="text-align: center;">9.143 - 146.286</td>
+<td style="text-align: center;">13.714 - 146.286</td>
+<td style="text-align: center;">9.143 - 146.286</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

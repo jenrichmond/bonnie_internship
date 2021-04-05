@@ -253,6 +253,13 @@ knitr::include_graphics(here::here("img", "paper1_table2.png"))
 ### Using arsenal
 
 ```{r}
+cleans2 <- cleans2 %>%
+  mutate(condition = case_when(dummy2_sprite_water == 1 ~ "Water condition",
+                               dummy1_water_sprite == 1 ~ "Sprite condition"
+                               ))
+```
+
+```{r}
 table_two <- tableby(condition ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2)
 
 my_labels <- list(
@@ -266,34 +273,10 @@ my_labels <- list(
 )
 ```
 
+
 ```{r, results= "asis"}
 
 summary(table_two, labelTranslations = my_labels,
-        title = "Table 2. Descriptive Statistics for Study 2")
-```
-
-```{r}
-cleans2_sprite <- cleans2 %>% filter (dummy2_sprite_water == "1")
-View(cleans2_sprite)
-```
-
-```{r}
-table_two2 <- tableby( ~ weight_1 + child_ses + currnt_ses + hrs_no_eat_1 + hunglvl + delicious_taste + calories_eaten, data = cleans2_sprite)
-
-my_labels <- list(
-  weight_1 = "Weight (pounds)",
-  child_ses = "Childhood socioeconomic status",
-  currnt_ses = "Current socioeconomic status (single item; 1-7)",
-  hrs_no_eat_1 = "Hours since eating",
-  hunglvl = "Hunger (1-7)",
-  delicious_taste = "Liking of the cookies (1-7)",
-  calories_eaten = "Total calories consumed"
-)
-```
-
-```{r, results= "asis"}
-
-summary(table_two2, labelTranslations = my_labels,
         title = "Table 2. Descriptive Statistics for Study 2")
 ```
 
@@ -304,6 +287,38 @@ The goal is to reproduce the values and formatting of this table.
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img", "paper1_table3.png"))
 ```
+
+
+```{r}
+cleans3 <- cleans3 %>%
+  mutate(condition = case_when(sprite_water_dummy2 == 1 ~ "Water condition",
+                               water_sprite_dummy == 1 ~ "Sprite condition"
+                               ))
+```
+
+```{r}
+table_three <- tableby(condition ~ weight + child_ses + adult_ses + blood_draw_2_post_maip + delicious_taste + calories_eaten, data = cleans3)
+
+my_labels <- list(
+  weight = "Weight (pounds)",
+  child_ses = "Childhood socioeconomic status (1-7)",
+  adult_ses = "Current socioeconomic status (1-7)",
+  blood_draw_2_post_maip = "Blood glucose level (mg/dl)",
+  delicious_taste = "Liking of the cookies (1-7)",
+  calories_eaten = "Total calories consumed"
+)
+```
+
+
+```{r, results= "asis"}
+
+summary(table_three, labelTranslations = my_labels,
+        title = "Table 3. Descriptive Statistics for Study 3")
+```
+
+
+
+
 
 ### Using arsenal
 ```{r}
