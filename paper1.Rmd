@@ -254,7 +254,7 @@ What did not replicate:
 
 What did replicate: everything else
 
-In the above cases, the values that did not replicate for Weight and Liking of the pretzels were only very slightly different, leading me to think that these could have been manual errors. However, the mean for Hunger 
+In the above cases, the values that did not replicate were only very slightly different, leading me to think that these could have been manual errors. 
 
 ## Study 2
 
@@ -293,6 +293,10 @@ my_labels <- list(
 summary(table_two, labelTranslations = my_labels,
         title = "Table 2. Descriptive Statistics for Study 2")
 ```
+
+### Summary
+
+The difficulties I encountered in reproducing this table were primarily due to the labelling of the two conditions. 
 
 ## Study 3
 
