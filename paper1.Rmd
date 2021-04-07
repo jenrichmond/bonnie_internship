@@ -242,6 +242,20 @@ summary(table_two,
 
 ```
 
+### Summary
+
+What did not replicate:
+
+- The range for Weight (R gave 102-215, the paper gave 102-211).
+
+- The mean for Hunger (R gave 3.774, the paper gave 4.23).
+
+- The range for Liking of the pretzels (R gave 4-7, the paper gave 4-5).
+
+What did replicate: everything else
+
+In the above cases, the values that did not replicate for Weight and Liking of the pretzels were only very slightly different, leading me to think that these could have been manual errors. However, the mean for Hunger 
+
 ## Study 2
 
 The goal is to reproduce the values and formatting of this table.
@@ -287,7 +301,7 @@ The goal is to reproduce the values and formatting of this table.
 ```{r out.width = "50%"}
 knitr::include_graphics(here::here("img", "paper1_table3.png"))
 ```
-
+### Using arsenal
 
 ```{r}
 cleans3 <- cleans3 %>%
@@ -316,27 +330,3 @@ summary(table_three, labelTranslations = my_labels,
         title = "Table 3. Descriptive Statistics for Study 3")
 ```
 
-
-
-
-
-### Using arsenal
-```{r}
-table_three <- tableby(sprite_water_dummy2 ~ weight + child_ses + adult_ses + blood_draw_2_post_maip + delicious_taste + calories_eaten, data = cleans3)
-
-my_labels <- list(
-  weight = "Weight (pounds)",
-  child_ses = "Childhood socioeconomic status (1-7)",
-  adult_ses = "Current socioeconomic status (1-7)",
-  blood_draw_2_post_maip = "Blood glucose level (mg/dl)",
-  delicious_taste = "Liking of the cookies (1-7)",
-  calories_eaten = "Total calories consumed"
-)
-```
-
-```{r, results= "asis"}
-
-summary(table_three, labelTranslations = my_labels,
-        title = "Table 3. Descriptive Statistics for Study 3")
-
-```
