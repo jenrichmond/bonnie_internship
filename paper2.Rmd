@@ -40,12 +40,6 @@ trust <- trust %>%
                                condition_information == 1 ~ "Accurate-Information Condition"))
 ```
 
-## obtain group means
-```{r}
-
-```
-
-
 ## creating the graph using ggplot
 ```{r}
 trust %>%
