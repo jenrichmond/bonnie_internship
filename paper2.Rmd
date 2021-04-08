@@ -31,20 +31,18 @@ trust %>%
   tabyl(experiment, response) %>%
   adorn_percentages()
 ```
-
+## mutate dataset to add new variable "agegroup" with two possible values representing the two age groups
 ```{r}
 trust <- trust %>%
   mutate(agegroup = case_when(age_group_participants == 0 ~ "3-5 year olds", 
                               age_group_participants == 1 ~ "5-6 year olds"))
 ```
 
+## creating the graph using ggplot
 ```{r}
-trust_long <- trust %>%
-  gather("condition_information", "response", -agegroup)
-```
-
-
-```{r}
-ggplot(trust_long, aes(x = agegroup, y = response, fill = condition_information)) +
-  geom_col(position = "dodge")
+trust %>%
+  gather("condition_information", "response",-agegroup) %>%
+  ggplot(aes(agegroup, response, fill = condition_information)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  theme_bw()
 ```
