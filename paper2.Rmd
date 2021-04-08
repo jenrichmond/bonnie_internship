@@ -16,6 +16,11 @@ library(patchwork)
 library(ggplot2)
 ```
 
+The goal is to reproduce the values and formatting of this graph.
+```{r out.width = "50%"}
+knitr::include_graphics(here::here("img","paper2graph.png"))
+```
+
 ## read in data and clean the names
 ```{r}
 trust <- read_csv(here("research_data", "trust.csv")) %>%
