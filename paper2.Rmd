@@ -13,17 +13,19 @@ library(tidyverse)
 library(here)
 library(janitor)
 library(patchwork)
+library(ggplot2)
 ```
 
+## read in data and clean the names
 ```{r}
 trust <- read_csv(here("research_data", "trust.csv")) %>%
   clean_names()
 ```
-
+## show names
 ```{r}
 names(trust)
 ```
-
+## convert response values to percentages (as per Table 3)
 ```{r}
 trust %>%
   tabyl(experiment, response) %>%
@@ -33,7 +35,16 @@ trust %>%
 ```{r}
 trust <- trust %>%
   mutate(agegroup = case_when(age_group_participants == 0 ~ "3-5 year olds", 
-                              ))
-  
+                              age_group_participants == 1 ~ "5-6 year olds"))
 ```
 
+```{r}
+trust_long <- trust %>%
+  gather("condition_information", "response", -agegroup)
+```
+
+
+```{r}
+ggplot(trust_long, aes(x = agegroup, y = response, fill = condition_information)) +
+  geom_col(position = "dodge")
+```
