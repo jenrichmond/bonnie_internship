@@ -252,7 +252,7 @@ What did not replicate:
 
 - The range for Liking of the pretzels (R gave 4-7, the paper gave 4-5).
 
-What did replicate: everything else
+What replicated: everything else
 
 In the above cases, the values that did not replicate were only very slightly different, leading me to think that these could have been manual errors. 
 
@@ -296,7 +296,17 @@ summary(table_two, labelTranslations = my_labels,
 
 ### Summary
 
-The difficulties I encountered in reproducing this table were primarily due to the labelling of the two conditions. 
+The difficulties I encountered in reproducing this table were primarily due to the labelling of the two conditions. I thought Dummy1_Water_Sprite represented the Water condition, and Dummy2_Sprite_Water the Sprite condition, as per the first drink listed in each label. However, upon checking the codebook as part of the researchers' data, the opposite was true. That is, when Dummy1_Water_Sprite = 0, then the participant is in the Water condition, and when Dummy1_Water_Sprite = 1, the participant is in the Sprite condition. It is therefore also the case that when Dummy2_Sprite_Water = 0, the participant is in the Sprite condition, and when Dummy2_Sprite_Water = 1, the participant is in the Water condition.
+
+What replicated:
+
+- Sprite condition: The mean for Hours since eating.
+
+- Water condition: THe mean for Liking of the cookies.
+
+What did not replicate: everything else*
+
+*All descriptives that did not replicate were within 0.9 mean units and SD units, excluding Weight, which was within 2 mean units and 1 SD unit). This leads me to believe that the discrepancy in descriptives between Table 2 in the paper and as reproduced by R is likely due to manual error by the researchers.
 
 ## Study 3
 
