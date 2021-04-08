@@ -35,14 +35,21 @@ trust %>%
 ```{r}
 trust <- trust %>%
   mutate(agegroup = case_when(age_group_participants == 0 ~ "3-5 year olds", 
-                              age_group_participants == 1 ~ "5-6 year olds"))
+                              age_group_participants == 1 ~ "5-6 year olds"),
+         condition = case_when(condition_information == 0 ~ "Inaccurate-Information Condition",
+                               condition_information == 1 ~ "Accurate-Information Condition"))
 ```
+
+## obtain group means
+```{r}
+
+```
+
 
 ## creating the graph using ggplot
 ```{r}
 trust %>%
-  gather("condition_information", "response",-agegroup) %>%
-  ggplot(aes(agegroup, response, fill = condition_information)) +
+  ggplot(aes(x = agegroup, y = response, fill = condition)) +
   geom_bar(position = "dodge", stat = "identity") +
   theme_bw()
 ```
