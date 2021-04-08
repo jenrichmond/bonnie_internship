@@ -344,3 +344,13 @@ summary(table_three, labelTranslations = my_labels,
         title = "Table 3. Descriptive Statistics for Study 3")
 ```
 
+### Summary
+
+Like Table 2, the difficulties I encountered in reproducing this table were primarily due to the labelling of the two conditions. I thought sprite_water_dummy2 represented the Sprite condition, and water_sprite_dummy the Water condition, as per the first drink listed in each label. However, upon checking the codebook, the opposite was again true. That is, when sprite_water_dummy2 = 0, the participant is in the Sprite condition, and when sprite_water_dummy2 = 1, the participant is in the Water condition. It is therefore also the case that when water_sprite_dummy = 0, the participant is in the Water condition, and when water_sprite_dummy = 1, the participant is in the Sprite condition. 
+
+What replicated: all descriptives for the Water condition.
+
+What did not replicate: all descriptives for the Sprite condition.*
+
+*All descriptives that did not replicate were within 1 mean unit and SD unit, excluding Weight, which was within 4 mean units and 1 SD unit). Like Table 2, this leads me to believe that the discrepancy in descriptives between Table 3 in the paper and as reproduced by R is likely due to manual error by the researchers.
+
