@@ -36,6 +36,7 @@ trust %>%
   tabyl(experiment, response) %>%
   adorn_percentages()
 ```
+
 ## mutate dataset to add new variable "agegroup" with two possible values representing the two age groups
 ```{r}
 trust <- trust %>%
