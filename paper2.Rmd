@@ -53,3 +53,15 @@ trust %>%
   geom_bar(position = "dodge", stat = "identity") +
   theme_bw()
 ```
+
+## create a new dataset with proportions of responses
+```{r}
+trust %>%
+  group_by(agegroup) %>%
+  summarise(n = n()) %>%
+  mutate (freq = n / sum(n)) %>%
+  ggplot(aes(x = agegroup, y = freq, fill = condition)) + 
+  geom_col()
+
+```
+
