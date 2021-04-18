@@ -56,12 +56,16 @@ trust %>%
 
 ## create a new dataset with proportions of responses
 ```{r}
-trust %>%
-  group_by(agegroup) %>%
+ptrust <- trust %>%
+  group_by(agegroup, condition) %>%
   summarise(n = n()) %>%
-  mutate (freq = n / sum(n)) %>%
-  ggplot(aes(x = agegroup, y = freq, fill = condition)) + 
-  geom_col()
+  mutate (freq = n / sum(n))
+```
 
+## create a graph using the new dataset
+```{r}
+ptrust %>%
+  ggplot(aes(x = agegroup, y = freq)) + 
+  geom_col()
 ```
 
