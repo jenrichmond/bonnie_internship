@@ -54,12 +54,26 @@ trust %>%
   theme_bw()
 ```
 
+## mutate dataset to add new variable "proportion"
+```{r}
+trust <- trust %>%
+  mutate(proportion = group_by(agegroup)) %>% 
+           summarise(n = n()) %>%
+           mutate (freq = n / sum(n))
+```
+
 ## create a new dataset with proportions of responses
 ```{r}
 ptrust <- trust %>%
-  group_by(agegroup, condition) %>%
+  group_by(agegroup) %>%
   summarise(n = n()) %>%
-  mutate (freq = n / sum(n))
+  mutate(freq = n / sum(n))
+```
+
+## create a new dataset with agegroup & condition variables gathered into one column
+```{r}
+trust2 <- trust %>%
+  gather("condition", "proportion", -agegroup)
 ```
 
 ## create a graph using the new dataset
