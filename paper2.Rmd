@@ -57,9 +57,9 @@ trust %>%
 ## mutate dataset to add new variable "proportion"
 ```{r}
 trust <- trust %>%
-  mutate(proportion = group_by(agegroup)) %>% 
+  mutate(proportion = case_when(group_by(agegroup)) %>% 
            summarise(n = n()) %>%
-           mutate (freq = n / sum(n))
+           mutate (freq = n / sum(n)))
 ```
 
 ## create a new dataset with proportions of responses
