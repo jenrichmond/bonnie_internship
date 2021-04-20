@@ -5,8 +5,10 @@ description: |
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
+
+Hi Bonnie- I added a couple of things to your knitr setup chunk (warning=FALSE, message=FALSE) so that you don't see the annoying warnings/messages. 
 
 ```{r}
 library(tidyverse)
@@ -26,10 +28,15 @@ knitr::include_graphics(here::here("img","paper2graph.png"))
 trust <- read_csv(here("research_data", "trust.csv")) %>%
   clean_names()
 ```
+
+
 ## show names
+
 ```{r}
 names(trust)
+
 ```
+
 ## convert response values to percentages (as per Table 3)
 ```{r}
 trust %>%
@@ -47,6 +54,9 @@ trust <- trust %>%
 ```
 
 ## creating the graph using ggplot
+
+ahhh yes so geom_bar will count things, rather than displaying any kind of summary data, which is why you have bars all the same height. Need to make a dataframe that summarises proportions if you want to plot them. 
+
 ```{r}
 trust %>%
   ggplot(aes(x = agegroup, y = response, fill = condition)) +
@@ -55,9 +65,54 @@ trust %>%
 ```
 
 ## mutate dataset to add new variable "proportion"
+
+hmmmm I could make your proportion calculation below run. I think we want to use group_by and summarise here. To get proportions separately for each age group and condition, we want to create a summary table that counts the total kids in each age/condition that left or didn't (resp = 1 vs 0).
+
+The count() function is handy for that. The code below makes a dataframe that counts how many kids in each agegroup x condition had responses 0 and 1. 
+```{r}
+trust_count <- trust %>%
+  group_by(agegroup, condition) %>%
+  count(response) 
+
+trust_count
+
+```
+
+The challenge is that it is hard to do calculations in R when the values are in rows like this. We want to caluculate the proportion of 3-5 year olds in the accurate condition who left = 41/(41+19), but it is hard to tell R to do that for pairs of values moving down the variable. 
+
+I think the thing to do is to make the data wide (with response 0 and 1 in different columns) so you can calculate proportion across columns. Before I do that though, I am going to recode those values and turn values of 0 and 1 into stayed and left, because when I make the data wide, they will become the names of the variables and R doesn't like numbers for variable names. 
+
+```{r}
+trust_count_wide <- trust_count %>%
+  na.omit() %>% # I am assuming that the kids who have NA here were excluded?
+  mutate(response = case_when(response == 0 ~ "stayed", 
+                              response == 1 ~ "left")) %>% # recoding response variable
+  pivot_wider(names_from = response, values_from = n) 
+
+trust_count_wide
+```
+
+Now that I have how many stayed in one column and left in another column, I can calculate a proportion using mutate. Then I can use that dataframe to plot. Use geom_col when you are wanting the height of the bars to be a stat you have calculated (geom_bar is for counting freqeuncies). 
+
+
+```{r}
+trust_count_prop <- trust_count_wide %>%
+  mutate(proportion = left /(stayed+left))
+
+trust_count_prop %>%
+  ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
+  geom_col(position = "dodge")
+```
+Hmmmm the values don't look quite right? Maybe my assumption that the kids with NAs were excluded is wrong? Is this Exp 1 data or Exp 2?
+
+**YOUR CHALLENGE** work out why these values don't match 
+
+
+## Bonnie code below
+
 ```{r}
 trust <- trust %>%
-  mutate(proportion = case_when(group_by(agegroup)) %>% 
+  mutate(proportion = case_when(group_by(agegroup)) %>% # I couldn't make this code run
            summarise(n = n()) %>%
            mutate (freq = n / sum(n)))
 ```
@@ -72,6 +127,8 @@ ptrust <- trust %>%
 
 ## create a new dataset with agegroup & condition variables gathered into one column
 ```{r}
+# ahhhh when you said gather I thought you were trying to make the data long, but Im not sure that this is what you are doing here, do you mean combine info from two variables into one? Maybe the unite() function is what you are looking for?
+
 trust2 <- trust %>%
   gather("condition", "proportion", -agegroup)
 ```
