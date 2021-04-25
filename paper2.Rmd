@@ -107,7 +107,7 @@ Now that I have how many stayed in one column and left in another column, I can 
 trust1_count_prop <- trust1_count_wide %>%
   mutate(proportion = left /(stayed+left))
 
-trust1_count_prop %>%
+p1 <- trust1_count_prop %>%
   ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
   geom_col(position = "dodge")
 ```
@@ -190,7 +190,15 @@ trust2_count_wide
 trust2_count_prop <- trust2_count_wide %>%
   mutate(proportion = left /(stayed+left))
 
-trust2_count_prop %>%
+p2 <- trust2_count_prop %>%
   ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
   geom_col(position = "dodge")
 ```
+
+# Combining the plots
+
+## use patchwork to paste the two plots together
+```{r}
+p1 + p2
+```
+
