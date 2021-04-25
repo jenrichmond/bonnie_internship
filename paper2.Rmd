@@ -43,9 +43,15 @@ trust %>%
   adorn_percentages()
 ```
 
+## create a new dataframe using only experiment 1 data
+```{r}
+trust1 <- filter(trust, experiment == "1")
+```
+
+
 ## mutate dataset to add new variable "agegroup" with two possible values representing the two age groups
 ```{r}
-trust <- trust %>%
+trust1 <- trust1 %>%
   mutate(agegroup = case_when(age_group_participants == 0 ~ "3-5 year olds", 
                               age_group_participants == 1 ~ "5-6 year olds"),
          condition = case_when(condition_information == 0 ~ "Inaccurate-Information Condition",
@@ -57,7 +63,7 @@ trust <- trust %>%
 ahhh yes so geom_bar will count things, rather than displaying any kind of summary data, which is why you have bars all the same height. Need to make a dataframe that summarises proportions if you want to plot them. 
 
 ```{r}
-trust %>%
+trust1 %>%
   ggplot(aes(x = agegroup, y = response, fill = condition)) +
   geom_bar(position = "dodge", stat = "identity") +
   theme_bw()
@@ -69,11 +75,11 @@ hmmmm I could make your proportion calculation below run. I think we want to use
 
 The count() function is handy for that. The code below makes a dataframe that counts how many kids in each agegroup x condition had responses 0 and 1. 
 ```{r}
-trust_count <- trust %>%
+trust1_count <- trust1 %>%
   group_by(agegroup, condition) %>%
   count(response) 
 
-trust_count
+trust1_count
 
 ```
 
@@ -82,23 +88,23 @@ The challenge is that it is hard to do calculations in R when the values are in 
 I think the thing to do is to make the data wide (with response 0 and 1 in different columns) so you can calculate proportion across columns. Before I do that though, I am going to recode those values and turn values of 0 and 1 into stayed and left, because when I make the data wide, they will become the names of the variables and R doesn't like numbers for variable names. 
 
 ```{r}
-trust_count_wide <- trust_count %>%
+trust1_count_wide <- trust1_count %>%
   na.omit() %>% # I am assuming that the kids who have NA here were excluded?
   mutate(response = case_when(response == 0 ~ "stayed", 
                               response == 1 ~ "left")) %>% # recoding response variable
   pivot_wider(names_from = response, values_from = n) 
 
-trust_count_wide
+trust1_count_wide
 ```
 
 Now that I have how many stayed in one column and left in another column, I can calculate a proportion using mutate. Then I can use that dataframe to plot. Use geom_col when you are wanting the height of the bars to be a stat you have calculated (geom_bar is for counting freqeuncies). 
 
 
 ```{r}
-trust_count_prop <- trust_count_wide %>%
+trust1_count_prop <- trust1_count_wide %>%
   mutate(proportion = left /(stayed+left))
 
-trust_count_prop %>%
+trust1_count_prop %>%
   ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
   geom_col(position = "dodge")
 ```
