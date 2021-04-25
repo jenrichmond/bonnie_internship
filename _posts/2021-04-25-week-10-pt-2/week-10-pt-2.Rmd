@@ -1,0 +1,69 @@
+---
+title: "week 10 pt 2"
+description: |
+  Another update for Week 10.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-04-25
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Modifications by JR
+
+- Added a couple of elements to knitr setup chunk (warning = FALSE, message = FALSE) so the warnings & messages don’t appear
+
+- geom_bar() will count things rather than display any kind of summary data, which is why the bars in the ggplot are all equal height. Will instead need a data frame that summarises proportions if you want to plot them.
+
+- To get proportions separately for each age group and condition, you want to create a summary table that counts the total kids in each age/condition that did or didn’t leave (0 vs 1). The count() function will help with this.
+
+- Provided code that creates a data frame counting how many kids in each age group x condition had responses 0 and 1
+
+- group_by(agegroup, condition) %>% count(response) showed some NA values - 5 for the 3-5 age group, 7 for the 5-6 age group
+
+- Difficult to do calculations in R when the values are in rows like this. We want to calculate the proportion of 3-5 year-olds in the accurate condition who left [ 41/(41+19) ] but it is tricky to tell R to do that for pairs of values moving down the variable.
+
+- Solution: make the data wide (with response 0 or 1 in different columns) so you can calculate proportions across columns. 
+
+- First: re-code those values and turn values of 0 and 1 “stayed” and “left”. Otherwise when you make the data wide, they will become the names of the variables & R doesn’t like numbers for variable names.
+
+- Now you can calculate a proportion using mutate, then use that data frame to plot. Use geom_col when you want the height of the bars to be a statistic you have calculated (geom_bar is for frequencies)
+
+## My challenge
+
+- Output: values don’t look quite right. Assumption that kids with NAs were excluded could be wrong?
+
+- Is this Exp 1 or 2 data?
+
+## My working
+
+- The data was actually a combination of both Experiment 1 and 2 because I hadn't filtered by experiment!
+
+- I know the code should be:   filter(trust, experiment == "1") but I can’t find where to put this so it will run
+
+- I created a new data frame using only experiment 1 data: trust1 <- filter(trust, experiment == “1”) & applied this change throughout the code.
+
+- Have reproduced the graph for Experiment 2 following the exact same steps for Experiment 1! The graphs seem to replicate those in the paper very well.
+
+## Next steps
+
+- Use the Patchwork package to paste the two plots together
+
+- Assigned p1 to first plot and p2 to the second as follows:
+
+p1 <- trust1_count_prop %>%
+  ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
+  geom_col(position = "dodge")
+
+p2 <- trust2_count_prop %>%
+  ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
+  geom_col(position = "dodge")
+  
+- Then used function p1 + p2 which should combine the two plots so they're on one plot. But it only put them side by side. Which is odd, given the "|" symbol (p1|p2) should do that. The "/" symbol (p1/p2) puts p1 on top of p2. I think there is something within the data itself that is preventing the two plots from being combined with p1 + p2, i.e., I think something within the coding I used to create the dataframes p1 and p2 prevents the two plots being combined.
