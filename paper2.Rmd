@@ -109,7 +109,9 @@ trust1_count_prop <- trust1_count_wide %>%
 
 p1 <- trust1_count_prop %>%
   ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  ggtitle("Experiment 1") +
+  labs(y = "Proportion of children who left with confederate", x = "Age group")
 ```
 Hmmmm the values don't look quite right? Maybe my assumption that the kids with NAs were excluded is wrong? Is this Exp 1 data or Exp 2?
 
@@ -192,13 +194,15 @@ trust2_count_prop <- trust2_count_wide %>%
 
 p2 <- trust2_count_prop %>%
   ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  ggtitle("Experiment 2") +
+  labs(y = "Proportion of children who left with confederate", x = "Age group")
 ```
 
 # Combining the plots
 
 ## use patchwork to paste the two plots together
 ```{r}
-p1/p2
+p1 + p2 + plot_layout(guides="collect")
 ```
 
