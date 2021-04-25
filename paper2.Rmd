@@ -199,6 +199,6 @@ p2 <- trust2_count_prop %>%
 
 ## use patchwork to paste the two plots together
 ```{r}
-p1 + p2
+p1/p2
 ```
 
