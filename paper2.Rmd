@@ -30,12 +30,10 @@ trust <- read_csv(here("research_data", "trust.csv")) %>%
   clean_names()
 ```
 
-
 ## show names
 
 ```{r}
 names(trust)
-
 ```
 
 ## convert response values to percentages (as per Table 3)
@@ -79,7 +77,7 @@ trust_count
 
 ```
 
-The challenge is that it is hard to do calculations in R when the values are in rows like this. We want to caluculate the proportion of 3-5 year olds in the accurate condition who left = 41/(41+19), but it is hard to tell R to do that for pairs of values moving down the variable. 
+The challenge is that it is hard to do calculations in R when the values are in rows like this. We want to calculate the proportion of 3-5 year olds in the accurate condition who left = 41/(41+19), but it is hard to tell R to do that for pairs of values moving down the variable. 
 
 I think the thing to do is to make the data wide (with response 0 and 1 in different columns) so you can calculate proportion across columns. Before I do that though, I am going to recode those values and turn values of 0 and 1 into stayed and left, because when I make the data wide, they will become the names of the variables and R doesn't like numbers for variable names. 
 
