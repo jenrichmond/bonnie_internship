@@ -16,3 +16,31 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Over the past couple of weeks, I feel as though I've been frustrated in my attempts to make any significant progress on reproducing the graphs for the second paper. I suppose the tricky thing with R is that you know what you want the output to look like, but it is a matter of finding the right code to produce that output, and to find the right code, you need to ask the right questions. And my issue is that I don't think I'm asking the right questions. 
+
+My first goal for Week 8 was to ascertain why I had the opposite sample sizes and values for the Sprite and Water conditions in Table 1, Paper 1. I was correct in guessing that I had misinterpreted the condition labels, e.g., I thought Dummy1_Water_Sprite would represent the Water condition (since Water was listed first in the label), but the codebook stated that the opposite was true, such that when Dummy1_Water_Sprite = 0, the participant is in the Water condition, and when it = 1, the participant is in the Sprite condition.
+
+My second goal was to reproduce Tables 2 and 3 for Paper 1. I found that very few of the descriptives in these tables replicated, but also noticed that the values differed by very small amounts (e.g., 0.9 mean and SD units for Table 2) and that there were cases where all descriptives for one condition replicated perfectly (i.e., all descriptives for the Water condition in Table 3). As such, I concluded that the discrepancy in descriptives between Tables 2 and 3 and the tables produced by R is likely due to manual error by the researchers.
+
+My third goal was to plot the data from Experiment 1 and Experiment 2 separately, then combine them using the "Patchwork" package. This is where I became quite stuck. The decision to plot the data from the two experiments separately was to overcome the challenge of the complex nature of the graph: there are 2 columns for each X variable, there are 2 sections of the graph (Exp 1: Female Confederate; Exp 2: Male Confederate), and the Y variable is converted to proportion (from the raw data which comprised "0" for not leaving with the confederate and "1" for leaving).
+
+My steps to achieve this goal went as follows:
+
+- Mutate the dataset to add new variable "agegroup" with two possible values representing the two age groups. This was fine.
+
+- Pipe the data into a ggplot using geom_bar with X variable = age group, Y variable = response, fill = condition. This was tricky - I produced a plot with bars all the same height, and couldn't seem to produce a plot with the correct bar heights, regardless of how I manipulated the code (e.g., group_by)
+
+- Mutate the dataset to add new variable "proportion" that calculates the proportion of participants in each age group who agreed to leave with the confederate. This was fine. 
+
+- Create a new dataset with the age group and condition variables combined into one column using the "gather" function. Code: trust2 <- trust %>%
+  gather("condition", "proportion", -agegroup). This did not work. 
+  
+I played around with the above for some time, but as mentioned previously, I knew what I wanted to achieve, but didn't know how to ask the right questions of CRAN and other online repos to identify the code I needed. I essentially needed some kind of function that will help distinguish between the two age groups as a function of their condition (accurate- or inaccurate-information) but could not manipulate the data in the way that suited the gather function to work successfully. I wondered whether there was a way to group_by() within a group_by() or some equivalent function so I could do the following:
+
+trust2 <- trust %>%
+  gather("condition", "proportion", -agegroup) and then...
+  
+ggplot(trust2, aes(x = agegroup, y = proportion, fill = condition)) +
+  geom_col()
+
+My goal for today (the end of Week 10): Jenny has left some tips on my code to point me in the right direction, and a challenge - determine why the values in R don't match those in the paper.
