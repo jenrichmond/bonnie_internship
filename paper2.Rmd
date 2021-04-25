@@ -43,6 +43,8 @@ trust %>%
   adorn_percentages()
 ```
 
+# Experiment 1
+
 ## create a new dataframe using only experiment 1 data
 ```{r}
 trust1 <- filter(trust, experiment == "1")
@@ -87,6 +89,7 @@ The challenge is that it is hard to do calculations in R when the values are in 
 
 I think the thing to do is to make the data wide (with response 0 and 1 in different columns) so you can calculate proportion across columns. Before I do that though, I am going to recode those values and turn values of 0 and 1 into stayed and left, because when I make the data wide, they will become the names of the variables and R doesn't like numbers for variable names. 
 
+## make your data wide
 ```{r}
 trust1_count_wide <- trust1_count %>%
   na.omit() %>% # I am assuming that the kids who have NA here were excluded?
@@ -99,7 +102,7 @@ trust1_count_wide
 
 Now that I have how many stayed in one column and left in another column, I can calculate a proportion using mutate. Then I can use that dataframe to plot. Use geom_col when you are wanting the height of the bars to be a stat you have calculated (geom_bar is for counting freqeuncies). 
 
-
+## creating the graph using ggplot
 ```{r}
 trust1_count_prop <- trust1_count_wide %>%
   mutate(proportion = left /(stayed+left))
@@ -145,3 +148,49 @@ ptrust %>%
   geom_col()
 ```
 
+# Experiment 2
+
+## create a new dataframe using only experiment 2 data
+```{r}
+trust2 <- filter(trust, experiment == "2")
+```
+
+## mutate dataset to add new variable "agegroup" with two possible values representing the two age groups
+```{r}
+trust2 <- trust2 %>%
+  mutate(agegroup = case_when(age_group_participants == 0 ~ "3-5 year olds", 
+                              age_group_participants == 1 ~ "5-6 year olds"),
+         condition = case_when(condition_information == 0 ~ "Inaccurate-Information Condition",
+                               condition_information == 1 ~ "Accurate-Information Condition"))
+```
+
+## mutate dataset to add new variable "proportion"
+```{r}
+trust2_count <- trust2 %>%
+  group_by(agegroup, condition) %>%
+  count(response) 
+
+trust2_count
+
+```
+
+## make your data wide
+```{r}
+trust2_count_wide <- trust2_count %>%
+  na.omit() %>% # I am assuming that the kids who have NA here were excluded?
+  mutate(response = case_when(response == 0 ~ "stayed", 
+                              response == 1 ~ "left")) %>% # recoding response variable
+  pivot_wider(names_from = response, values_from = n) 
+
+trust2_count_wide
+```
+
+## creating the graph using ggplot
+```{r}
+trust2_count_prop <- trust2_count_wide %>%
+  mutate(proportion = left /(stayed+left))
+
+trust2_count_prop %>%
+  ggplot(aes(x = agegroup, y = proportion, fill = condition)) +
+  geom_col(position = "dodge")
+```
