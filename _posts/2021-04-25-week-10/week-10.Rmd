@@ -1,0 +1,18 @@
+---
+title: "weeks 9-10"
+description: |
+  A recap of the past 2 weeks.
+author:
+  - name: Bonnie Butler
+    url: {}
+date: 2021-04-25
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
